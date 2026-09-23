@@ -1,0 +1,152 @@
+/* 西综病理学 · 学成选择题 —— 主题层
+   统一到「我的考研资料库 / 学习中心」的设计语言：
+   暖纸底 + 深青主色 + 橙色点缀 + 细边框卡片 + 柔和投影
+   （Google Fonts 在国内不可达，这里只用系统字体栈，保证秒开） */
+
+:root{
+  --paper:#f6f4ef; --bg:#f6f4ef; --surface:#fff; --card:#fff;
+  --ink:#202a35; --sub:#6d7780; --line:#dfe3e1; --hair:#e9eae5;
+  --accent:#146d68; --accent-bg:#e8f1ee; --deep:#0c514e; --dot:#d89055;
+  --shadow:0 12px 40px rgba(31,46,49,.06);
+  /* 语义色（保留对错/题型区分，但调成同一套调性） */
+  --green:#2f7d5f; --green-bg:#e9f2ec;
+  --red:#b4453c;   --red-bg:#fbeceb;
+  --blue:#3b6ea8;  --blue-bg:#eaf0f7;
+  --purple:#6b5b95;--purple-bg:#f0edf6;
+  --orange:#b96f2a;--orange-bg:#fbf0e4;
+  --gold:#a9822b;  --gold-bg:#fbf4e3;
+}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);
+  font:15.5px/1.75 "DM Sans","Noto Sans SC",-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;padding:0 14px 70px}
+
+/* ---------- 顶部导航（与学习中心一致） ---------- */
+.xz-nav{max-width:780px;margin:0 auto;height:64px;padding:0 14px;display:flex;
+  align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line)}
+.xz-brand{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  text-decoration:none;color:var(--ink)}
+.xz-mark{width:31px;height:31px;border-radius:9px;background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-size:16px;font-weight:700;line-height:1}
+.xz-mark span{color:#e6ba8e}
+.xz-navlinks{display:flex;gap:16px;font-size:12px;font-weight:600;color:var(--sub)}
+.xz-navlinks a{color:inherit;text-decoration:none}
+.xz-navlinks a:hover{color:var(--accent)}
+@media (max-width:420px){.xz-brand span:last-child{display:none}.xz-navlinks{gap:13px;font-size:11.5px}}
+
+/* ---------- 页头 ---------- */
+header.top{background:var(--deep);color:#fff;border-radius:20px;padding:22px 22px 18px;
+  margin:16px 0 16px;position:relative;overflow:hidden;box-shadow:0 20px 45px rgba(12,81,78,.14)}
+header.top::before{content:"";position:absolute;width:210px;height:210px;border:1px solid #ffffff1f;
+  border-radius:50%;right:-80px;top:-70px;box-shadow:0 0 0 46px #ffffff0a,0 0 0 92px #ffffff07}
+header.top .crumb{font-size:10.5px;letter-spacing:.14em;font-weight:700;color:#cfdfd8;
+  position:relative;opacity:1}
+header.top h1{font-size:23px;line-height:1.36;letter-spacing:-.02em;margin:9px 0 8px;position:relative}
+header.top .meta{font-size:12px;color:#d2e1dc;position:relative;line-height:1.7}
+header.top .meta b{color:#fff}
+.toolbar{position:relative;gap:7px}
+.toolbar button{background:#ffffff26;border-radius:9px;padding:8px 12px;font-size:13px;font-weight:700}
+.toolbar button:active{background:#ffffff40}
+.toolbar .score{background:#ffffff1c;border-radius:9px;font-size:12.5px;color:#eaf4f1}
+a.toolbtn{background:#ffffff26;border-radius:9px;font-size:13px;font-weight:700}
+a.toolbtn:active{background:#ffffff40}
+header.top a[data-nkhome]{background:#ffffff26!important;border-radius:8px!important;font-size:11px!important}
+
+/* ---------- 提示条 ---------- */
+.howto{background:var(--accent-bg);color:#0c514e;border-radius:14px;padding:12px 15px;
+  font-size:13px;line-height:1.75;margin:0 0 18px;border:1px solid #dbe8e3}
+.howto b{font-weight:700;color:var(--deep)}
+
+/* ---------- 小节标题 ---------- */
+h2.part{border-left:0;padding-left:0;font-size:19px;letter-spacing:-.02em;
+  margin:30px 2px 13px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+h2.part::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--dot);
+  box-shadow:0 0 0 4px #f6e9dd;flex:none}
+h2.part .cnt{font-size:12.5px;font-weight:400;color:var(--sub);margin-left:0}
+
+/* ---------- 题卡 ---------- */
+.q{background:var(--surface);border:1px solid var(--hair);border-radius:17px;
+  box-shadow:var(--shadow);padding:16px 15px 14px;margin-bottom:14px}
+.q::before{width:4px;border-radius:17px 0 0 17px}
+.qhead{gap:6px;margin-bottom:8px}
+.tag{border-radius:5px;padding:3px 8px;font-size:10.5px;font-weight:700;letter-spacing:.05em}
+.tloc{background:#f1f5f2;color:#4d6b67;font-weight:600}
+.qno{font-size:11.5px;color:var(--sub);font-weight:600;letter-spacing:.03em}
+.stem{font-size:15.5px;line-height:1.78;margin:3px 0 10px}
+.opts{gap:8px}
+.opt{background:#fff;border:1px solid var(--line);border-radius:11px;
+  padding:10px 12px;font-size:14.5px;line-height:1.65;transition:border-color .15s,background .15s}
+@media (hover:hover){.opt:hover:not([disabled]){border-color:#c9d6d2;background:#fcfdfc}}
+.opt.sel{border-color:var(--accent);background:var(--accent-bg)}
+.opt.right{border-color:#79ab95;background:var(--green-bg);color:#1f5c45}
+.opt.wrong{border-color:#d3a19c;background:var(--red-bg);color:#8a352e}
+.opt.missed{border-style:dashed;border-color:#dfb287;background:var(--orange-bg);color:#95541c}
+.letters button{width:46px;height:40px;border-radius:11px;background:#fff;border:1px solid var(--line);
+  font-weight:700}
+.judgebar{margin-top:10px;gap:8px}
+.judgebar button{background:var(--accent);border-radius:10px;padding:8px 16px;font-size:13px}
+.judgebar button.ghost{background:#f1f5f2;color:#4d6b67}
+
+/* ---------- 解析 ---------- */
+details.ans{margin-top:10px;border-radius:12px;background:#fbfaf6;border:1px solid var(--line)}
+details.ans summary{color:var(--accent);font-size:12.5px;font-weight:700;letter-spacing:.02em;
+  padding:9px 13px}
+details.ans[open] summary{border-bottom:1px dashed #e3ded3}
+.ansbody{padding:10px 14px 12px;font-size:14px;line-height:1.78}
+.ansbody .ansline{margin-bottom:5px}
+.ansbody .expl{color:#3c4854}
+.ansbody .loc{margin-top:7px;font-size:12px;color:var(--sub)}
+.shot img{border:1px solid var(--line);border-radius:11px}
+.shcap{font-size:11px;color:var(--sub);margin-top:4px}
+
+/* ---------- 配伍 / 网站题库 / 速记卡 ---------- */
+.bgroup,.wgroup{background:var(--surface);border:1px solid var(--hair);border-radius:17px;
+  box-shadow:var(--shadow);padding:15px}
+.bgroup .bnote,.wgtop b{color:var(--purple)}
+.bopts{background:#f8f6fb;border:1px dashed #ded7ea;border-radius:11px;font-size:14.5px}
+.wopts{background:#f7f9fb;border:1px dashed #d8e0ea;border-radius:11px}
+.wbbtn{border:1.5px dashed #146d6877;background:#f0f7f4;color:var(--accent);
+  border-radius:14px;font-size:14px;padding:13px;letter-spacing:.01em}
+.wbbtn:active{background:#dfeee9}
+.wbnote{background:#fbfaf6;border:1px solid var(--line);border-radius:11px;font-size:12.5px}
+.cardlist{background:var(--surface);border:1px solid var(--hair);border-radius:17px;
+  box-shadow:var(--shadow);padding:17px 19px}
+.cardlist h3{color:var(--accent);font-size:14.5px;letter-spacing:.01em}
+.cardlist li{font-size:14.5px;line-height:1.85}
+.cardlist a{color:var(--accent)!important;font-weight:600;text-decoration:none}
+.cardlist a:hover{text-decoration:underline}
+.cardlist th{background:#f1f5f2;color:#0c514e;font-weight:700}
+.cardlist th,.cardlist td{border:1px solid var(--line);padding:6px 9px}
+
+/* ---------- 讲义 PDF 悬浮按钮 ---------- */
+.pdf-fab{background:var(--deep);border-radius:14px;box-shadow:0 8px 22px rgba(12,81,78,.28)}
+.pdf-bar{background:var(--deep)}
+.pdf-pages{background:#eeece7}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:34px;font-size:11.5px;color:var(--sub);line-height:1.9}
+footer a{color:var(--accent)}
+
+/* ---------- 打印 ---------- */
+@media print{
+  body{background:#fff}
+  .xz-nav,.toolbar,.howto,.pdf-fab,.pdf-overlay{display:none!important}
+  header.top{background:#fff;color:#000;border:1px solid #000;box-shadow:none}
+  header.top::before{display:none}
+  header.top .crumb,header.top .meta{color:#333}
+  .q,.cardlist{box-shadow:none}
+}
+
+/* ---------- 细节打磨 ---------- */
+/* 「讲义」悬浮按钮移到右下，避免压住正文提示框 */
+.pdf-fab{top:auto;bottom:26px;right:12px;padding:8px 9px;border-radius:13px}
+/* 目录列表：去掉原生圆点，改成干净的条目 */
+.cardlist ul{padding-left:0!important;margin:2px 0!important}
+.cardlist ul li{list-style:none;padding:7px 0 7px 2px;border-bottom:1px solid #f1f2ee;
+  font-size:14.5px!important;line-height:1.65!important}
+.cardlist ul li:last-child{border-bottom:0}
+.cardlist ul li span{font-size:11px!important;color:#5c8a76!important;white-space:nowrap}
+@media (max-width:600px){
+  .cardlist ul li{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+}
