@@ -1,0 +1,278 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>病理学 第06课 学成选择题 | 感染性心内膜炎</title><style>:root{
+  --bg:#f2f5f6; --card:#ffffff; --ink:#1f2933; --sub:#5c6b73;
+  --line:#e2e8ea; --accent:#0f766e; --accent-bg:#e6f6f4;
+  --green:#15803d; --green-bg:#e8f6ec; --red:#b91c1c; --red-bg:#fdecec;
+  --blue:#1d4ed8; --blue-bg:#e8effd; --purple:#6d28d9; --purple-bg:#f1ebfd;
+  --orange:#c2410c; --orange-bg:#fdf0e6; --gold:#b45309; --gold-bg:#fdf6e3;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.7 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wrap{max-width:760px;margin:0 auto;padding:14px 12px 60px}
+header.top{background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;
+  border-radius:16px;padding:16px 16px 14px;margin-bottom:14px}
+header.top .crumb{font-size:12px;opacity:.85;letter-spacing:.05em}
+header.top h1{font-size:19px;line-height:1.45;margin:6px 0 8px}
+header.top .meta{font-size:12.5px;opacity:.92;line-height:1.6}
+header.top .meta b{font-weight:600}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toolbar button{border:0;border-radius:9px;padding:8px 12px;font-size:13.5px;font-weight:600;
+  background:rgba(255,255,255,.16);color:#fff}
+.toolbar button:active{background:rgba(255,255,255,.3)}
+.toolbar .score{margin-left:auto;font-size:13px;background:rgba(255,255,255,.14);
+  border-radius:9px;padding:8px 10px;white-space:nowrap}
+.howto{background:var(--accent-bg);border-radius:12px;padding:10px 14px;font-size:13.5px;
+  color:#115e59;margin:0 0 16px;line-height:1.65}
+.howto b{font-weight:700}
+h2.part{font-size:16.5px;margin:26px 4px 10px;padding-left:10px;border-left:4px solid var(--accent)}
+h2.part .cnt{font-size:12px;font-weight:400;color:var(--sub);margin-left:6px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 12px 10px;margin-bottom:12px;position:relative;overflow:hidden}
+.q::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:transparent}
+.q.correct::before{background:var(--green)}
+.q.wrong::before{background:var(--red)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}
+.tag{font-size:11px;font-weight:700;border-radius:6px;padding:2px 7px;letter-spacing:.03em}
+.tA{background:var(--blue-bg);color:var(--blue)}
+.tX{background:var(--orange-bg);color:var(--orange)}
+.tB{background:var(--purple-bg);color:var(--purple)}
+.tZ{background:var(--red-bg);color:var(--red)}
+.tloc{background:#eef2f4;color:var(--sub);font-weight:500}
+.qno{font-size:12px;color:var(--sub);font-weight:600}
+.stem{font-size:15.5px;line-height:1.7;margin:2px 0 8px}
+.opts{display:grid;gap:7px}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:14.5px;line-height:1.6;
+  background:#fafbfc;border:1.5px solid var(--line);border-radius:10px;padding:8px 11px;color:var(--ink)}
+.opt.sel{border-color:var(--accent);background:var(--accent-bg)}
+.opt.right{border-color:var(--green);background:var(--green-bg);color:#14532d;font-weight:600}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:#7f1d1d;font-weight:600}
+.opt.missed{border-style:dashed;border-color:var(--orange);background:var(--orange-bg);color:#9a3412}
+.opt[disabled]{opacity:.92}
+.judgebar{display:flex;gap:8px;margin-top:8px}
+.judgebar button{font-size:13.5px;font-weight:700;border:0;border-radius:9px;padding:7px 14px;
+  background:var(--accent);color:#fff}
+.judgebar button.ghost{background:#eef2f4;color:var(--sub)}
+.letters{display:flex;gap:8px;margin-top:8px}
+.letters button{width:44px;height:38px;border-radius:9px;border:1.5px solid var(--line);
+  background:#fafbfc;font-size:15px;font-weight:700;color:var(--ink)}
+.letters button.right{border-color:var(--green);background:var(--green-bg);color:#14532d}
+.letters button.wrong{border-color:var(--red);background:var(--red-bg);color:#7f1d1d}
+.bgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.bgroup .bnote{font-size:12.5px;color:var(--purple);font-weight:600;margin-bottom:6px}
+.bopts{background:#faf9fe;border:1px dashed #ddd6fe;border-radius:10px;padding:8px 11px;
+  font-size:14.5px;line-height:1.8;margin-bottom:10px}
+.bgroup .q{border:0;border-top:1px solid var(--line);border-radius:0;margin:0;padding:10px 2px 6px}
+.bgroup .q::before{display:none}
+details.ans{margin-top:9px;border-radius:10px;background:#f6f8f9;border:1px solid var(--line)}
+details.ans summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--accent);
+  padding:7px 11px;list-style-position:inside}
+details.ans[open] summary{border-bottom:1px dashed var(--line)}
+.ansbody{padding:8px 12px 10px;font-size:14px;line-height:1.75}
+.ansbody .ansline{font-weight:700;margin-bottom:4px}
+.ansbody .ansline .ok{color:var(--green)}
+.ansbody .expl{color:#37474f;white-space:pre-line}
+.ansbody .loc{margin-top:6px;font-size:12.5px;color:var(--sub)}
+.cardlist{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.cardlist h3{font-size:14.5px;margin:10px 0 6px;color:var(--accent)}
+.cardlist h3:first-child{margin-top:2px}
+.cardlist ul{margin:4px 0;padding-left:20px}
+.cardlist li{font-size:14px;line-height:1.8;margin:2px 0}
+.cardlist table{border-collapse:collapse;width:100%;margin:6px 0;font-size:13.5px}
+.cardlist th,.cardlist td{border:1px solid var(--line);padding:5px 8px;text-align:left;line-height:1.6}
+.cardlist th{background:#f2f7f6;font-weight:600;color:#115e59}
+footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center;line-height:1.8}
+@media print{
+  body{background:#fff}
+  .toolbar,.howto{display:none}
+  details.ans{display:block}
+  details.ans summary{list-style:none}
+  .q{break-inside:avoid;page-break-inside:avoid}
+  header.top{background:#fff;color:#000;border:1px solid #000}
+  header.top .crumb,header.top .meta{color:#333}
+}
+.shot{margin-top:8px}
+.shot img{width:100%;display:block;border:1px solid var(--line);border-radius:8px}
+.shcap{font-size:11.5px;color:var(--sub);margin-top:3px}
+a.toolbtn{display:inline-block;text-decoration:none;border-radius:9px;padding:8px 12px;
+  font-size:13.5px;font-weight:600;background:rgba(255,255,255,.16);color:#fff}
+a.toolbtn:active{background:rgba(255,255,255,.3)}
+
+.pdf-fab{position:fixed;right:10px;top:45%;z-index:60;display:flex;flex-direction:column;align-items:center;
+  gap:1px;background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;text-decoration:none;
+  border-radius:14px;padding:9px;font-size:11px;font-weight:700;box-shadow:0 3px 12px rgba(0,0,0,.28);
+  line-height:1.15;letter-spacing:1px}
+.pdf-fab .ico{font-size:17px;letter-spacing:0}
+.pdf-fab:active{opacity:.85}
+.pdf-overlay{position:fixed;inset:0;z-index:120;background:#eef2f3;display:flex;flex-direction:column}
+.pdf-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#0f766e;color:#fff;
+  padding:9px 12px;font-size:14px}
+.pdf-bar .pdf-ext{color:#d1faf5;text-decoration:none;font-size:12.5px;margin-right:10px}
+.pdf-bar #pdfClose{border:0;border-radius:8px;background:rgba(255,255,255,.2);color:#fff;font-size:13px;
+  font-weight:600;padding:6px 10px}
+.pdf-pages{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#e8edee;padding:8px 6px 24px}
+.pdf-pages img{width:100%;display:block;margin:0 auto 10px;border-radius:6px;box-shadow:0 1px 6px rgba(0,0,0,.18);background:#fff}
+@media print{.pdf-fab,.pdf-overlay{display:none!important}}
+
+.tW{background:#eef2ff;color:#4f46e5}
+.tS2{background:#fdf2f8;color:#be185d}
+.wbbtn{width:100%;border:1.5px dashed #0f766e88;background:#f0fdfa;color:#0f766e;font-size:14.5px;font-weight:700;
+  border-radius:12px;padding:13px;margin-bottom:12px;line-height:1.5}
+.wbbtn:active{background:#ccfbf1}
+.wbnote{font-size:12.5px;color:var(--sub);background:#f6f8f9;border:1px solid var(--line);border-radius:10px;
+  padding:8px 11px;margin-bottom:10px;line-height:1.65}
+.wgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.wgtop{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:7px}
+.wgtop b{font-size:15px}
+.wopts{background:#f7f9ff;border:1px dashed #cdd8f6;border-radius:10px;padding:8px 11px;font-size:13.5px;
+  line-height:1.75;margin-bottom:8px;max-height:240px;overflow:auto}
+.wgroup .q{border:0;border-top:1px dashed var(--line);border-radius:0;margin:0;padding:9px 2px 6px}
+.wgroup .q::before{display:none}
+.opts.lg{display:flex;flex-wrap:wrap;gap:6px}
+.opts.lg .opt{width:auto;min-width:40px;text-align:center;padding:6px 10px;font-size:13.5px}
+</style></head><body data-total="17"><div class="wrap"><header class="top"><div class="crumb">考研西综 · 病理学 · 学成选择题</div><h1>第06课｜感染性心内膜炎</h1><div class="meta">对应讲义：<b>P1</b> ｜ 共 <b>17</b> 题 ｜ 建议约 <b>15</b> 分钟</div><div class="toolbar"><a class="toolbtn" href="../index.html">← 总目录</a><button id="expandAll">展开全部答案</button><button id="collapseAll">收起全部</button><button id="resetBtn">重做</button><span class="score" id="score">已答 0/17 · 正确 0</span></div></header><div class="howto">用法：A型题点选项即判；X型题先多选、再点【判卷】；答完自动展开解析。刷完本课再过一遍底部【本课速记卡】，效果最好。</div><h2 class="part">感染性心内膜炎（急性 VS 亚急性）<span class="cnt">17 题</span></h2><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q1</span><span class="tag tloc">P1 · 致病菌</span></div><div class="stem">急性感染性心内膜炎最多见的致病菌是</div><div class="opts"><button class="opt" data-k="A">A. 金黄色葡萄球菌</button><button class="opt" data-k="B">B. A 组溶血性链球菌</button><button class="opt" data-k="C">C. 肺炎链球菌</button><button class="opt" data-k="D">D. 草绿色链球菌</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">急性：金葡菌最多见，另有溶血性链球菌、肺炎链球菌等毒力较强的化脓菌。</div><div class="loc">📖 讲义定位：P1 · 致病菌</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 致病菌</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q2</span><span class="tag tloc">P1 · 致病菌</span></div><div class="stem">亚急性感染性心内膜炎最常见的致病菌是</div><div class="opts"><button class="opt" data-k="A">A. 溶血性链球菌</button><button class="opt" data-k="B">B. 草绿色链球菌</button><button class="opt" data-k="C">C. 金黄色葡萄球菌</button><button class="opt" data-k="D">D. 肺炎链球菌</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">亚急性：草绿色链球菌等毒力较弱的细菌。</div><div class="loc">📖 讲义定位：P1 · 致病菌</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 致病菌</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q3</span><span class="tag tloc">P1 · 病变部位</span></div><div class="stem">亚急性感染性心内膜炎主要侵犯的瓣膜是</div><div class="opts"><button class="opt" data-k="A">A. 仅三尖瓣</button><button class="opt" data-k="B">B. 仅肺动脉瓣</button><button class="opt" data-k="C">C. 已有病变的心瓣膜（如风湿病）</button><button class="opt" data-k="D">D. 正常心瓣膜</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">亚急性多侵犯已有病变的心瓣膜（如风湿病基础上）；急性可侵犯正常心瓣膜。</div><div class="loc">📖 讲义定位：P1 · 病变部位</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 病变部位</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q4</span><span class="tag tloc">P1 · 病变部位</span></div><div class="stem">急性感染性心内膜炎的病变部位特点是</div><div class="opts"><button class="opt" data-k="A">A. 仅侵犯已有病变的心瓣膜</button><button class="opt" data-k="B">B. 不累及瓣膜</button><button class="opt" data-k="C">C. 仅侵犯三尖瓣</button><button class="opt" data-k="D">D. 正常心瓣膜即可被侵犯</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">急性：正常心瓣膜即可侵犯；亚急性：多发生在已有病变的瓣膜。</div><div class="loc">📖 讲义定位：P1 · 病变部位</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 病变部位</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q5</span><span class="tag tloc">P1 · 赘生物</span></div><div class="stem">急性感染性心内膜炎赘生物脱落引起的梗死特点是</div><div class="opts"><button class="opt" data-k="A">A. 出血性梗死</button><button class="opt" data-k="B">B. 败血性（感染性）梗死</button><button class="opt" data-k="C">C. 贫血性梗死</button><button class="opt" data-k="D">D. 无菌性梗死</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">急性：赘生物易脱落→败血性/感染性梗死；亚急性→无菌性梗死（栓塞最多见于脑）。</div><div class="loc">📖 讲义定位：P1 · 赘生物</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 赘生物</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q6</span><span class="tag tloc">P1 · 赘生物</span></div><div class="stem">亚急性感染性心内膜炎栓塞最多见的部位是</div><div class="opts"><button class="opt" data-k="A">A. 脾</button><button class="opt" data-k="B">B. 下肢</button><button class="opt" data-k="C">C. 肺</button><button class="opt" data-k="D">D. 脑</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">亚急性赘生物易脱落形成无菌性栓子，栓塞最多见于脑。</div><div class="loc">📖 讲义定位：P1 · 赘生物</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 赘生物</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q7</span><span class="tag tloc">P1 · 变态反应</span></div><div class="stem">Osler 小结和肾小球肾炎较常见于</div><div class="opts"><button class="opt" data-k="A">A. 两者均常见</button><button class="opt" data-k="B">B. 两者均少见</button><button class="opt" data-k="C">C. 亚急性感染性心内膜炎</button><button class="opt" data-k="D">D. 急性感染性心内膜炎</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">变态反应表现（肾小球肾炎、Osler 小结）：亚急性多见、急性少见。</div><div class="loc">📖 讲义定位：P1 · 变态反应</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 变态反应</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q8</span><span class="tag tloc">P1 · 受累瓣膜</span></div><div class="stem">急性感染性心内膜炎较具特征性的瓣膜改变是</div><div class="opts"><button class="opt" data-k="A">A. 瓣膜穿孔</button><button class="opt" data-k="B">B. 瓣膜增厚</button><button class="opt" data-k="C">C. 瓣膜钙化</button><button class="opt" data-k="D">D. 瓣膜变形</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">急性：瓣膜穿孔等；亚急性：瓣膜变形等。</div><div class="loc">📖 讲义定位：P1 · 受累瓣膜</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 受累瓣膜</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q9</span><span class="tag tloc">P1 · 概述</span></div><div class="stem">感染性心内膜炎主要累及的瓣膜是</div><div class="opts"><button class="opt" data-k="A">A. 仅主动脉瓣</button><button class="opt" data-k="B">B. 三尖瓣和肺动脉瓣</button><button class="opt" data-k="C">C. 仅二尖瓣</button><button class="opt" data-k="D">D. 二尖瓣和主动脉瓣</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">感染性心内膜炎主要累及二尖瓣＋主动脉瓣。</div><div class="loc">📖 讲义定位：P1 · 概述</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 概述</div></div></div></details></div><div class="q" data-ans="BCD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q10</span><span class="tag tloc">P1 · 小结</span></div><div class="stem">关于亚急性感染性心内膜炎，下列叙述正确的有</div><div class="opts"><button class="opt" data-k="A">A. 赘生物脱落常致败血性梗死</button><button class="opt" data-k="B">B. 赘生物脱落栓塞最多见于脑</button><button class="opt" data-k="C">C. 多由草绿色链球菌引起</button><button class="opt" data-k="D">D. 多侵犯已有病变的心瓣膜</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BCD</span></div><div class="expl">A 错：亚急性赘生物脱落引起无菌性梗死；败血性（感染性）梗死见于急性。</div><div class="loc">📖 讲义定位：P1 · 小结</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 小结</div></div></div></details></div><div class="q" data-ans="ABD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q11</span><span class="tag tloc">P1 · 小结</span></div><div class="stem">关于急性感染性心内膜炎，下列叙述正确的有</div><div class="opts"><button class="opt" data-k="A">A. 瓣膜穿孔较常见</button><button class="opt" data-k="B">B. 金葡菌为最多见致病菌</button><button class="opt" data-k="C">C. 肾小球肾炎和 Osler 小结多见</button><button class="opt" data-k="D">D. 可侵犯正常心瓣膜</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ABD</span></div><div class="expl">C 错：变态反应表现在急性较少见（亚急性多见）。</div><div class="loc">📖 讲义定位：P1 · 小结</div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 小结</div></div></div></details></div><div class="bgroup"><div class="bnote">配伍题 · 共用选项，每题选一个</div><div class="bopts"><div>A. 急性感染性心内膜炎</div><div>B. 亚急性感染性心内膜炎</div><div>C. 两者均可</div><div>D. 两者均无</div></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="qno">Q12</span><span class="tag tloc">P1 · 致病菌</span></div><div class="stem">金黄色葡萄球菌为最多见致病菌</div><div class="letters"><button class="lt" data-k="A">A</button><button class="lt" data-k="B">B</button><button class="lt" data-k="C">C</button><button class="lt" data-k="D">D</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">金葡菌是急性感染性心内膜炎最多见的致病菌。</div><div class="loc">📖 讲义定位：P1 · 致病菌</div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="qno">Q13</span><span class="tag tloc">P1 · 致病菌</span></div><div class="stem">由草绿色链球菌所致</div><div class="letters"><button class="lt" data-k="A">A</button><button class="lt" data-k="B">B</button><button class="lt" data-k="C">C</button><button class="lt" data-k="D">D</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">草绿色链球菌所致者为亚急性。</div><div class="loc">📖 讲义定位：P1 · 致病菌</div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="qno">Q14</span><span class="tag tloc">P1 · 病变部位</span></div><div class="stem">可侵犯正常心瓣膜</div><div class="letters"><button class="lt" data-k="A">A</button><button class="lt" data-k="B">B</button><button class="lt" data-k="C">C</button><button class="lt" data-k="D">D</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">急性可侵犯正常心瓣膜；亚急性多发生在已有病变的瓣膜。</div><div class="loc">📖 讲义定位：P1 · 病变部位</div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="qno">Q15</span><span class="tag tloc">P1 · 赘生物</span></div><div class="stem">栓塞最多见于脑</div><div class="letters"><button class="lt" data-k="A">A</button><button class="lt" data-k="B">B</button><button class="lt" data-k="C">C</button><button class="lt" data-k="D">D</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">亚急性赘生物脱落形成栓子，栓塞最多见于脑。</div><div class="loc">📖 讲义定位：P1 · 赘生物</div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="qno">Q16</span><span class="tag tloc">P1 · 受累瓣膜</span></div><div class="stem">瓣膜穿孔常见</div><div class="letters"><button class="lt" data-k="A">A</button><button class="lt" data-k="B">B</button><button class="lt" data-k="C">C</button><button class="lt" data-k="D">D</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">急性以瓣膜穿孔等为特点；亚急性为瓣膜变形等。</div><div class="loc">📖 讲义定位：P1 · 受累瓣膜</div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="qno">Q17</span><span class="tag tloc">P1 · 变态反应</span></div><div class="stem">Osler 小结多见</div><div class="letters"><button class="lt" data-k="A">A</button><button class="lt" data-k="B">B</button><button class="lt" data-k="C">C</button><button class="lt" data-k="D">D</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">Osler 小结、肾小球肾炎在亚急性多见。</div><div class="loc">📖 讲义定位：P1 · 变态反应</div></div></details></div><div class="shot"><img loading="lazy" src="img/06a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图</div></div></div><h2 class="part">本课速记卡</h2><div class="cardlist"><h3>感染性心内膜炎：急性 VS 亚急性</h3><table><tr><th>项目</th><th>急性</th><th>亚急性</th></tr><tr><td>致病菌</td><td>金葡菌（最多见）等毒力强化脓菌</td><td>草绿色链球菌等毒力弱</td></tr><tr><td>病变部位</td><td>正常心瓣膜即可侵犯</td><td>已有病变的瓣膜（如风湿病）</td></tr><tr><td>赘生物脱落</td><td>→败血性/感染性梗死</td><td>→无菌性梗死（栓塞最多见脑）</td></tr><tr><td>受累瓣膜</td><td>瓣膜穿孔等</td><td>瓣膜变形等</td></tr><tr><td>变态反应</td><td>肾小球肾炎、Osler 小结少见</td><td>多见</td></tr></table><h3>概述</h3><ul><li>感染性心内膜炎主要累及二尖瓣＋主动脉瓣</li></ul></div><h2 class="part">📚 网站题库（导入）<span class="cnt">3 组 · 4 题</span></h2><div class="wbank"><button class="wbbtn" id="webBankBtn" data-label="🔽 点击展开：从「西综题库」网站导入的 3 组题（4 题，含答案）">🔽 点击展开：从「西综题库」网站导入的 3 组题（4 题，含答案）</button><div id="webBank" style="display:none"><div class="wbnote">说明：本部分为外部题库导入（来源：「西综题库」网站 · 病理学），题干、选项与答案保留原样；标注「教师补充」的答案未经讲义逐项复核。做题方式：点字母选择（多选后点【判卷】；答案可点开「答案与出处」查看）。</div><div class="wgroup"><div class="wgtop"><b>急性与亚急性感染性心内膜炎</b><span class="tag tW">B型题</span></div><div class="wopts"><div><b>A</b> 受累瓣膜穿孔</div><div><b>B</b> 致病菌为草绿色链球菌等毒力较弱的细菌</div><div><b>C</b> 病变部位为病变心瓣膜</div><div><b>D</b> 赘生物易脱落形成栓子</div><div><b>E</b> 无菌性梗死（栓塞最多见于脑）</div><div><b>F</b> 感染性/败血性梗死</div><div><b>G</b> 肾小球肾炎和Osler小结多见</div><div><b>H</b> 致病菌金葡菌最多见</div><div><b>I</b> 肾小球肾炎和Osler小结少见</div><div><b>J</b> 受累瓣膜变形</div><div><b>K</b> 正常心瓣膜即可侵犯</div><div><b>L</b> 致病菌为金葡菌，溶血性链球菌，肺炎链球菌等毒力较强的化脓菌</div><div><b>M</b> 赘生物含菌</div></div><div class="q wq" data-ans="ADFHIKLM" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W1</span><span class="tag tloc">第6讲 · 第1页</span></div><div class="stem">急性感染性心内膜炎</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ADFHIKLM</span></div><div class="loc">📖 第6讲 · 第1页</div><div class="shot"><img loading="lazy" src="pdfpages/06/01.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第6讲 · 第1页</div></div></div></details></div><div class="q wq" data-ans="BCDEGJM" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W2</span><span class="tag tloc">第6讲 · 第1页</span></div><div class="stem">亚急性感染性心内膜炎</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BCDEGJM</span></div><div class="loc">📖 第6讲 · 第1页</div><div class="shot"><img loading="lazy" src="pdfpages/06/01.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第6讲 · 第1页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>亚急性感染性心内膜炎的表现有</b><span class="tag tW">多项选择</span><span class="tag tS2">教师补充</span></div><div class="wopts"><div><b>A</b> 贫血</div><div><b>B</b> 脾大</div><div><b>C</b> 败血性梗死</div><div><b>D</b> Aschoff 小体</div></div><div class="q wq" data-ans="AB" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W3</span><span class="tag tloc">第6讲 · 第1页</span></div><div class="stem">亚急性感染性心内膜炎的表现有(多选)</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">AB</span></div><div class="loc">📖 第6讲 · 第1页</div><div class="shot"><img loading="lazy" src="pdfpages/06/01.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第6讲 · 第1页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>亚急性感染性心内膜炎的赘生物脱落最易栓塞</b><span class="tag tW">单项选择</span><span class="tag tS2">教师补充</span></div><div class="wopts"><div><b>A</b> 脑</div><div><b>B</b> 肾</div><div><b>C</b> 肺</div><div><b>D</b> 下肢</div></div><div class="q wq" data-ans="A" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W4</span><span class="tag tloc">第6讲 · 第1页</span></div><div class="stem">亚急性感染性心内膜炎的赘生物脱落最易栓塞(单选)</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="loc">📖 第6讲 · 第1页</div><div class="shot"><img loading="lazy" src="pdfpages/06/01.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第6讲 · 第1页</div></div></div></details></div></div></div></div><footer>素材：病理学讲义·第06课核心精讲（P1）<br>题库与解析为学习整理 · 仅供个人复习参考</footer><a class="pdf-fab" id="pdfFab"><span class="ico">📄</span><span>讲义</span></a><div class="pdf-overlay" id="pdfOverlay" style="display:none"><div class="pdf-bar"><b>📄 本课讲义（共 1 页）</b><span><a class="pdf-ext" href="../%E9%A1%B5%E9%9D%A2/pdf/06.pdf" target="_blank">原生打开 ↗</a><button id="pdfClose">✕ 关闭</button></span></div><div class="pdf-pages"><img loading="lazy" decoding="async" src="pdfpages/06/01.jpg" alt="讲义第1页"></div></div></div><script>/* 病理学·学成选择题 —— 交互脚本（无依赖） */
+(function () {
+  'use strict';
+  var total = parseInt(document.body.getAttribute('data-total') || '0', 10);
+  var answered = 0, correct = 0;
+
+  function scoreEl() { return document.getElementById('score'); }
+  function refreshScore() {
+    var el = scoreEl();
+    if (el) el.textContent = '已答 ' + answered + '/' + total + ' · 正确 ' + correct;
+  }
+  function markResult(q, ok) {
+    q.classList.add(ok ? 'correct' : 'wrong');
+    var head = q.querySelector('.qhead');
+    if (head && !head.querySelector('.res')) {
+      var s = document.createElement('span');
+      s.className = 'res ' + (ok ? 'ok' : 'no');
+      s.textContent = ok ? '✓ 答对' : '✗ 答错';
+      s.style.cssText = 'font-size:12px;font-weight:700;' + (ok ? 'color:#15803d;' : 'color:#b91c1c;');
+      head.appendChild(s);
+    }
+    if (!q.getAttribute('data-noscore') && !q.getAttribute('data-counted')) {
+      q.setAttribute('data-counted', '1');
+      answered += 1;
+      if (ok) correct += 1;
+      refreshScore();
+    }
+    var d = q.querySelector('details.ans');
+    if (d) d.open = true;
+  }
+  function lockOpts(q) {
+    q.querySelectorAll('.opt,.lt').forEach(function (b) { b.disabled = true; });
+  }
+
+  /* 单选：.opt[data-k] 或 .lt[data-k] */
+  function bindSingle(q) {
+    var ans = (q.getAttribute('data-ans') || '').toUpperCase();
+    q.querySelectorAll('.lt,.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.getAttribute('data-judged')) return;
+        q.setAttribute('data-judged', '1');
+        var k = (b.getAttribute('data-k') || '').toUpperCase();
+        var ok = (k === ans);
+        if (ok) b.classList.add('right');
+        else {
+          b.classList.add('wrong');
+          var rightBtn = q.querySelector('[data-k="' + ans + '"]');
+          if (rightBtn) rightBtn.classList.add('right');
+        }
+        lockOpts(q);
+        markResult(q, ok);
+      });
+    });
+  }
+
+  /* 多选：.opt 可切换 .sel，.judge 判卷 */
+  function bindMulti(q) {
+    var ans = (q.getAttribute('data-ans') || '').toUpperCase().split('').sort().join('');
+    q.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.getAttribute('data-judged')) return;
+        b.classList.toggle('sel');
+      });
+    });
+    var jb = q.querySelector('.judge');
+    if (jb) jb.addEventListener('click', function () {
+      if (q.getAttribute('data-judged')) return;
+      var picked = [];
+      q.querySelectorAll('.opt.sel').forEach(function (b) { picked.push(b.getAttribute('data-k')); });
+      if (!picked.length) { jb.textContent = '请先选择'; setTimeout(function () { jb.textContent = '判卷'; }, 900); return; }
+      q.setAttribute('data-judged', '1');
+      var pk = picked.sort().join('');
+      q.querySelectorAll('.opt').forEach(function (b) {
+        var k = b.getAttribute('data-k');
+        var sel = b.classList.contains('sel');
+        var isR = ans.indexOf(k) >= 0;
+        b.classList.remove('sel');
+        if (sel && isR) b.classList.add('right');
+        else if (sel && !isR) b.classList.add('wrong');
+        else if (!sel && isR) b.classList.add('missed');
+      });
+      q.querySelectorAll('.opt,.judge').forEach(function (x) { x.disabled = true; });
+      markResult(q, pk === ans);
+    });
+  }
+
+  document.querySelectorAll('.q').forEach(function (q) {
+    var isMulti = q.getAttribute('data-mode') === 'multi';
+    if (isMulti) bindMulti(q); else bindSingle(q);
+  });
+
+  var ex = document.getElementById('expandAll');
+  if (ex) ex.addEventListener('click', function () {
+    document.querySelectorAll('details.ans').forEach(function (d) { d.open = true; });
+  });
+  var co = document.getElementById('collapseAll');
+  if (co) co.addEventListener('click', function () {
+    document.querySelectorAll('details.ans').forEach(function (d) { d.open = false; });
+  });
+  var rs = document.getElementById('resetBtn');
+  if (rs) rs.addEventListener('click', function () {
+    document.querySelectorAll('.q').forEach(function (q) {
+      q.classList.remove('correct', 'wrong');
+      q.removeAttribute('data-judged');
+      q.removeAttribute('data-counted');
+      q.querySelectorAll('.opt').forEach(function (b) {
+        b.classList.remove('sel', 'right', 'wrong', 'missed');
+        b.disabled = false;
+      });
+      q.querySelectorAll('.lt').forEach(function (b) {
+        b.classList.remove('right', 'wrong');
+        b.disabled = false;
+      });
+      q.querySelectorAll('.res').forEach(function (s) { s.remove(); });
+      q.querySelectorAll('details.ans').forEach(function (d) { d.open = false; });
+    });
+    answered = 0; correct = 0; refreshScore();
+  });
+
+  var fab = document.getElementById('pdfFab');
+  var ov = document.getElementById('pdfOverlay');
+  var pc = document.getElementById('pdfClose');
+  if (fab && ov && pc) {
+    fab.addEventListener('click', function () {
+      ov.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    pc.addEventListener('click', function () {
+      ov.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  }
+
+  var wbBtn = document.getElementById('webBankBtn');
+  var wbBox = document.getElementById('webBank');
+  if (wbBtn && wbBox) {
+    wbBtn.addEventListener('click', function () {
+      var open = wbBox.style.display !== 'none';
+      wbBox.style.display = open ? 'none' : 'block';
+      wbBtn.textContent = open ? wbBtn.getAttribute('data-label') : '🔼 收起网站题库';
+    });
+  }
+
+  refreshScore();
+})();
+</script></body></html>

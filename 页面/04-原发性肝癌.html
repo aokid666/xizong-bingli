@@ -1,0 +1,278 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>病理学 第04课 学成选择题 | 原发性肝癌</title><style>:root{
+  --bg:#f2f5f6; --card:#ffffff; --ink:#1f2933; --sub:#5c6b73;
+  --line:#e2e8ea; --accent:#0f766e; --accent-bg:#e6f6f4;
+  --green:#15803d; --green-bg:#e8f6ec; --red:#b91c1c; --red-bg:#fdecec;
+  --blue:#1d4ed8; --blue-bg:#e8effd; --purple:#6d28d9; --purple-bg:#f1ebfd;
+  --orange:#c2410c; --orange-bg:#fdf0e6; --gold:#b45309; --gold-bg:#fdf6e3;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.7 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wrap{max-width:760px;margin:0 auto;padding:14px 12px 60px}
+header.top{background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;
+  border-radius:16px;padding:16px 16px 14px;margin-bottom:14px}
+header.top .crumb{font-size:12px;opacity:.85;letter-spacing:.05em}
+header.top h1{font-size:19px;line-height:1.45;margin:6px 0 8px}
+header.top .meta{font-size:12.5px;opacity:.92;line-height:1.6}
+header.top .meta b{font-weight:600}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toolbar button{border:0;border-radius:9px;padding:8px 12px;font-size:13.5px;font-weight:600;
+  background:rgba(255,255,255,.16);color:#fff}
+.toolbar button:active{background:rgba(255,255,255,.3)}
+.toolbar .score{margin-left:auto;font-size:13px;background:rgba(255,255,255,.14);
+  border-radius:9px;padding:8px 10px;white-space:nowrap}
+.howto{background:var(--accent-bg);border-radius:12px;padding:10px 14px;font-size:13.5px;
+  color:#115e59;margin:0 0 16px;line-height:1.65}
+.howto b{font-weight:700}
+h2.part{font-size:16.5px;margin:26px 4px 10px;padding-left:10px;border-left:4px solid var(--accent)}
+h2.part .cnt{font-size:12px;font-weight:400;color:var(--sub);margin-left:6px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 12px 10px;margin-bottom:12px;position:relative;overflow:hidden}
+.q::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:transparent}
+.q.correct::before{background:var(--green)}
+.q.wrong::before{background:var(--red)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}
+.tag{font-size:11px;font-weight:700;border-radius:6px;padding:2px 7px;letter-spacing:.03em}
+.tA{background:var(--blue-bg);color:var(--blue)}
+.tX{background:var(--orange-bg);color:var(--orange)}
+.tB{background:var(--purple-bg);color:var(--purple)}
+.tZ{background:var(--red-bg);color:var(--red)}
+.tloc{background:#eef2f4;color:var(--sub);font-weight:500}
+.qno{font-size:12px;color:var(--sub);font-weight:600}
+.stem{font-size:15.5px;line-height:1.7;margin:2px 0 8px}
+.opts{display:grid;gap:7px}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:14.5px;line-height:1.6;
+  background:#fafbfc;border:1.5px solid var(--line);border-radius:10px;padding:8px 11px;color:var(--ink)}
+.opt.sel{border-color:var(--accent);background:var(--accent-bg)}
+.opt.right{border-color:var(--green);background:var(--green-bg);color:#14532d;font-weight:600}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:#7f1d1d;font-weight:600}
+.opt.missed{border-style:dashed;border-color:var(--orange);background:var(--orange-bg);color:#9a3412}
+.opt[disabled]{opacity:.92}
+.judgebar{display:flex;gap:8px;margin-top:8px}
+.judgebar button{font-size:13.5px;font-weight:700;border:0;border-radius:9px;padding:7px 14px;
+  background:var(--accent);color:#fff}
+.judgebar button.ghost{background:#eef2f4;color:var(--sub)}
+.letters{display:flex;gap:8px;margin-top:8px}
+.letters button{width:44px;height:38px;border-radius:9px;border:1.5px solid var(--line);
+  background:#fafbfc;font-size:15px;font-weight:700;color:var(--ink)}
+.letters button.right{border-color:var(--green);background:var(--green-bg);color:#14532d}
+.letters button.wrong{border-color:var(--red);background:var(--red-bg);color:#7f1d1d}
+.bgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.bgroup .bnote{font-size:12.5px;color:var(--purple);font-weight:600;margin-bottom:6px}
+.bopts{background:#faf9fe;border:1px dashed #ddd6fe;border-radius:10px;padding:8px 11px;
+  font-size:14.5px;line-height:1.8;margin-bottom:10px}
+.bgroup .q{border:0;border-top:1px solid var(--line);border-radius:0;margin:0;padding:10px 2px 6px}
+.bgroup .q::before{display:none}
+details.ans{margin-top:9px;border-radius:10px;background:#f6f8f9;border:1px solid var(--line)}
+details.ans summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--accent);
+  padding:7px 11px;list-style-position:inside}
+details.ans[open] summary{border-bottom:1px dashed var(--line)}
+.ansbody{padding:8px 12px 10px;font-size:14px;line-height:1.75}
+.ansbody .ansline{font-weight:700;margin-bottom:4px}
+.ansbody .ansline .ok{color:var(--green)}
+.ansbody .expl{color:#37474f;white-space:pre-line}
+.ansbody .loc{margin-top:6px;font-size:12.5px;color:var(--sub)}
+.cardlist{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.cardlist h3{font-size:14.5px;margin:10px 0 6px;color:var(--accent)}
+.cardlist h3:first-child{margin-top:2px}
+.cardlist ul{margin:4px 0;padding-left:20px}
+.cardlist li{font-size:14px;line-height:1.8;margin:2px 0}
+.cardlist table{border-collapse:collapse;width:100%;margin:6px 0;font-size:13.5px}
+.cardlist th,.cardlist td{border:1px solid var(--line);padding:5px 8px;text-align:left;line-height:1.6}
+.cardlist th{background:#f2f7f6;font-weight:600;color:#115e59}
+footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center;line-height:1.8}
+@media print{
+  body{background:#fff}
+  .toolbar,.howto{display:none}
+  details.ans{display:block}
+  details.ans summary{list-style:none}
+  .q{break-inside:avoid;page-break-inside:avoid}
+  header.top{background:#fff;color:#000;border:1px solid #000}
+  header.top .crumb,header.top .meta{color:#333}
+}
+.shot{margin-top:8px}
+.shot img{width:100%;display:block;border:1px solid var(--line);border-radius:8px}
+.shcap{font-size:11.5px;color:var(--sub);margin-top:3px}
+a.toolbtn{display:inline-block;text-decoration:none;border-radius:9px;padding:8px 12px;
+  font-size:13.5px;font-weight:600;background:rgba(255,255,255,.16);color:#fff}
+a.toolbtn:active{background:rgba(255,255,255,.3)}
+
+.pdf-fab{position:fixed;right:10px;top:45%;z-index:60;display:flex;flex-direction:column;align-items:center;
+  gap:1px;background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;text-decoration:none;
+  border-radius:14px;padding:9px;font-size:11px;font-weight:700;box-shadow:0 3px 12px rgba(0,0,0,.28);
+  line-height:1.15;letter-spacing:1px}
+.pdf-fab .ico{font-size:17px;letter-spacing:0}
+.pdf-fab:active{opacity:.85}
+.pdf-overlay{position:fixed;inset:0;z-index:120;background:#eef2f3;display:flex;flex-direction:column}
+.pdf-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#0f766e;color:#fff;
+  padding:9px 12px;font-size:14px}
+.pdf-bar .pdf-ext{color:#d1faf5;text-decoration:none;font-size:12.5px;margin-right:10px}
+.pdf-bar #pdfClose{border:0;border-radius:8px;background:rgba(255,255,255,.2);color:#fff;font-size:13px;
+  font-weight:600;padding:6px 10px}
+.pdf-pages{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#e8edee;padding:8px 6px 24px}
+.pdf-pages img{width:100%;display:block;margin:0 auto 10px;border-radius:6px;box-shadow:0 1px 6px rgba(0,0,0,.18);background:#fff}
+@media print{.pdf-fab,.pdf-overlay{display:none!important}}
+
+.tW{background:#eef2ff;color:#4f46e5}
+.tS2{background:#fdf2f8;color:#be185d}
+.wbbtn{width:100%;border:1.5px dashed #0f766e88;background:#f0fdfa;color:#0f766e;font-size:14.5px;font-weight:700;
+  border-radius:12px;padding:13px;margin-bottom:12px;line-height:1.5}
+.wbbtn:active{background:#ccfbf1}
+.wbnote{font-size:12.5px;color:var(--sub);background:#f6f8f9;border:1px solid var(--line);border-radius:10px;
+  padding:8px 11px;margin-bottom:10px;line-height:1.65}
+.wgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.wgtop{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:7px}
+.wgtop b{font-size:15px}
+.wopts{background:#f7f9ff;border:1px dashed #cdd8f6;border-radius:10px;padding:8px 11px;font-size:13.5px;
+  line-height:1.75;margin-bottom:8px;max-height:240px;overflow:auto}
+.wgroup .q{border:0;border-top:1px dashed var(--line);border-radius:0;margin:0;padding:9px 2px 6px}
+.wgroup .q::before{display:none}
+.opts.lg{display:flex;flex-wrap:wrap;gap:6px}
+.opts.lg .opt{width:auto;min-width:40px;text-align:center;padding:6px 10px;font-size:13.5px}
+</style></head><body data-total="25"><div class="wrap"><header class="top"><div class="crumb">考研西综 · 病理学 · 学成选择题</div><h1>第04课｜原发性肝癌</h1><div class="meta">对应讲义：<b>P1–2 ＋ 专题串联</b> ｜ 共 <b>25</b> 题 ｜ 建议约 <b>20</b> 分钟</div><div class="toolbar"><a class="toolbtn" href="../index.html">← 总目录</a><button id="expandAll">展开全部答案</button><button id="collapseAll">收起全部</button><button id="resetBtn">重做</button><span class="score" id="score">已答 0/25 · 正确 0</span></div></header><div class="howto">用法：A型题点选项即判；X型题先多选、再点【判卷】；答完自动展开解析。刷完本课再过一遍底部【本课速记卡】，效果最好。</div><h2 class="part">一、病因举例<span class="cnt">3 题</span></h2><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q1</span><span class="tag tloc">P1 · 病因</span></div><div class="stem">原发性肝癌最常合并的病变是</div><div class="opts"><button class="opt" data-k="A">A. 肝硬化</button><button class="opt" data-k="B">B. 慢性萎缩性胃炎</button><button class="opt" data-k="C">C. 肝脓肿</button><button class="opt" data-k="D">D. 脂肪肝</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">原发性肝癌常合并肝硬化，尤其是病毒性肝炎（HBV、HCV）与酒精相关者。</div><div class="loc">📖 讲义定位：P1 · 病因</div><div class="shot"><img loading="lazy" src="img/04a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 病因</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q2</span><span class="tag tloc">P1 · 病因</span></div><div class="stem">与肝内胆管癌发生有关的寄生虫是</div><div class="opts"><button class="opt" data-k="A">A. 血吸虫</button><button class="opt" data-k="B">B. 华支睾吸虫</button><button class="opt" data-k="C">C. 疟原虫</button><button class="opt" data-k="D">D. 蛔虫</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">华支睾吸虫与肝内胆管癌相关（讲义病因举例）。</div><div class="loc">📖 讲义定位：P1 · 病因</div><div class="shot"><img loading="lazy" src="img/04a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 病因</div></div></div></details></div><div class="q" data-ans="BCD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q3</span><span class="tag tloc">P1 · 病因</span></div><div class="stem">与肝细胞癌发生有关的因素有</div><div class="opts"><button class="opt" data-k="A">A. HEV 感染</button><button class="opt" data-k="B">B. HCV 感染</button><button class="opt" data-k="C">C. 黄曲霉素</button><button class="opt" data-k="D">D. HBV 感染</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BCD</span></div><div class="expl">HBV/HCV（尤其合并肝硬化）、酒精、黄曲霉素等与肝细胞癌相关；HEV 无明确关系（A 错）。</div><div class="loc">📖 讲义定位：P1 · 病因</div><div class="shot"><img loading="lazy" src="img/04a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 病因</div></div></div></details></div><h2 class="part">二、肝细胞癌：肉眼类型<span class="cnt">5 题</span></h2><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q4</span><span class="tag tloc">P1 · 肝细胞癌·肉眼</span></div><div class="stem">肝细胞癌最常见的肉眼类型是</div><div class="opts"><button class="opt" data-k="A">A. 单结节型</button><button class="opt" data-k="B">B. 巨块型</button><button class="opt" data-k="C">C. 弥漫型</button><button class="opt" data-k="D">D. 多结节型</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">多结节型最常见。</div><div class="loc">📖 讲义定位：P1 · 肝细胞癌·肉眼</div><div class="shot"><img loading="lazy" src="img/04b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 肝细胞癌·肉眼</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q5</span><span class="tag tloc">P1 · 肝细胞癌·肉眼</span></div><div class="stem">多结节型肝细胞癌的典型表现是</div><div class="opts"><button class="opt" data-k="A">A. 直径＞10cm 的单个巨大肿块</button><button class="opt" data-k="B">B. 结节不明显，与肝硬化难区分</button><button class="opt" data-k="C">C. 一个界限较清的癌结节，周围有数目不等的卫星状癌结节</button><button class="opt" data-k="D">D. 单个界限清楚的癌结节</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">多结节型：通常一个界限较清的癌结节＋周围卫星状癌结节。</div><div class="loc">📖 讲义定位：P1 · 肝细胞癌·肉眼</div><div class="shot"><img loading="lazy" src="img/04b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 肝细胞癌·肉眼</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q6</span><span class="tag tloc">P1 · 肝细胞癌·肉眼</span></div><div class="stem">巨块型肝细胞癌的特点是</div><div class="opts"><button class="opt" data-k="A">A. 直径≤5cm</button><button class="opt" data-k="B">B. 与肝硬化高度相关</button><button class="opt" data-k="C">C. 直径＞10cm、右叶多见、常不合并肝硬化</button><button class="opt" data-k="D">D. 结节不明显</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">巨块型：直径＞10cm、右叶多见，周围可有卫星结节，常不合并肝硬化。</div><div class="loc">📖 讲义定位：P1 · 肝细胞癌·肉眼</div><div class="shot"><img loading="lazy" src="img/04b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 肝细胞癌·肉眼</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q7</span><span class="tag tloc">P1 · 肝细胞癌·肉眼</span></div><div class="stem">弥漫型肝细胞癌的特点是</div><div class="opts"><button class="opt" data-k="A">A. 直径均≤3cm 的多发结节</button><button class="opt" data-k="B">B. 常伴大量纤维间隔</button><button class="opt" data-k="C">C. 单个界限清楚的大结节</button><button class="opt" data-k="D">D. 结节不明显，形态上与肝硬化易混淆</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">弥漫型：结节不明显，形态上与肝硬化易混淆。</div><div class="loc">📖 讲义定位：P1 · 肝细胞癌·肉眼</div><div class="shot"><img loading="lazy" src="img/04b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 肝细胞癌·肉眼</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q8</span><span class="tag tloc">P1 · 肝细胞癌·肉眼</span></div><div class="stem">按米兰标准，单发肿瘤直径不超过多少可归为『小肝癌』</div><div class="opts"><button class="opt" data-k="A">A. 2cm</button><button class="opt" data-k="B">B. 5cm</button><button class="opt" data-k="C">C. 3cm</button><button class="opt" data-k="D">D. 10cm</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">小肝癌（体积概念）：单发≤5cm，或多发≤3 个且最大径≤3cm；小肝癌并不完全等同于早期肝癌。</div><div class="loc">📖 讲义定位：P1 · 肝细胞癌·肉眼</div><div class="shot"><img loading="lazy" src="img/04b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 肝细胞癌·肉眼</div></div></div></details></div><h2 class="part">三、肝细胞癌：镜下、转移与胆管癌<span class="cnt">6 题</span></h2><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q9</span><span class="tag tloc">P1–2 · 肝细胞癌·镜下</span></div><div class="stem">分化高的肝细胞癌镜下特点是</div><div class="opts"><button class="opt" data-k="A">A. 类似肝细胞，可分泌胆汁，血管多似肝血窦，间质少</button><button class="opt" data-k="B">B. 多呈腺管状排列</button><button class="opt" data-k="C">C. 常形成黏液湖</button><button class="opt" data-k="D">D. 间质丰富、纤维化明显</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">高分化者类似肝细胞：可分泌胆汁、血管似肝血窦、间质少；低分化者异型性明显。（C、B 更符合分泌黏液的胆管癌。）</div><div class="loc">📖 讲义定位：P1–2 · 肝细胞癌·镜下</div><div class="shot"><img loading="lazy" src="img/04c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1–2 · 肝细胞癌·镜下</div></div></div></details></div><div class="q" data-ans="BCD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q10</span><span class="tag tloc">P2 · 肝细胞癌·镜下</span></div><div class="stem">肝细胞癌常见的组织学生长模式有</div><div class="opts"><button class="opt" data-k="A">A. 筛状型</button><button class="opt" data-k="B">B. 细梁型</button><button class="opt" data-k="C">C. 粗梁型</button><button class="opt" data-k="D">D. 假腺管型</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BCD</span></div><div class="expl">常见生长模式：细梁型、粗梁型、假腺管型、团片型；筛状型不在其列（A 错）。</div><div class="loc">📖 讲义定位：P2 · 肝细胞癌·镜下</div><div class="shot"><img loading="lazy" src="img/04d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 肝细胞癌·镜下</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q11</span><span class="tag tloc">P2 · 肝细胞癌·转移</span></div><div class="stem">肝细胞癌最早、最常见的转移方式是</div><div class="opts"><button class="opt" data-k="A">A. 经肝静脉转移至肺</button><button class="opt" data-k="B">B. 经淋巴道至肝门淋巴结</button><button class="opt" data-k="C">C. 种植性转移</button><button class="opt" data-k="D">D. 肝内沿门静脉分支血道转移至肝脏本身</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">最早最常见：肝内沿门静脉分支血道转移；微血管侵犯（MVI）/微血管癌栓是评估复发风险和选择治疗方案的重要参考。</div><div class="loc">📖 讲义定位：P2 · 肝细胞癌·转移</div><div class="shot"><img loading="lazy" src="img/04d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 肝细胞癌·转移</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q12</span><span class="tag tloc">P2 · 肝细胞癌·转移</span></div><div class="stem">关于微血管侵犯（MVI），下列叙述正确的是</div><div class="opts"><button class="opt" data-k="A">A. 提示良性过程</button><button class="opt" data-k="B">B. 仅见于胆管癌</button><button class="opt" data-k="C">C. 是评估肝癌复发风险和选择治疗方案的重要参考</button><button class="opt" data-k="D">D. 与转移无关</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">MVI（微血管癌栓）是评估肝癌复发风险和选择治疗方案的重要参考。</div><div class="loc">📖 讲义定位：P2 · 肝细胞癌·转移</div><div class="shot"><img loading="lazy" src="img/04d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 肝细胞癌·转移</div></div></div></details></div><div class="q" data-ans="ABD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q13</span><span class="tag tloc">P2 · 肝细胞癌·转移</span></div><div class="stem">肝细胞癌的肝外转移途径包括</div><div class="opts"><button class="opt" data-k="A">A. 种植性转移</button><button class="opt" data-k="B">B. 经淋巴道最常至肝门淋巴结</button><button class="opt" data-k="C">C. 经胆道转移至胆囊</button><button class="opt" data-k="D">D. 经肝静脉最常至肺</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ABD</span></div><div class="expl">肝外转移：淋巴→肝门淋巴结；血道（肝静脉）→肺；种植性转移（C 错）。</div><div class="loc">📖 讲义定位：P2 · 肝细胞癌·转移</div><div class="shot"><img loading="lazy" src="img/04d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 肝细胞癌·转移</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q14</span><span class="tag tloc">P2 · 肝内胆管癌</span></div><div class="stem">肝内胆管癌的特点是</div><div class="opts"><button class="opt" data-k="A">A. 发生于肝内胆管上皮，可分泌黏液，多呈腺管状排列，间质多</button><button class="opt" data-k="B">B. 发生于肝细胞，分泌胆汁</button><button class="opt" data-k="C">C. 常伴 AFP 显著升高</button><button class="opt" data-k="D">D. 血管似肝血窦，间质少</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">肝内胆管癌：源于肝内胆管上皮、可分泌黏液、腺管状排列、间质多（与肝细胞癌区别）。</div><div class="loc">📖 讲义定位：P2 · 肝内胆管癌</div><div class="shot"><img loading="lazy" src="img/04e.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 肝内胆管癌</div></div></div></details></div><h2 class="part">四、专题串联：异型性与转移规律<span class="cnt">5 题</span></h2><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q15</span><span class="tag tloc">专题P1 · 异型性</span></div><div class="stem">肿瘤的异型性大，通常意味着</div><div class="opts"><button class="opt" data-k="A">A. 分化程度高、恶性度低</button><button class="opt" data-k="B">B. 分化程度低、恶性度高</button><button class="opt" data-k="C">C. 属于良性肿瘤</button><button class="opt" data-k="D">D. 不会发生转移</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">异型性大→分化程度低→恶性度高；分结构异型性与细胞异型性。</div><div class="loc">📖 讲义定位：专题P1 · 异型性</div><div class="shot"><img loading="lazy" src="img/04f.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P1 · 异型性</div></div></div></details></div><div class="q" data-ans="ABC" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q16</span><span class="tag tloc">专题P1 · 异型性</span></div><div class="stem">细胞异型性的表现有</div><div class="opts"><button class="opt" data-k="A">A. 核大、多形性、深染，核仁大而明显</button><button class="opt" data-k="B">B. 核分裂象多，可见病理性核分裂象（如不对称核分裂）</button><button class="opt" data-k="C">C. 细胞体积异常和多形性</button><button class="opt" data-k="D">D. 细胞排列与来源组织完全一致</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ABC</span></div><div class="expl">C、A、B 为细胞异型性表现；D 与异型性定义相反。</div><div class="loc">📖 讲义定位：专题P1 · 异型性</div><div class="shot"><img loading="lazy" src="img/04f.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P1 · 异型性</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q17</span><span class="tag tloc">专题P1 · 异型性</span></div><div class="stem">下列属于病理性核分裂象的是</div><div class="opts"><button class="opt" data-k="A">A. 有丝分裂</button><button class="opt" data-k="B">B. 不对称核分裂</button><button class="opt" data-k="C">C. 减数分裂</button><button class="opt" data-k="D">D. 无丝分裂</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">病理性核分裂象如不对称核分裂等，是恶性肿瘤的重要形态表现。</div><div class="loc">📖 讲义定位：专题P1 · 异型性</div><div class="shot"><img loading="lazy" src="img/04f.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P1 · 异型性</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q18</span><span class="tag tloc">专题P1 · 癌的转移</span></div><div class="stem">一般情况下，癌最早、最常见的转移途径是</div><div class="opts"><button class="opt" data-k="A">A. 种植性转移</button><button class="opt" data-k="B">B. 直接蔓延</button><button class="opt" data-k="C">C. 血道转移</button><button class="opt" data-k="D">D. 淋巴转移</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">抓规律：癌最早最常见多为淋巴转移；记特殊：绒癌、肝细胞癌、甲状腺滤泡癌、肺腺癌最早最常见为血道转移。</div><div class="loc">📖 讲义定位：专题P1 · 癌的转移</div><div class="shot"><img loading="lazy" src="img/04g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P1 · 癌的转移</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q19</span><span class="tag tloc">专题P1 · 癌的转移</span></div><div class="stem">下列肿瘤中，最早、最常见发生血道转移的是</div><div class="opts"><button class="opt" data-k="A">A. 食管癌</button><button class="opt" data-k="B">B. 结肠癌</button><button class="opt" data-k="C">C. 肝细胞癌</button><button class="opt" data-k="D">D. 胃癌</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">特殊（最早最常见血道转移）：绒癌、肝细胞癌 HCC、甲状腺滤泡癌、肺腺癌。</div><div class="loc">📖 讲义定位：专题P1 · 癌的转移</div><div class="shot"><img loading="lazy" src="img/04g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P1 · 癌的转移</div></div></div></details></div><h2 class="part">五、专题串联：消化系统肿瘤类型<span class="cnt">6 题</span></h2><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q20</span><span class="tag tloc">专题P2 · 食管癌</span></div><div class="stem">中晚期食管癌最多见的大体类型是</div><div class="opts"><button class="opt" data-k="A">A. 髓质型</button><button class="opt" data-k="B">B. 蕈伞型</button><button class="opt" data-k="C">C. 溃疡型</button><button class="opt" data-k="D">D. 缩窄型</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">食管癌大体：溃疡型、蕈伞/隆起型、髓质型（最多见，纤维少、软）、缩窄/硬化型（纤维多、硬、梗阻）。</div><div class="loc">📖 讲义定位：专题P2 · 食管癌</div><div class="shot"><img loading="lazy" src="img/04h.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P2 · 食管癌</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q21</span><span class="tag tloc">专题P2 · 胃癌</span></div><div class="stem">胃癌中晚期最多见的大体类型是</div><div class="opts"><button class="opt" data-k="A">A. 蕈伞型</button><button class="opt" data-k="B">B. 浸润型</button><button class="opt" data-k="C">C. 息肉型</button><button class="opt" data-k="D">D. 溃疡型</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">胃癌：溃疡型（最多见）、息肉/蕈伞/结节蕈伞型、浸润型（弥漫浸润→革囊胃）。</div><div class="loc">📖 讲义定位：专题P2 · 胃癌</div><div class="shot"><img loading="lazy" src="img/04h.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P2 · 胃癌</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q22</span><span class="tag tloc">专题P2 · 大肠癌</span></div><div class="stem">大肠癌中晚期最多见的大体类型是</div><div class="opts"><button class="opt" data-k="A">A. 溃疡型</button><button class="opt" data-k="B">B. 胶样型</button><button class="opt" data-k="C">C. 隆起型</button><button class="opt" data-k="D">D. 浸润型</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">大肠癌：溃疡型（最多见，因直肠癌以溃疡型最多见）、隆起/息肉/蕈伞型、浸润型。</div><div class="loc">📖 讲义定位：专题P2 · 大肠癌</div><div class="shot"><img loading="lazy" src="img/04h.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P2 · 大肠癌</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q23</span><span class="tag tloc">专题P2 · 组织学类型</span></div><div class="stem">食管癌最多见的组织学类型是</div><div class="opts"><button class="opt" data-k="A">A. 腺癌</button><button class="opt" data-k="B">B. 未分化癌</button><button class="opt" data-k="C">C. 鳞状细胞癌</button><button class="opt" data-k="D">D. 小细胞癌</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">食管癌以鳞癌最多见；腺癌多来自 Barrett 食管。</div><div class="loc">📖 讲义定位：专题P2 · 组织学类型</div><div class="shot"><img loading="lazy" src="img/04i.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P2 · 组织学类型</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q24</span><span class="tag tloc">专题P2 · 组织学类型</span></div><div class="stem">胃癌、肠癌、胰腺癌、胆管癌最多见的组织学类型是</div><div class="opts"><button class="opt" data-k="A">A. 类癌</button><button class="opt" data-k="B">B. 腺癌</button><button class="opt" data-k="C">C. 鳞癌</button><button class="opt" data-k="D">D. 未分化癌</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">胃、肠、胰（导管腺癌）、胆囊/胆管均为腺癌；阑尾癌为类癌；原发性肝癌为肝细胞癌。</div><div class="loc">📖 讲义定位：专题P2 · 组织学类型</div><div class="shot"><img loading="lazy" src="img/04i.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P2 · 组织学类型</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q25</span><span class="tag tloc">专题P2 · 组织学类型</span></div><div class="stem">阑尾最常见的恶性肿瘤是</div><div class="opts"><button class="opt" data-k="A">A. 淋巴瘤</button><button class="opt" data-k="B">B. 类癌</button><button class="opt" data-k="C">C. 腺癌</button><button class="opt" data-k="D">D. 鳞癌</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">阑尾癌：类癌。</div><div class="loc">📖 讲义定位：专题P2 · 组织学类型</div><div class="shot"><img loading="lazy" src="img/04i.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 专题P2 · 组织学类型</div></div></div></details></div><h2 class="part">本课速记卡</h2><div class="cardlist"><h3>原发性肝癌：病因</h3><ul><li>常合并肝硬化（尤其病毒性肝炎 HBV/HCV、酒精）</li><li>黄曲霉素</li><li>华支睾吸虫→肝内胆管癌</li></ul><h3>肝细胞癌：肉眼 4 型</h3><table><tr><th>类型</th><th>要点</th></tr><tr><td>单结节型</td><td>单个界限较清结节；小肝癌＝单发≤5cm 或 ≤3 个且最大≤3cm（体积概念≠早期肝癌）</td></tr><tr><td>多结节型</td><td>最常见；主结节＋卫星结节</td></tr><tr><td>弥漫型</td><td>结节不明显，易与肝硬化混淆</td></tr><tr><td>巨块型</td><td>＞10cm、右叶多见、常不合并肝硬化</td></tr></table><h3>肝细胞癌：镜下与转移</h3><ul><li>高分化似肝细胞（分泌胆汁、血窦样血管、间质少）；低分化异型明显</li><li>生长模式：细梁型、粗梁型、假腺管型、团片型</li><li>最早最常见：肝内沿门静脉分支转移（MVI＝复发风险/治疗方案参考）</li><li>肝外：淋巴→肝门淋巴结；肝静脉→肺；种植性转移</li></ul><h3>专题：异型性与转移规律</h3><ul><li>异型性大→分化低→恶性度高（结构异型性＋细胞异型性）</li><li>病理性核分裂象：不对称核分裂等</li><li>癌一般最早最常见＝淋巴转移</li><li>特殊血道转移：绒癌、肝细胞癌、甲状腺滤泡癌、肺腺癌</li></ul><h3>专题：消化系统肿瘤类型速记</h3><table><tr><th>肿瘤</th><th>肉眼（最多见）</th><th>组织学（最多见）</th></tr><tr><td>食管癌</td><td>髓质型</td><td>鳞癌（Barrett→腺癌）</td></tr><tr><td>胃癌</td><td>溃疡型</td><td>腺癌（黏液癌/印戒细胞癌）</td></tr><tr><td>大肠癌</td><td>溃疡型</td><td>腺癌</td></tr><tr><td>肝细胞癌</td><td>多结节型</td><td>肝细胞癌</td></tr><tr><td>阑尾</td><td>——</td><td>类癌</td></tr></table></div><h2 class="part">📚 网站题库（导入）<span class="cnt">2 组 · 2 题</span></h2><div class="wbank"><button class="wbbtn" id="webBankBtn" data-label="🔽 点击展开：从「西综题库」网站导入的 2 组题（2 题，含答案）">🔽 点击展开：从「西综题库」网站导入的 2 组题（2 题，含答案）</button><div id="webBank" style="display:none"><div class="wbnote">说明：本部分为外部题库导入（来源：「西综题库」网站 · 病理学），题干、选项与答案保留原样；标注「教师补充」的答案未经讲义逐项复核。做题方式：点字母选择（多选后点【判卷】；答案可点开「答案与出处」查看）。</div><div class="wgroup"><div class="wgtop"><b>以下关于肝内胆管癌的描述,正确的是</b><span class="tag tW">单项选择</span><span class="tag tS2">教师补充</span></div><div class="wopts"><div><b>A</b> 属于原发性肝癌,发生于肝内胆管上皮</div><div><b>B</b> 与肝硬化和HBV或HCV感染密切相关</div><div><b>C</b> 大体分为单结节型、多结节型、弥漫型</div><div><b>D</b> 以腺癌最常见,可分泌黏液,间质较少</div></div><div class="q wq" data-ans="A" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W1</span><span class="tag tloc">第4讲 · 第2页</span></div><div class="stem">以下关于肝内胆管癌的描述,正确的是(单选)</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="loc">📖 第4讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/04/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第4讲 · 第2页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>以下符合小肝癌的米兰标准的有</b><span class="tag tW">多项选择</span><span class="tag tS2">教师补充</span></div><div class="wopts"><div><b>A</b> 单发肿瘤直径≤3cm</div><div><b>B</b> 单发肿瘤直径≤5cm</div><div><b>C</b> 多发病灶数量≤3个且其中最大径≤3cm</div><div><b>D</b> 多发病灶数量≤3个且其中最大径≤5cm</div></div><div class="q wq" data-ans="BC" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W2</span><span class="tag tloc">第4讲 · 第1页</span></div><div class="stem">以下符合小肝癌的米兰标准的有(多选)</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BC</span></div><div class="loc">📖 第4讲 · 第1页</div><div class="shot"><img loading="lazy" src="pdfpages/04/01.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第4讲 · 第1页</div></div></div></details></div></div></div></div><footer>素材：病理学讲义·第04课核心精讲（P1–2 ＋ 专题串联）<br>题库与解析为学习整理 · 仅供个人复习参考</footer><a class="pdf-fab" id="pdfFab"><span class="ico">📄</span><span>讲义</span></a><div class="pdf-overlay" id="pdfOverlay" style="display:none"><div class="pdf-bar"><b>📄 本课讲义（共 4 页）</b><span><a class="pdf-ext" href="../%E9%A1%B5%E9%9D%A2/pdf/04.pdf" target="_blank">原生打开 ↗</a><button id="pdfClose">✕ 关闭</button></span></div><div class="pdf-pages"><img loading="lazy" decoding="async" src="pdfpages/04/01.jpg" alt="讲义第1页"><img loading="lazy" decoding="async" src="pdfpages/04/02.jpg" alt="讲义第2页"><img loading="lazy" decoding="async" src="pdfpages/04/03.jpg" alt="讲义第3页"><img loading="lazy" decoding="async" src="pdfpages/04/04.jpg" alt="讲义第4页"></div></div></div><script>/* 病理学·学成选择题 —— 交互脚本（无依赖） */
+(function () {
+  'use strict';
+  var total = parseInt(document.body.getAttribute('data-total') || '0', 10);
+  var answered = 0, correct = 0;
+
+  function scoreEl() { return document.getElementById('score'); }
+  function refreshScore() {
+    var el = scoreEl();
+    if (el) el.textContent = '已答 ' + answered + '/' + total + ' · 正确 ' + correct;
+  }
+  function markResult(q, ok) {
+    q.classList.add(ok ? 'correct' : 'wrong');
+    var head = q.querySelector('.qhead');
+    if (head && !head.querySelector('.res')) {
+      var s = document.createElement('span');
+      s.className = 'res ' + (ok ? 'ok' : 'no');
+      s.textContent = ok ? '✓ 答对' : '✗ 答错';
+      s.style.cssText = 'font-size:12px;font-weight:700;' + (ok ? 'color:#15803d;' : 'color:#b91c1c;');
+      head.appendChild(s);
+    }
+    if (!q.getAttribute('data-noscore') && !q.getAttribute('data-counted')) {
+      q.setAttribute('data-counted', '1');
+      answered += 1;
+      if (ok) correct += 1;
+      refreshScore();
+    }
+    var d = q.querySelector('details.ans');
+    if (d) d.open = true;
+  }
+  function lockOpts(q) {
+    q.querySelectorAll('.opt,.lt').forEach(function (b) { b.disabled = true; });
+  }
+
+  /* 单选：.opt[data-k] 或 .lt[data-k] */
+  function bindSingle(q) {
+    var ans = (q.getAttribute('data-ans') || '').toUpperCase();
+    q.querySelectorAll('.lt,.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.getAttribute('data-judged')) return;
+        q.setAttribute('data-judged', '1');
+        var k = (b.getAttribute('data-k') || '').toUpperCase();
+        var ok = (k === ans);
+        if (ok) b.classList.add('right');
+        else {
+          b.classList.add('wrong');
+          var rightBtn = q.querySelector('[data-k="' + ans + '"]');
+          if (rightBtn) rightBtn.classList.add('right');
+        }
+        lockOpts(q);
+        markResult(q, ok);
+      });
+    });
+  }
+
+  /* 多选：.opt 可切换 .sel，.judge 判卷 */
+  function bindMulti(q) {
+    var ans = (q.getAttribute('data-ans') || '').toUpperCase().split('').sort().join('');
+    q.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.getAttribute('data-judged')) return;
+        b.classList.toggle('sel');
+      });
+    });
+    var jb = q.querySelector('.judge');
+    if (jb) jb.addEventListener('click', function () {
+      if (q.getAttribute('data-judged')) return;
+      var picked = [];
+      q.querySelectorAll('.opt.sel').forEach(function (b) { picked.push(b.getAttribute('data-k')); });
+      if (!picked.length) { jb.textContent = '请先选择'; setTimeout(function () { jb.textContent = '判卷'; }, 900); return; }
+      q.setAttribute('data-judged', '1');
+      var pk = picked.sort().join('');
+      q.querySelectorAll('.opt').forEach(function (b) {
+        var k = b.getAttribute('data-k');
+        var sel = b.classList.contains('sel');
+        var isR = ans.indexOf(k) >= 0;
+        b.classList.remove('sel');
+        if (sel && isR) b.classList.add('right');
+        else if (sel && !isR) b.classList.add('wrong');
+        else if (!sel && isR) b.classList.add('missed');
+      });
+      q.querySelectorAll('.opt,.judge').forEach(function (x) { x.disabled = true; });
+      markResult(q, pk === ans);
+    });
+  }
+
+  document.querySelectorAll('.q').forEach(function (q) {
+    var isMulti = q.getAttribute('data-mode') === 'multi';
+    if (isMulti) bindMulti(q); else bindSingle(q);
+  });
+
+  var ex = document.getElementById('expandAll');
+  if (ex) ex.addEventListener('click', function () {
+    document.querySelectorAll('details.ans').forEach(function (d) { d.open = true; });
+  });
+  var co = document.getElementById('collapseAll');
+  if (co) co.addEventListener('click', function () {
+    document.querySelectorAll('details.ans').forEach(function (d) { d.open = false; });
+  });
+  var rs = document.getElementById('resetBtn');
+  if (rs) rs.addEventListener('click', function () {
+    document.querySelectorAll('.q').forEach(function (q) {
+      q.classList.remove('correct', 'wrong');
+      q.removeAttribute('data-judged');
+      q.removeAttribute('data-counted');
+      q.querySelectorAll('.opt').forEach(function (b) {
+        b.classList.remove('sel', 'right', 'wrong', 'missed');
+        b.disabled = false;
+      });
+      q.querySelectorAll('.lt').forEach(function (b) {
+        b.classList.remove('right', 'wrong');
+        b.disabled = false;
+      });
+      q.querySelectorAll('.res').forEach(function (s) { s.remove(); });
+      q.querySelectorAll('details.ans').forEach(function (d) { d.open = false; });
+    });
+    answered = 0; correct = 0; refreshScore();
+  });
+
+  var fab = document.getElementById('pdfFab');
+  var ov = document.getElementById('pdfOverlay');
+  var pc = document.getElementById('pdfClose');
+  if (fab && ov && pc) {
+    fab.addEventListener('click', function () {
+      ov.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    pc.addEventListener('click', function () {
+      ov.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  }
+
+  var wbBtn = document.getElementById('webBankBtn');
+  var wbBox = document.getElementById('webBank');
+  if (wbBtn && wbBox) {
+    wbBtn.addEventListener('click', function () {
+      var open = wbBox.style.display !== 'none';
+      wbBox.style.display = open ? 'none' : 'block';
+      wbBtn.textContent = open ? wbBtn.getAttribute('data-label') : '🔼 收起网站题库';
+    });
+  }
+
+  refreshScore();
+})();
+</script></body></html>

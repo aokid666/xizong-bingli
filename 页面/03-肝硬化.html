@@ -1,0 +1,278 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>病理学 第03课 学成选择题 | 肝硬化</title><style>:root{
+  --bg:#f2f5f6; --card:#ffffff; --ink:#1f2933; --sub:#5c6b73;
+  --line:#e2e8ea; --accent:#0f766e; --accent-bg:#e6f6f4;
+  --green:#15803d; --green-bg:#e8f6ec; --red:#b91c1c; --red-bg:#fdecec;
+  --blue:#1d4ed8; --blue-bg:#e8effd; --purple:#6d28d9; --purple-bg:#f1ebfd;
+  --orange:#c2410c; --orange-bg:#fdf0e6; --gold:#b45309; --gold-bg:#fdf6e3;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.7 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wrap{max-width:760px;margin:0 auto;padding:14px 12px 60px}
+header.top{background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;
+  border-radius:16px;padding:16px 16px 14px;margin-bottom:14px}
+header.top .crumb{font-size:12px;opacity:.85;letter-spacing:.05em}
+header.top h1{font-size:19px;line-height:1.45;margin:6px 0 8px}
+header.top .meta{font-size:12.5px;opacity:.92;line-height:1.6}
+header.top .meta b{font-weight:600}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toolbar button{border:0;border-radius:9px;padding:8px 12px;font-size:13.5px;font-weight:600;
+  background:rgba(255,255,255,.16);color:#fff}
+.toolbar button:active{background:rgba(255,255,255,.3)}
+.toolbar .score{margin-left:auto;font-size:13px;background:rgba(255,255,255,.14);
+  border-radius:9px;padding:8px 10px;white-space:nowrap}
+.howto{background:var(--accent-bg);border-radius:12px;padding:10px 14px;font-size:13.5px;
+  color:#115e59;margin:0 0 16px;line-height:1.65}
+.howto b{font-weight:700}
+h2.part{font-size:16.5px;margin:26px 4px 10px;padding-left:10px;border-left:4px solid var(--accent)}
+h2.part .cnt{font-size:12px;font-weight:400;color:var(--sub);margin-left:6px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 12px 10px;margin-bottom:12px;position:relative;overflow:hidden}
+.q::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:transparent}
+.q.correct::before{background:var(--green)}
+.q.wrong::before{background:var(--red)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}
+.tag{font-size:11px;font-weight:700;border-radius:6px;padding:2px 7px;letter-spacing:.03em}
+.tA{background:var(--blue-bg);color:var(--blue)}
+.tX{background:var(--orange-bg);color:var(--orange)}
+.tB{background:var(--purple-bg);color:var(--purple)}
+.tZ{background:var(--red-bg);color:var(--red)}
+.tloc{background:#eef2f4;color:var(--sub);font-weight:500}
+.qno{font-size:12px;color:var(--sub);font-weight:600}
+.stem{font-size:15.5px;line-height:1.7;margin:2px 0 8px}
+.opts{display:grid;gap:7px}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:14.5px;line-height:1.6;
+  background:#fafbfc;border:1.5px solid var(--line);border-radius:10px;padding:8px 11px;color:var(--ink)}
+.opt.sel{border-color:var(--accent);background:var(--accent-bg)}
+.opt.right{border-color:var(--green);background:var(--green-bg);color:#14532d;font-weight:600}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:#7f1d1d;font-weight:600}
+.opt.missed{border-style:dashed;border-color:var(--orange);background:var(--orange-bg);color:#9a3412}
+.opt[disabled]{opacity:.92}
+.judgebar{display:flex;gap:8px;margin-top:8px}
+.judgebar button{font-size:13.5px;font-weight:700;border:0;border-radius:9px;padding:7px 14px;
+  background:var(--accent);color:#fff}
+.judgebar button.ghost{background:#eef2f4;color:var(--sub)}
+.letters{display:flex;gap:8px;margin-top:8px}
+.letters button{width:44px;height:38px;border-radius:9px;border:1.5px solid var(--line);
+  background:#fafbfc;font-size:15px;font-weight:700;color:var(--ink)}
+.letters button.right{border-color:var(--green);background:var(--green-bg);color:#14532d}
+.letters button.wrong{border-color:var(--red);background:var(--red-bg);color:#7f1d1d}
+.bgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.bgroup .bnote{font-size:12.5px;color:var(--purple);font-weight:600;margin-bottom:6px}
+.bopts{background:#faf9fe;border:1px dashed #ddd6fe;border-radius:10px;padding:8px 11px;
+  font-size:14.5px;line-height:1.8;margin-bottom:10px}
+.bgroup .q{border:0;border-top:1px solid var(--line);border-radius:0;margin:0;padding:10px 2px 6px}
+.bgroup .q::before{display:none}
+details.ans{margin-top:9px;border-radius:10px;background:#f6f8f9;border:1px solid var(--line)}
+details.ans summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--accent);
+  padding:7px 11px;list-style-position:inside}
+details.ans[open] summary{border-bottom:1px dashed var(--line)}
+.ansbody{padding:8px 12px 10px;font-size:14px;line-height:1.75}
+.ansbody .ansline{font-weight:700;margin-bottom:4px}
+.ansbody .ansline .ok{color:var(--green)}
+.ansbody .expl{color:#37474f;white-space:pre-line}
+.ansbody .loc{margin-top:6px;font-size:12.5px;color:var(--sub)}
+.cardlist{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.cardlist h3{font-size:14.5px;margin:10px 0 6px;color:var(--accent)}
+.cardlist h3:first-child{margin-top:2px}
+.cardlist ul{margin:4px 0;padding-left:20px}
+.cardlist li{font-size:14px;line-height:1.8;margin:2px 0}
+.cardlist table{border-collapse:collapse;width:100%;margin:6px 0;font-size:13.5px}
+.cardlist th,.cardlist td{border:1px solid var(--line);padding:5px 8px;text-align:left;line-height:1.6}
+.cardlist th{background:#f2f7f6;font-weight:600;color:#115e59}
+footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center;line-height:1.8}
+@media print{
+  body{background:#fff}
+  .toolbar,.howto{display:none}
+  details.ans{display:block}
+  details.ans summary{list-style:none}
+  .q{break-inside:avoid;page-break-inside:avoid}
+  header.top{background:#fff;color:#000;border:1px solid #000}
+  header.top .crumb,header.top .meta{color:#333}
+}
+.shot{margin-top:8px}
+.shot img{width:100%;display:block;border:1px solid var(--line);border-radius:8px}
+.shcap{font-size:11.5px;color:var(--sub);margin-top:3px}
+a.toolbtn{display:inline-block;text-decoration:none;border-radius:9px;padding:8px 12px;
+  font-size:13.5px;font-weight:600;background:rgba(255,255,255,.16);color:#fff}
+a.toolbtn:active{background:rgba(255,255,255,.3)}
+
+.pdf-fab{position:fixed;right:10px;top:45%;z-index:60;display:flex;flex-direction:column;align-items:center;
+  gap:1px;background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;text-decoration:none;
+  border-radius:14px;padding:9px;font-size:11px;font-weight:700;box-shadow:0 3px 12px rgba(0,0,0,.28);
+  line-height:1.15;letter-spacing:1px}
+.pdf-fab .ico{font-size:17px;letter-spacing:0}
+.pdf-fab:active{opacity:.85}
+.pdf-overlay{position:fixed;inset:0;z-index:120;background:#eef2f3;display:flex;flex-direction:column}
+.pdf-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#0f766e;color:#fff;
+  padding:9px 12px;font-size:14px}
+.pdf-bar .pdf-ext{color:#d1faf5;text-decoration:none;font-size:12.5px;margin-right:10px}
+.pdf-bar #pdfClose{border:0;border-radius:8px;background:rgba(255,255,255,.2);color:#fff;font-size:13px;
+  font-weight:600;padding:6px 10px}
+.pdf-pages{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#e8edee;padding:8px 6px 24px}
+.pdf-pages img{width:100%;display:block;margin:0 auto 10px;border-radius:6px;box-shadow:0 1px 6px rgba(0,0,0,.18);background:#fff}
+@media print{.pdf-fab,.pdf-overlay{display:none!important}}
+
+.tW{background:#eef2ff;color:#4f46e5}
+.tS2{background:#fdf2f8;color:#be185d}
+.wbbtn{width:100%;border:1.5px dashed #0f766e88;background:#f0fdfa;color:#0f766e;font-size:14.5px;font-weight:700;
+  border-radius:12px;padding:13px;margin-bottom:12px;line-height:1.5}
+.wbbtn:active{background:#ccfbf1}
+.wbnote{font-size:12.5px;color:var(--sub);background:#f6f8f9;border:1px solid var(--line);border-radius:10px;
+  padding:8px 11px;margin-bottom:10px;line-height:1.65}
+.wgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.wgtop{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:7px}
+.wgtop b{font-size:15px}
+.wopts{background:#f7f9ff;border:1px dashed #cdd8f6;border-radius:10px;padding:8px 11px;font-size:13.5px;
+  line-height:1.75;margin-bottom:8px;max-height:240px;overflow:auto}
+.wgroup .q{border:0;border-top:1px dashed var(--line);border-radius:0;margin:0;padding:9px 2px 6px}
+.wgroup .q::before{display:none}
+.opts.lg{display:flex;flex-wrap:wrap;gap:6px}
+.opts.lg .opt{width:auto;min-width:40px;text-align:center;padding:6px 10px;font-size:13.5px}
+</style></head><body data-total="25"><div class="wrap"><header class="top"><div class="crumb">考研西综 · 病理学 · 学成选择题</div><h1>第03课｜肝硬化</h1><div class="meta">对应讲义：<b>P1–7</b> ｜ 共 <b>25</b> 题 ｜ 建议约 <b>20</b> 分钟</div><div class="toolbar"><a class="toolbtn" href="../index.html">← 总目录</a><button id="expandAll">展开全部答案</button><button id="collapseAll">收起全部</button><button id="resetBtn">重做</button><span class="score" id="score">已答 0/25 · 正确 0</span></div></header><div class="howto">用法：A型题点选项即判；X型题先多选、再点【判卷】；答完自动展开解析。刷完本课再过一遍底部【本课速记卡】，效果最好。</div><h2 class="part">一、概述与病因<span class="cnt">8 题</span></h2><div class="q" data-ans="BCD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q1</span><span class="tag tloc">P1 · 概述·三病变</span></div><div class="stem">肝硬化发生必备的病变（『三病变』）包括</div><div class="opts"><button class="opt" data-k="A">A. 肝细胞广泛水样变性（气球样变）</button><button class="opt" data-k="B">B. 肝细胞结节状再生（伴网状支架塌陷）</button><button class="opt" data-k="C">C. 广泛纤维组织增生</button><button class="opt" data-k="D">D. 弥漫性肝细胞变性坏死（桥接坏死或亚大块坏死）</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BCD</span></div><div class="expl">『三病变』：①弥漫性肝细胞变性坏死（桥接坏死或亚大块坏死）②肝细胞结节状再生（网状支架塌陷）③广泛纤维化。广泛水样变性是急性普通型肝炎的特点（A 错）。</div><div class="loc">📖 讲义定位：P1 · 概述·三病变</div><div class="shot"><img loading="lazy" src="img/03a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 概述·三病变</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q2</span><span class="tag tloc">P1 · 概述·两改建</span></div><div class="stem">肝硬化的病理诊断标准是</div><div class="opts"><button class="opt" data-k="A">A. 腹水形成</button><button class="opt" data-k="B">B. 假小叶形成</button><button class="opt" data-k="C">C. 肝细胞结节状再生</button><button class="opt" data-k="D">D. 门脉高压症</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">『两改建』：肝小叶结构改建——假小叶是肝硬化的病理诊断标准。</div><div class="loc">📖 讲义定位：P1 · 概述·两改建</div><div class="shot"><img loading="lazy" src="img/03a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 概述·两改建</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q3</span><span class="tag tloc">P1 · 概述·三变化</span></div><div class="stem">肝硬化的肝脏大体变化通常是</div><div class="opts"><button class="opt" data-k="A">A. 体积缩小、质软</button><button class="opt" data-k="B">B. 体积增大、质软、切面红黄</button><button class="opt" data-k="C">C. 体积增大、变硬</button><button class="opt" data-k="D">D. 体积缩小、变硬、变形</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">『三变化』：多变形、变小、变硬（早期肝体积可正常或稍大）。</div><div class="loc">📖 讲义定位：P1 · 概述·三变化</div><div class="shot"><img loading="lazy" src="img/03a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 概述·三变化</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q4</span><span class="tag tloc">P2 · 病因举例</span></div><div class="stem">在我国，肝硬化最主要的病因是</div><div class="opts"><button class="opt" data-k="A">A. 病毒性肝炎</button><button class="opt" data-k="B">B. 胆汁淤积</button><button class="opt" data-k="C">C. 长期酗酒</button><button class="opt" data-k="D">D. 血吸虫感染</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">病毒性肝炎是我国肝硬化的最主要病因；酒精是欧美最主要的病因。</div><div class="loc">📖 讲义定位：P2 · 病因举例</div><div class="shot"><img loading="lazy" src="img/03b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 病因举例</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q5</span><span class="tag tloc">P2 · 病因举例·酒精</span></div><div class="stem">酒精性肝炎时肝细胞的典型改变是</div><div class="opts"><button class="opt" data-k="A">A. 嗜酸性坏死</button><button class="opt" data-k="B">B. 毛玻璃样变</button><button class="opt" data-k="C">C. 脂肪变性</button><button class="opt" data-k="D">D. 广泛气球样变</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">酒精性肝炎常见：①脂肪变性（注意：不是气球样变）②Mallory 小体③肝细胞灶状坏死④中性粒细胞浸润。</div><div class="loc">📖 讲义定位：P2 · 病因举例·酒精</div><div class="shot"><img loading="lazy" src="img/03b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 病因举例·酒精</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q6</span><span class="tag tloc">P2 · 病因举例·酒精</span></div><div class="stem">Mallory 小体（酒精性肝炎）的本质是</div><div class="opts"><button class="opt" data-k="A">A. 免疫球蛋白沉积</button><button class="opt" data-k="B">B. HBsAg 聚集</button><button class="opt" data-k="C">C. 中间丝前角蛋白蓄积</button><button class="opt" data-k="D">D. 脂滴融合</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">Mallory 小体本质是肝细胞中间丝前角蛋白蓄积，属玻璃样/透明变性；不是嗜酸性小体（嗜酸性小体＝凋亡）。</div><div class="loc">📖 讲义定位：P2 · 病因举例·酒精</div><div class="shot"><img loading="lazy" src="img/03b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 病因举例·酒精</div></div></div></details></div><div class="q" data-ans="ACD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q7</span><span class="tag tloc">P2 · 病因举例</span></div><div class="stem">酒精性肝炎的常见病变有</div><div class="opts"><button class="opt" data-k="A">A. 肝细胞灶状坏死</button><button class="opt" data-k="B">B. 肝细胞羽毛状/网状变性</button><button class="opt" data-k="C">C. Mallory 小体</button><button class="opt" data-k="D">D. 肝细胞脂肪变性</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ACD</span></div><div class="expl">酒精性肝炎四特点：脂肪变性、Mallory 小体、肝细胞灶状坏死、中性粒细胞浸润。羽毛状/网状变性（胆盐『去垢剂』作用）见于胆汁淤积（B 错）。</div><div class="loc">📖 讲义定位：P2 · 病因举例</div><div class="shot"><img loading="lazy" src="img/03b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 病因举例</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q8</span><span class="tag tloc">P2 · 病因举例·胆汁淤积</span></div><div class="stem">胆汁淤积时肝细胞的典型变性是</div><div class="opts"><button class="opt" data-k="A">A. 砂粒样核</button><button class="opt" data-k="B">B. 大泡型脂肪变</button><button class="opt" data-k="C">C. 气球样变</button><button class="opt" data-k="D">D. 羽毛状/网状变性</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">胆汁淤积（胆色素沉着）：肝细胞羽毛状/网状变性（胆盐去垢剂作用）。</div><div class="loc">📖 讲义定位：P2 · 病因举例·胆汁淤积</div><div class="shot"><img loading="lazy" src="img/03b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 病因举例·胆汁淤积</div></div></div></details></div><h2 class="part">二、假小叶与分类<span class="cnt">8 题</span></h2><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q9</span><span class="tag tloc">P2 · 假小叶</span></div><div class="stem">假小叶是指</div><div class="opts"><button class="opt" data-k="A">A. 肝细胞再生形成的肉眼结节</button><button class="opt" data-k="B">B. 广泛增生的胶原纤维将原来肝小叶分割包绕成的大小不等肝细胞团</button><button class="opt" data-k="C">C. 坏死后塌陷的网状支架</button><button class="opt" data-k="D">D. 汇管区周围的炎细胞团</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">假小叶（镜下结构）＝胶原纤维分割包绕原肝小叶形成的大小不等肝细胞团；注意它不等于肉眼所见的肝表面结节。</div><div class="loc">📖 讲义定位：P2 · 假小叶</div><div class="shot"><img loading="lazy" src="img/03c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 假小叶</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q10</span><span class="tag tloc">P2 · 假小叶</span></div><div class="stem">假小叶内中央静脉的典型改变是</div><div class="opts"><button class="opt" data-k="A">A. 缺如、偏位或有 2 个以上</button><button class="opt" data-k="B">B. 均位于纤维间隔内</button><button class="opt" data-k="C">C. 完全消失不见</button><button class="opt" data-k="D">D. 居中、单一</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">假小叶内中央静脉常缺如、偏位、或两个以上。</div><div class="loc">📖 讲义定位：P2 · 假小叶</div><div class="shot"><img loading="lazy" src="img/03c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 假小叶</div></div></div></details></div><div class="q" data-ans="ABD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q11</span><span class="tag tloc">P2 · 假小叶</span></div><div class="stem">关于假小叶，下列叙述正确的有</div><div class="opts"><button class="opt" data-k="A">A. 肝细胞索排列紊乱，可见肝细胞结节状再生</button><button class="opt" data-k="B">B. 外周被纤维间隔包绕，伴炎细胞浸润、小胆管增生</button><button class="opt" data-k="C">C. 中央静脉居中且恒定为一个</button><button class="opt" data-k="D">D. 可见门/汇管区</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ABD</span></div><div class="expl">D、A、B 均与讲义一致；C 错：中央静脉常缺如、偏位或两个以上。</div><div class="loc">📖 讲义定位：P2 · 假小叶</div><div class="shot"><img loading="lazy" src="img/03c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 假小叶</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q12</span><span class="tag tloc">P2 · 假小叶</span></div><div class="stem">假小叶内再生的肝细胞体积大、核大深染、可见双核，其性质是</div><div class="opts"><button class="opt" data-k="A">A. 结节状再生</button><button class="opt" data-k="B">B. 异型增生</button><button class="opt" data-k="C">C. 癌变</button><button class="opt" data-k="D">D. 凋亡</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">这是结节状再生的表现，不是异型增生。</div><div class="loc">📖 讲义定位：P2 · 假小叶</div><div class="shot"><img loading="lazy" src="img/03c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 假小叶</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q13</span><span class="tag tloc">P3 · 分类</span></div><div class="stem">小结节性（门脉性/酒精性）肝硬化的特点是</div><div class="opts"><button class="opt" data-k="A">A. 再生结节多＞3mm、大小不均</button><button class="opt" data-k="B">B. 再生结节多≤3mm、大小相仿，纤维间隔细</button><button class="opt" data-k="C">C. 常无明显结节</button><button class="opt" data-k="D">D. 纤维间隔宽而不均</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">小结节性（门脉性/酒精性）：结节多≤3mm、大小相仿、间隔细，并发食管胃底静脉曲张破裂出血的机率高。A、D 为大结节性（坏死后性）特点。</div><div class="loc">📖 讲义定位：P3 · 分类</div><div class="shot"><img loading="lazy" src="img/03d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 分类</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q14</span><span class="tag tloc">P3 · 分类</span></div><div class="stem">大结节性（坏死后性）肝硬化常见的来源疾病是</div><div class="opts"><button class="opt" data-k="A">A. 急性普通型肝炎</button><button class="opt" data-k="B">B. 酒精性肝炎</button><button class="opt" data-k="C">C. 亚急性重型肝炎、中毒性肝炎</button><button class="opt" data-k="D">D. 胆汁淤积</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">大结节性（坏死后性）肝硬化多由亚急性重型肝炎、中毒性肝炎所致（大块坏死→大『坏蛋』）。</div><div class="loc">📖 讲义定位：P3 · 分类</div><div class="shot"><img loading="lazy" src="img/03d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 分类</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q15</span><span class="tag tloc">P3 · 分类</span></div><div class="stem">与小结节性肝硬化相比，大结节性肝硬化更易并发</div><div class="opts"><button class="opt" data-k="A">A. 腹水</button><button class="opt" data-k="B">B. 淤血性脾大</button><button class="opt" data-k="C">C. 食管胃底静脉曲张破裂出血</button><button class="opt" data-k="D">D. 肝性脑病</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">大结节性并发肝性脑病机率高；小结节性并发食管胃底静脉曲张破裂出血机率高。</div><div class="loc">📖 讲义定位：P3 · 分类</div><div class="shot"><img loading="lazy" src="img/03d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 分类</div></div></div></details></div><div class="q" data-ans="BCD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q16</span><span class="tag tloc">P3 · 分类</span></div><div class="stem">关于肝硬化，下列叙述正确的有</div><div class="opts"><button class="opt" data-k="A">A. 肝表面无明显结节即可排除肝硬化</button><button class="opt" data-k="B">B. 大结节性肝硬化结节大小不均、纤维间隔宽而不均</button><button class="opt" data-k="C">C. 小结节性肝硬化又称门脉性肝硬化</button><button class="opt" data-k="D">D. 小结节性肝硬化并发食管胃底静脉曲张破裂出血的机率高</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BCD</span></div><div class="expl">A 错：胆汁性、淤血性、血吸虫性肝纤维化以纤维组织增生为主，可无明显结节；诊断标准是假小叶。</div><div class="loc">📖 讲义定位：P3 · 分类</div><div class="shot"><img loading="lazy" src="img/03d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 分类</div></div></div></details></div><h2 class="part">三、肝功能障碍<span class="cnt">4 题</span></h2><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q17</span><span class="tag tloc">P3 · 肝功能障碍</span></div><div class="stem">肝硬化患者出血倾向的主要原因是</div><div class="opts"><button class="opt" data-k="A">A. 凝血因子合成减少、脾亢致血小板减少</button><button class="opt" data-k="B">B. 红细胞破坏增多</button><button class="opt" data-k="C">C. 维生素 K 摄入过多</button><button class="opt" data-k="D">D. 血管脆性增加</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">出血倾向＝凝血因子合成↓（主要）＋脾亢致血小板↓等。</div><div class="loc">📖 讲义定位：P3 · 肝功能障碍</div><div class="shot"><img loading="lazy" src="img/03e.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 肝功能障碍</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q18</span><span class="tag tloc">P3 · 肝功能障碍</span></div><div class="stem">肝硬化患者出现蜘蛛痣、肝掌的机制是</div><div class="opts"><button class="opt" data-k="A">A. 胆红素升高</button><button class="opt" data-k="B">B. 雌激素灭活减弱</button><button class="opt" data-k="C">C. 门脉高压</button><button class="opt" data-k="D">D. 雄激素增多</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">雌激素灭活减弱→蜘蛛痣、肝掌、睾丸萎缩、乳房发育、月经不调等。</div><div class="loc">📖 讲义定位：P3 · 肝功能障碍</div><div class="shot"><img loading="lazy" src="img/03e.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 肝功能障碍</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q19</span><span class="tag tloc">P3 · 肝功能障碍</span></div><div class="stem">肝硬化患者低蛋白血症（白/球蛋白比值下降或倒置）的原因是</div><div class="opts"><button class="opt" data-k="A">A. 球蛋白合成减少</button><button class="opt" data-k="B">B. 肾小球滤过减少</button><button class="opt" data-k="C">C. 白蛋白合成障碍</button><button class="opt" data-k="D">D. 蛋白质摄入过多</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">白蛋白合成障碍→低蛋白血症→血浆胶体渗透压↓，白/球蛋白↓或倒置。</div><div class="loc">📖 讲义定位：P3 · 肝功能障碍</div><div class="shot"><img loading="lazy" src="img/03e.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 肝功能障碍</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q20</span><span class="tag tloc">P3 · 肝功能障碍</span></div><div class="stem">肝硬化最严重的肝功能障碍表现是</div><div class="opts"><button class="opt" data-k="A">A. 黄疸</button><button class="opt" data-k="B">B. 肝肾综合征</button><button class="opt" data-k="C">C. 腹水</button><button class="opt" data-k="D">D. 肝性脑病（肝昏迷）</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">肝性脑病/肝昏迷是最严重的表现，与氨中毒、门-腔侧支循环分流等有关。</div><div class="loc">📖 讲义定位：P3 · 肝功能障碍</div><div class="shot"><img loading="lazy" src="img/03e.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 肝功能障碍</div></div></div></details></div><h2 class="part">四、门脉高压症<span class="cnt">5 题</span></h2><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q21</span><span class="tag tloc">P5 · 门脉高压机制</span></div><div class="stem">肝炎肝硬化引起门脉高压的阻塞部位主要是</div><div class="opts"><button class="opt" data-k="A">A. 窦性和窦后性</button><button class="opt" data-k="B">B. 肝静脉阻塞</button><button class="opt" data-k="C">C. 窦前性</button><button class="opt" data-k="D">D. 单纯窦后性</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">肝炎肝硬化主要为窦性（肝血窦受压）＋窦后性（中央静脉和小叶下静脉受压）阻塞；注意不是肝静脉（肝静脉在肝后）。</div><div class="loc">📖 讲义定位：P5 · 门脉高压机制</div><div class="shot"><img loading="lazy" src="img/03f.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P5 · 门脉高压机制</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q22</span><span class="tag tloc">P5 · 门脉高压机制</span></div><div class="stem">血吸虫性肝纤维化导致门脉高压的主要机制是</div><div class="opts"><button class="opt" data-k="A">A. 窦性阻塞</button><button class="opt" data-k="B">B. 窦前性阻塞</button><button class="opt" data-k="C">C. 窦后性阻塞</button><button class="opt" data-k="D">D. 肝动脉-门静脉吻合支开放</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">血吸虫卵沉积于门管区→肝内门静脉周围纤维化→窦前阻塞→较显著的门脉高压。</div><div class="loc">📖 讲义定位：P5 · 门脉高压机制</div><div class="shot"><img loading="lazy" src="img/03f.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P5 · 门脉高压机制</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q23</span><span class="tag tloc">P5 · 门脉高压表现</span></div><div class="stem">门脉高压症最具特征性的表现是</div><div class="opts"><button class="opt" data-k="A">A. 淤血性脾大</button><button class="opt" data-k="B">B. 胃肠淤血、水肿</button><button class="opt" data-k="C">C. 侧支循环形成（食管胃底/直肠/腹壁静脉曲张）</button><button class="opt" data-k="D">D. 腹水</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">侧支循环形成（最特征/最有价值）：食管胃底、直肠、腹壁静脉曲张（可形成海蛇头）。</div><div class="loc">📖 讲义定位：P5 · 门脉高压表现</div><div class="shot"><img loading="lazy" src="img/03g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P5 · 门脉高压表现</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q24</span><span class="tag tloc">P5 · 门脉高压表现</span></div><div class="stem">门脉高压症出现最早的表现是</div><div class="opts"><button class="opt" data-k="A">A. 食管胃底静脉曲张</button><button class="opt" data-k="B">B. 肝性脑病</button><button class="opt" data-k="C">C. 腹水</button><button class="opt" data-k="D">D. 淤血性脾大</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">淤血性脾大出现最早，可伴脾亢；腹水为漏出液。</div><div class="loc">📖 讲义定位：P5 · 门脉高压表现</div><div class="shot"><img loading="lazy" src="img/03g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P5 · 门脉高压表现</div></div></div></details></div><div class="q" data-ans="ACD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q25</span><span class="tag tloc">P5 · 门脉高压表现</span></div><div class="stem">下列属于门脉高压症表现的有</div><div class="opts"><button class="opt" data-k="A">A. 腹水</button><button class="opt" data-k="B">B. 蜘蛛痣</button><button class="opt" data-k="C">C. 淤血性脾大</button><button class="opt" data-k="D">D. 食管胃底静脉曲张</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ACD</span></div><div class="expl">蜘蛛痣属于肝功能障碍（雌激素灭活减弱）的表现，不是门脉高压症的表现（B 错）；A、C、D 均为门脉高压症表现。</div><div class="loc">📖 讲义定位：P5 · 门脉高压表现</div><div class="shot"><img loading="lazy" src="img/03g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P5 · 门脉高压表现</div></div></div></details></div><h2 class="part">本课速记卡</h2><div class="cardlist"><h3>肝硬化『三病变·三变化·两改建·两表现』</h3><ul><li>三病变：①弥漫性肝细胞变性坏死（桥接坏死或亚大块坏死）②肝细胞结节状再生（网状支架塌陷）③广泛纤维化</li><li>三变化：多变形、变小、变硬（早期可正常或稍大）</li><li>两改建：肝小叶结构改建（假小叶＝病理诊断标准）＋肝内血液循环途径改建</li><li>两表现：肝功能障碍＋门脉高压症</li></ul><h3>假小叶（镜下）</h3><ul><li>胶原纤维分割包绕原肝小叶→大小不等肝细胞团</li><li>中央静脉常缺如、偏位或≥2 个；可见门/汇管区</li><li>肝细胞索排列紊乱、变性坏死＋结节状再生（核大深染、双核——非异型增生）</li><li>外周纤维间隔包绕、炎细胞浸润、小胆管增生</li><li>注意：假小叶≠肉眼结节；淤胆/淤血/血吸虫性以纤维化为主，少再生结节</li></ul><h3>分类对照</h3><table><tr><th>项目</th><th>小结节性（门脉性/酒精性）</th><th>大结节性（坏死后性）</th></tr><tr><td>再生结节</td><td>多≤3mm、大小相仿</td><td>多＞3mm、大小不均</td></tr><tr><td>纤维间隔</td><td>细</td><td>宽而不均</td></tr><tr><td>主要并发症</td><td>食管胃底静脉曲张破裂出血机率高</td><td>肝性脑病机率高</td></tr><tr><td>来源</td><td>——</td><td>亚急性重型肝炎、中毒性肝炎</td></tr></table><h3>肝功能障碍（要点）</h3><ul><li>白蛋白合成↓→低蛋白血症、白/球↓或倒置</li><li>雌激素灭活↓→蜘蛛痣、肝掌（＋睾丸萎缩、乳房发育）</li><li>凝血因子合成↓＋脾亢→出血倾向</li><li>胆红素处理障碍→黄疸；肝肾综合征</li><li>肝性脑病/肝昏迷——最严重</li></ul><h3>门脉高压症（要点）</h3><ul><li>机制：肝炎肝硬化＝窦性＋窦后性；血吸虫＝窦前性</li><li>最特征：侧支循环（食管胃底/直肠/腹壁静脉曲张、海蛇头）</li><li>最早：淤血性脾大、脾亢</li><li>腹水＝漏出液（静水压↑、淋巴外溢、胶渗压↓、醛固酮/ADH 灭活↓等）</li></ul></div><h2 class="part">📚 网站题库（导入）<span class="cnt">2 组 · 4 题</span></h2><div class="wbank"><button class="wbbtn" id="webBankBtn" data-label="🔽 点击展开：从「西综题库」网站导入的 2 组题（4 题，含答案）">🔽 点击展开：从「西综题库」网站导入的 2 组题（4 题，含答案）</button><div id="webBank" style="display:none"><div class="wbnote">说明：本部分为外部题库导入（来源：「西综题库」网站 · 病理学），题干、选项与答案保留原样；标注「教师补充」的答案未经讲义逐项复核。做题方式：点字母选择（多选后点【判卷】；答案可点开「答案与出处」查看）。</div><div class="wgroup"><div class="wgtop"><b>肝硬化的临床表现与腹水机制</b><span class="tag tW">多项选择</span></div><div class="wopts"><div><b>A</b> 腹水</div><div><b>B</b> 白蛋白合成障碍</div><div><b>C</b> 侧支循环形成</div><div><b>D</b> 凝血因子合成减少</div><div><b>E</b> 静水压和通透性↑</div><div><b>F</b> 肝肾综合征（区别内科学）</div><div><b>G</b> 胃肠瘀血和水肿</div><div><b>H</b> 肝性脑病/肝昏迷</div><div><b>I</b> 雌激素灭活障碍</div><div><b>J</b> 肝处理胆红素障碍</div><div><b>K</b> 直肠静脉曲张</div><div><b>L</b> （最早）瘀血性脾大</div><div><b>M</b> 蜘蛛痣，肝掌</div><div><b>N</b> 氨中毒</div><div><b>O</b> 脾亢致血小板减少</div><div><b>P</b> 腹壁静脉曲张</div><div><b>Q</b> 脾亢</div><div><b>R</b> 低蛋白血症</div><div><b>S</b> 小叶结构改变致淤胆</div><div><b>T</b> 食管胃底静脉曲张</div><div><b>U</b> 睾丸萎缩</div><div><b>V</b> 淋巴液外溢</div><div><b>W</b> 血浆胶体渗透压降低</div><div><b>X</b> 黄疸</div><div><b>Z</b> 出血倾向</div><div><b>①</b> 门-腔侧支循环分流</div><div><b>②</b> 乳房发育</div><div><b>③</b> 醛固酮和ADH灭活障碍</div><div><b>④</b> 白/球蛋白↓或倒置</div><div><b>⑤</b> 月经不调</div><div><b>⑥</b> 有效循环血量↓</div></div><div class="q wq" data-ans="BDFHIJMNRSUWXZ②③④⑤" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W1</span><span class="tag tloc">第3讲 · 第3页</span></div><div class="stem">肝功能障碍临床表现</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button><button class="opt" data-k="Q">Q</button><button class="opt" data-k="R">R</button><button class="opt" data-k="S">S</button><button class="opt" data-k="T">T</button><button class="opt" data-k="U">U</button><button class="opt" data-k="V">V</button><button class="opt" data-k="W">W</button><button class="opt" data-k="X">X</button><button class="opt" data-k="Z">Z</button><button class="opt" data-k="①">①</button><button class="opt" data-k="②">②</button><button class="opt" data-k="③">③</button><button class="opt" data-k="④">④</button><button class="opt" data-k="⑤">⑤</button><button class="opt" data-k="⑥">⑥</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BDFHIJMNRSUWXZ②③④⑤</span></div><div class="loc">📖 第3讲 · 第3页</div><div class="shot"><img loading="lazy" src="pdfpages/03/03.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第3讲 · 第3页</div></div></div></details></div><div class="q wq" data-ans="ACEGKLOPQTV①" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W2</span><span class="tag tloc">第3讲 · 第5页</span></div><div class="stem">门脉高压的临床表现</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button><button class="opt" data-k="Q">Q</button><button class="opt" data-k="R">R</button><button class="opt" data-k="S">S</button><button class="opt" data-k="T">T</button><button class="opt" data-k="U">U</button><button class="opt" data-k="V">V</button><button class="opt" data-k="W">W</button><button class="opt" data-k="X">X</button><button class="opt" data-k="Z">Z</button><button class="opt" data-k="①">①</button><button class="opt" data-k="②">②</button><button class="opt" data-k="③">③</button><button class="opt" data-k="④">④</button><button class="opt" data-k="⑤">⑤</button><button class="opt" data-k="⑥">⑥</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ACEGKLOPQTV①</span></div><div class="loc">📖 第3讲 · 第5页</div><div class="shot"><img loading="lazy" src="pdfpages/03/05.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第3讲 · 第5页</div></div></div></details></div><div class="q wq" data-ans="EVW③⑥" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W3</span><span class="tag tloc">第3讲 · 第5页</span></div><div class="stem">腹水形成的机制</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button><button class="opt" data-k="Q">Q</button><button class="opt" data-k="R">R</button><button class="opt" data-k="S">S</button><button class="opt" data-k="T">T</button><button class="opt" data-k="U">U</button><button class="opt" data-k="V">V</button><button class="opt" data-k="W">W</button><button class="opt" data-k="X">X</button><button class="opt" data-k="Z">Z</button><button class="opt" data-k="①">①</button><button class="opt" data-k="②">②</button><button class="opt" data-k="③">③</button><button class="opt" data-k="④">④</button><button class="opt" data-k="⑤">⑤</button><button class="opt" data-k="⑥">⑥</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">EVW③⑥</span></div><div class="loc">📖 第3讲 · 第5页</div><div class="shot"><img loading="lazy" src="pdfpages/03/05.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第3讲 · 第5页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>假小叶周围结缔组织的分割包绕通常不完全,该型肝硬化的主要病因为</b><span class="tag tW">单项选择</span><span class="tag tS2">教师补充</span></div><div class="wopts"><div><b>A</b> 病毒性肝炎</div><div><b>B</b> 胆汁淤积</div><div><b>C</b> 慢性酒精中毒</div><div><b>D</b> 非酒精性脂肪肝</div></div><div class="q wq" data-ans="B" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W4</span><span class="tag tloc">第3讲 · 第2页</span></div><div class="stem">假小叶周围结缔组织的分割包绕通常不完全,该型肝硬化的主要病因为(单选)</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="loc">📖 第3讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/03/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第3讲 · 第2页</div></div></div></details></div></div></div></div><footer>素材：病理学讲义·第03课核心精讲（P1–7）<br>题库与解析为学习整理 · 仅供个人复习参考</footer><a class="pdf-fab" id="pdfFab"><span class="ico">📄</span><span>讲义</span></a><div class="pdf-overlay" id="pdfOverlay" style="display:none"><div class="pdf-bar"><b>📄 本课讲义（共 7 页）</b><span><a class="pdf-ext" href="../%E9%A1%B5%E9%9D%A2/pdf/03.pdf" target="_blank">原生打开 ↗</a><button id="pdfClose">✕ 关闭</button></span></div><div class="pdf-pages"><img loading="lazy" decoding="async" src="pdfpages/03/01.jpg" alt="讲义第1页"><img loading="lazy" decoding="async" src="pdfpages/03/02.jpg" alt="讲义第2页"><img loading="lazy" decoding="async" src="pdfpages/03/03.jpg" alt="讲义第3页"><img loading="lazy" decoding="async" src="pdfpages/03/04.jpg" alt="讲义第4页"><img loading="lazy" decoding="async" src="pdfpages/03/05.jpg" alt="讲义第5页"><img loading="lazy" decoding="async" src="pdfpages/03/06.jpg" alt="讲义第6页"><img loading="lazy" decoding="async" src="pdfpages/03/07.jpg" alt="讲义第7页"></div></div></div><script>/* 病理学·学成选择题 —— 交互脚本（无依赖） */
+(function () {
+  'use strict';
+  var total = parseInt(document.body.getAttribute('data-total') || '0', 10);
+  var answered = 0, correct = 0;
+
+  function scoreEl() { return document.getElementById('score'); }
+  function refreshScore() {
+    var el = scoreEl();
+    if (el) el.textContent = '已答 ' + answered + '/' + total + ' · 正确 ' + correct;
+  }
+  function markResult(q, ok) {
+    q.classList.add(ok ? 'correct' : 'wrong');
+    var head = q.querySelector('.qhead');
+    if (head && !head.querySelector('.res')) {
+      var s = document.createElement('span');
+      s.className = 'res ' + (ok ? 'ok' : 'no');
+      s.textContent = ok ? '✓ 答对' : '✗ 答错';
+      s.style.cssText = 'font-size:12px;font-weight:700;' + (ok ? 'color:#15803d;' : 'color:#b91c1c;');
+      head.appendChild(s);
+    }
+    if (!q.getAttribute('data-noscore') && !q.getAttribute('data-counted')) {
+      q.setAttribute('data-counted', '1');
+      answered += 1;
+      if (ok) correct += 1;
+      refreshScore();
+    }
+    var d = q.querySelector('details.ans');
+    if (d) d.open = true;
+  }
+  function lockOpts(q) {
+    q.querySelectorAll('.opt,.lt').forEach(function (b) { b.disabled = true; });
+  }
+
+  /* 单选：.opt[data-k] 或 .lt[data-k] */
+  function bindSingle(q) {
+    var ans = (q.getAttribute('data-ans') || '').toUpperCase();
+    q.querySelectorAll('.lt,.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.getAttribute('data-judged')) return;
+        q.setAttribute('data-judged', '1');
+        var k = (b.getAttribute('data-k') || '').toUpperCase();
+        var ok = (k === ans);
+        if (ok) b.classList.add('right');
+        else {
+          b.classList.add('wrong');
+          var rightBtn = q.querySelector('[data-k="' + ans + '"]');
+          if (rightBtn) rightBtn.classList.add('right');
+        }
+        lockOpts(q);
+        markResult(q, ok);
+      });
+    });
+  }
+
+  /* 多选：.opt 可切换 .sel，.judge 判卷 */
+  function bindMulti(q) {
+    var ans = (q.getAttribute('data-ans') || '').toUpperCase().split('').sort().join('');
+    q.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.getAttribute('data-judged')) return;
+        b.classList.toggle('sel');
+      });
+    });
+    var jb = q.querySelector('.judge');
+    if (jb) jb.addEventListener('click', function () {
+      if (q.getAttribute('data-judged')) return;
+      var picked = [];
+      q.querySelectorAll('.opt.sel').forEach(function (b) { picked.push(b.getAttribute('data-k')); });
+      if (!picked.length) { jb.textContent = '请先选择'; setTimeout(function () { jb.textContent = '判卷'; }, 900); return; }
+      q.setAttribute('data-judged', '1');
+      var pk = picked.sort().join('');
+      q.querySelectorAll('.opt').forEach(function (b) {
+        var k = b.getAttribute('data-k');
+        var sel = b.classList.contains('sel');
+        var isR = ans.indexOf(k) >= 0;
+        b.classList.remove('sel');
+        if (sel && isR) b.classList.add('right');
+        else if (sel && !isR) b.classList.add('wrong');
+        else if (!sel && isR) b.classList.add('missed');
+      });
+      q.querySelectorAll('.opt,.judge').forEach(function (x) { x.disabled = true; });
+      markResult(q, pk === ans);
+    });
+  }
+
+  document.querySelectorAll('.q').forEach(function (q) {
+    var isMulti = q.getAttribute('data-mode') === 'multi';
+    if (isMulti) bindMulti(q); else bindSingle(q);
+  });
+
+  var ex = document.getElementById('expandAll');
+  if (ex) ex.addEventListener('click', function () {
+    document.querySelectorAll('details.ans').forEach(function (d) { d.open = true; });
+  });
+  var co = document.getElementById('collapseAll');
+  if (co) co.addEventListener('click', function () {
+    document.querySelectorAll('details.ans').forEach(function (d) { d.open = false; });
+  });
+  var rs = document.getElementById('resetBtn');
+  if (rs) rs.addEventListener('click', function () {
+    document.querySelectorAll('.q').forEach(function (q) {
+      q.classList.remove('correct', 'wrong');
+      q.removeAttribute('data-judged');
+      q.removeAttribute('data-counted');
+      q.querySelectorAll('.opt').forEach(function (b) {
+        b.classList.remove('sel', 'right', 'wrong', 'missed');
+        b.disabled = false;
+      });
+      q.querySelectorAll('.lt').forEach(function (b) {
+        b.classList.remove('right', 'wrong');
+        b.disabled = false;
+      });
+      q.querySelectorAll('.res').forEach(function (s) { s.remove(); });
+      q.querySelectorAll('details.ans').forEach(function (d) { d.open = false; });
+    });
+    answered = 0; correct = 0; refreshScore();
+  });
+
+  var fab = document.getElementById('pdfFab');
+  var ov = document.getElementById('pdfOverlay');
+  var pc = document.getElementById('pdfClose');
+  if (fab && ov && pc) {
+    fab.addEventListener('click', function () {
+      ov.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    pc.addEventListener('click', function () {
+      ov.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  }
+
+  var wbBtn = document.getElementById('webBankBtn');
+  var wbBox = document.getElementById('webBank');
+  if (wbBtn && wbBox) {
+    wbBtn.addEventListener('click', function () {
+      var open = wbBox.style.display !== 'none';
+      wbBox.style.display = open ? 'none' : 'block';
+      wbBtn.textContent = open ? wbBtn.getAttribute('data-label') : '🔼 收起网站题库';
+    });
+  }
+
+  refreshScore();
+})();
+</script></body></html>

@@ -1,0 +1,278 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>病理学 第19课 学成选择题 | 乳腺疾病</title><style>:root{
+  --bg:#f2f5f6; --card:#ffffff; --ink:#1f2933; --sub:#5c6b73;
+  --line:#e2e8ea; --accent:#0f766e; --accent-bg:#e6f6f4;
+  --green:#15803d; --green-bg:#e8f6ec; --red:#b91c1c; --red-bg:#fdecec;
+  --blue:#1d4ed8; --blue-bg:#e8effd; --purple:#6d28d9; --purple-bg:#f1ebfd;
+  --orange:#c2410c; --orange-bg:#fdf0e6; --gold:#b45309; --gold-bg:#fdf6e3;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.7 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wrap{max-width:760px;margin:0 auto;padding:14px 12px 60px}
+header.top{background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;
+  border-radius:16px;padding:16px 16px 14px;margin-bottom:14px}
+header.top .crumb{font-size:12px;opacity:.85;letter-spacing:.05em}
+header.top h1{font-size:19px;line-height:1.45;margin:6px 0 8px}
+header.top .meta{font-size:12.5px;opacity:.92;line-height:1.6}
+header.top .meta b{font-weight:600}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toolbar button{border:0;border-radius:9px;padding:8px 12px;font-size:13.5px;font-weight:600;
+  background:rgba(255,255,255,.16);color:#fff}
+.toolbar button:active{background:rgba(255,255,255,.3)}
+.toolbar .score{margin-left:auto;font-size:13px;background:rgba(255,255,255,.14);
+  border-radius:9px;padding:8px 10px;white-space:nowrap}
+.howto{background:var(--accent-bg);border-radius:12px;padding:10px 14px;font-size:13.5px;
+  color:#115e59;margin:0 0 16px;line-height:1.65}
+.howto b{font-weight:700}
+h2.part{font-size:16.5px;margin:26px 4px 10px;padding-left:10px;border-left:4px solid var(--accent)}
+h2.part .cnt{font-size:12px;font-weight:400;color:var(--sub);margin-left:6px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 12px 10px;margin-bottom:12px;position:relative;overflow:hidden}
+.q::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:transparent}
+.q.correct::before{background:var(--green)}
+.q.wrong::before{background:var(--red)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}
+.tag{font-size:11px;font-weight:700;border-radius:6px;padding:2px 7px;letter-spacing:.03em}
+.tA{background:var(--blue-bg);color:var(--blue)}
+.tX{background:var(--orange-bg);color:var(--orange)}
+.tB{background:var(--purple-bg);color:var(--purple)}
+.tZ{background:var(--red-bg);color:var(--red)}
+.tloc{background:#eef2f4;color:var(--sub);font-weight:500}
+.qno{font-size:12px;color:var(--sub);font-weight:600}
+.stem{font-size:15.5px;line-height:1.7;margin:2px 0 8px}
+.opts{display:grid;gap:7px}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:14.5px;line-height:1.6;
+  background:#fafbfc;border:1.5px solid var(--line);border-radius:10px;padding:8px 11px;color:var(--ink)}
+.opt.sel{border-color:var(--accent);background:var(--accent-bg)}
+.opt.right{border-color:var(--green);background:var(--green-bg);color:#14532d;font-weight:600}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:#7f1d1d;font-weight:600}
+.opt.missed{border-style:dashed;border-color:var(--orange);background:var(--orange-bg);color:#9a3412}
+.opt[disabled]{opacity:.92}
+.judgebar{display:flex;gap:8px;margin-top:8px}
+.judgebar button{font-size:13.5px;font-weight:700;border:0;border-radius:9px;padding:7px 14px;
+  background:var(--accent);color:#fff}
+.judgebar button.ghost{background:#eef2f4;color:var(--sub)}
+.letters{display:flex;gap:8px;margin-top:8px}
+.letters button{width:44px;height:38px;border-radius:9px;border:1.5px solid var(--line);
+  background:#fafbfc;font-size:15px;font-weight:700;color:var(--ink)}
+.letters button.right{border-color:var(--green);background:var(--green-bg);color:#14532d}
+.letters button.wrong{border-color:var(--red);background:var(--red-bg);color:#7f1d1d}
+.bgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.bgroup .bnote{font-size:12.5px;color:var(--purple);font-weight:600;margin-bottom:6px}
+.bopts{background:#faf9fe;border:1px dashed #ddd6fe;border-radius:10px;padding:8px 11px;
+  font-size:14.5px;line-height:1.8;margin-bottom:10px}
+.bgroup .q{border:0;border-top:1px solid var(--line);border-radius:0;margin:0;padding:10px 2px 6px}
+.bgroup .q::before{display:none}
+details.ans{margin-top:9px;border-radius:10px;background:#f6f8f9;border:1px solid var(--line)}
+details.ans summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--accent);
+  padding:7px 11px;list-style-position:inside}
+details.ans[open] summary{border-bottom:1px dashed var(--line)}
+.ansbody{padding:8px 12px 10px;font-size:14px;line-height:1.75}
+.ansbody .ansline{font-weight:700;margin-bottom:4px}
+.ansbody .ansline .ok{color:var(--green)}
+.ansbody .expl{color:#37474f;white-space:pre-line}
+.ansbody .loc{margin-top:6px;font-size:12.5px;color:var(--sub)}
+.cardlist{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.cardlist h3{font-size:14.5px;margin:10px 0 6px;color:var(--accent)}
+.cardlist h3:first-child{margin-top:2px}
+.cardlist ul{margin:4px 0;padding-left:20px}
+.cardlist li{font-size:14px;line-height:1.8;margin:2px 0}
+.cardlist table{border-collapse:collapse;width:100%;margin:6px 0;font-size:13.5px}
+.cardlist th,.cardlist td{border:1px solid var(--line);padding:5px 8px;text-align:left;line-height:1.6}
+.cardlist th{background:#f2f7f6;font-weight:600;color:#115e59}
+footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center;line-height:1.8}
+@media print{
+  body{background:#fff}
+  .toolbar,.howto{display:none}
+  details.ans{display:block}
+  details.ans summary{list-style:none}
+  .q{break-inside:avoid;page-break-inside:avoid}
+  header.top{background:#fff;color:#000;border:1px solid #000}
+  header.top .crumb,header.top .meta{color:#333}
+}
+.shot{margin-top:8px}
+.shot img{width:100%;display:block;border:1px solid var(--line);border-radius:8px}
+.shcap{font-size:11.5px;color:var(--sub);margin-top:3px}
+a.toolbtn{display:inline-block;text-decoration:none;border-radius:9px;padding:8px 12px;
+  font-size:13.5px;font-weight:600;background:rgba(255,255,255,.16);color:#fff}
+a.toolbtn:active{background:rgba(255,255,255,.3)}
+
+.pdf-fab{position:fixed;right:10px;top:45%;z-index:60;display:flex;flex-direction:column;align-items:center;
+  gap:1px;background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;text-decoration:none;
+  border-radius:14px;padding:9px;font-size:11px;font-weight:700;box-shadow:0 3px 12px rgba(0,0,0,.28);
+  line-height:1.15;letter-spacing:1px}
+.pdf-fab .ico{font-size:17px;letter-spacing:0}
+.pdf-fab:active{opacity:.85}
+.pdf-overlay{position:fixed;inset:0;z-index:120;background:#eef2f3;display:flex;flex-direction:column}
+.pdf-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#0f766e;color:#fff;
+  padding:9px 12px;font-size:14px}
+.pdf-bar .pdf-ext{color:#d1faf5;text-decoration:none;font-size:12.5px;margin-right:10px}
+.pdf-bar #pdfClose{border:0;border-radius:8px;background:rgba(255,255,255,.2);color:#fff;font-size:13px;
+  font-weight:600;padding:6px 10px}
+.pdf-pages{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#e8edee;padding:8px 6px 24px}
+.pdf-pages img{width:100%;display:block;margin:0 auto 10px;border-radius:6px;box-shadow:0 1px 6px rgba(0,0,0,.18);background:#fff}
+@media print{.pdf-fab,.pdf-overlay{display:none!important}}
+
+.tW{background:#eef2ff;color:#4f46e5}
+.tS2{background:#fdf2f8;color:#be185d}
+.wbbtn{width:100%;border:1.5px dashed #0f766e88;background:#f0fdfa;color:#0f766e;font-size:14.5px;font-weight:700;
+  border-radius:12px;padding:13px;margin-bottom:12px;line-height:1.5}
+.wbbtn:active{background:#ccfbf1}
+.wbnote{font-size:12.5px;color:var(--sub);background:#f6f8f9;border:1px solid var(--line);border-radius:10px;
+  padding:8px 11px;margin-bottom:10px;line-height:1.65}
+.wgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.wgtop{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:7px}
+.wgtop b{font-size:15px}
+.wopts{background:#f7f9ff;border:1px dashed #cdd8f6;border-radius:10px;padding:8px 11px;font-size:13.5px;
+  line-height:1.75;margin-bottom:8px;max-height:240px;overflow:auto}
+.wgroup .q{border:0;border-top:1px dashed var(--line);border-radius:0;margin:0;padding:9px 2px 6px}
+.wgroup .q::before{display:none}
+.opts.lg{display:flex;flex-wrap:wrap;gap:6px}
+.opts.lg .opt{width:auto;min-width:40px;text-align:center;padding:6px 10px;font-size:13.5px}
+</style></head><body data-total="18"><div class="wrap"><header class="top"><div class="crumb">考研西综 · 病理学 · 学成选择题</div><h1>第19课｜乳腺疾病</h1><div class="meta">对应讲义：<b>P1–3</b> ｜ 共 <b>18</b> 题 ｜ 建议约 <b>15</b> 分钟</div><div class="toolbar"><a class="toolbtn" href="../index.html">← 总目录</a><button id="expandAll">展开全部答案</button><button id="collapseAll">收起全部</button><button id="resetBtn">重做</button><span class="score" id="score">已答 0/18 · 正确 0</span></div></header><div class="howto">用法：A型题点选项即判；X型题先多选、再点【判卷】；答完自动展开解析。刷完本课再过一遍底部【本课速记卡】，效果最好。</div><h2 class="part">一、乳腺导管增生<span class="cnt">2 题</span></h2><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q1</span><span class="tag tloc">P1 · 导管增生</span></div><div class="stem">普通型乳腺导管增生的特点是</div><div class="opts"><button class="opt" data-k="A">A. 伴粉刺样坏死</button><button class="opt" data-k="B">B. 增生细胞分布均匀、单一形态</button><button class="opt" data-k="C">C. 增生细胞呈流水样分布</button><button class="opt" data-k="D">D. 细胞异型显著</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">普通型导管增生：增生细胞呈流水样分布（『水-普通』）。</div><div class="loc">📖 讲义定位：P1 · 导管增生</div><div class="shot"><img loading="lazy" src="img/19a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 导管增生</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q2</span><span class="tag tloc">P1 · 导管增生</span></div><div class="stem">乳腺异型（非典型）导管增生的特点是</div><div class="opts"><button class="opt" data-k="A">A. 增生细胞分布均匀、单一形态（为癌前病变）</button><button class="opt" data-k="B">B. 伴大量淋巴细胞浸润</button><button class="opt" data-k="C">C. 伴粉刺样坏死</button><button class="opt" data-k="D">D. 增生细胞呈流水样分布</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">异型/非典型导管增生：增生细胞分布均匀、单一形态——为乳腺癌的癌前病变。</div><div class="loc">📖 讲义定位：P1 · 导管增生</div><div class="shot"><img loading="lazy" src="img/19a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 导管增生</div></div></div></details></div><h2 class="part">二、乳腺癌<span class="cnt">8 题</span></h2><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q3</span><span class="tag tloc">P1 · 乳腺癌</span></div><div class="stem">下列属于乳腺癌危险因素的是</div><div class="opts"><button class="opt" data-k="A">A. 初次妊娠年龄较早</button><button class="opt" data-k="B">B. 哺乳时间较长</button><button class="opt" data-k="C">C. 绝经年龄较早</button><button class="opt" data-k="D">D. 雌激素暴露时间延长（月经早、绝经晚、晚育不育、肥胖）</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">危险因素：①雌激素暴露时间延长（月经早、绝经晚、晚育不育、肥胖、乳腺增生性病变——导管上皮非典型增生为癌前病变）②遗传（BRCA 缺陷）。</div><div class="loc">📖 讲义定位：P1 · 乳腺癌</div><div class="shot"><img loading="lazy" src="img/19b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 乳腺癌</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q4</span><span class="tag tloc">P1 · 乳腺癌</span></div><div class="stem">乳腺癌的癌前病变是</div><div class="opts"><button class="opt" data-k="A">A. 普通型导管增生</button><button class="opt" data-k="B">B. 导管上皮非典型（异型）增生</button><button class="opt" data-k="C">C. 乳腺纤维腺瘤</button><button class="opt" data-k="D">D. 乳腺硬化性腺病</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">乳腺增生性病变中，导管上皮非典型/异型增生为癌前病变。</div><div class="loc">📖 讲义定位：P1 · 乳腺癌</div><div class="shot"><img loading="lazy" src="img/19b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 乳腺癌</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q5</span><span class="tag tloc">P1 · 乳腺癌</span></div><div class="stem">与遗传性乳腺癌密切相关的基因是</div><div class="opts"><button class="opt" data-k="A">A. BRCA（乳腺癌易感基因）</button><button class="opt" data-k="B">B. APC</button><button class="opt" data-k="C">C. MLH/MSH</button><button class="opt" data-k="D">D. RAS</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">遗传因素：抑癌基因 BRCA（乳腺癌易感基因）缺陷。</div><div class="loc">📖 讲义定位：P1 · 乳腺癌</div><div class="shot"><img loading="lazy" src="img/19b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 乳腺癌</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q6</span><span class="tag tloc">P1 · 乳腺癌</span></div><div class="stem">乳腺浸润癌与乳腺硬化性腺病形态相似，鉴别两者最主要的依据是</div><div class="opts"><button class="opt" data-k="A">A. 浸润癌核分裂象多见</button><button class="opt" data-k="B">B. 浸润癌腺腔周围无肌上皮细胞</button><button class="opt" data-k="C">C. 浸润癌增生活跃</button><button class="opt" data-k="D">D. 浸润癌腺体异型明显</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">乳腺癌缺失肌上皮细胞（这是与硬化性腺病鉴别的主要依据）。复习：前列腺癌缺失基底细胞。</div><div class="loc">📖 讲义定位：P1 · 乳腺癌</div><div class="shot"><img loading="lazy" src="img/19b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 乳腺癌</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q7</span><span class="tag tloc">P1 · 乳腺癌</span></div><div class="stem">乳腺癌最好发的部位是</div><div class="opts"><button class="opt" data-k="A">A. 乳晕区</button><button class="opt" data-k="B">B. 内下象限</button><button class="opt" data-k="C">C. 内上象限</button><button class="opt" data-k="D">D. 外上象限</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">乳腺癌好发于外上象限。</div><div class="loc">📖 讲义定位：P1 · 乳腺癌</div><div class="shot"><img loading="lazy" src="img/19b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 乳腺癌</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q8</span><span class="tag tloc">P2 · 乳腺癌分类</span></div><div class="stem">关于乳腺导管原位癌（导管内癌），下列叙述正确的是</div><div class="opts"><button class="opt" data-k="A">A. 多累及双侧乳房多个象限</button><button class="opt" data-k="B">B. 已穿透基膜向间质浸润</button><button class="opt" data-k="C">C. 其中高级别者核分裂象常见、可见粉刺样坏死（粉刺癌）</button><button class="opt" data-k="D">D. 核分裂象罕见、癌变间期长</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">导管原位癌/导管内癌：高级别者核分裂象常见、粉刺样坏死（粉刺癌）；D、A 是小叶原位癌的特点。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌分类</div><div class="shot"><img loading="lazy" src="img/19c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 乳腺癌分类</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q9</span><span class="tag tloc">P2 · 乳腺癌分类</span></div><div class="stem">关于小叶原位癌，下列叙述正确的是</div><div class="opts"><button class="opt" data-k="A">A. 核分裂象常见</button><button class="opt" data-k="B">B. 核分裂象罕见、癌变间期长、多累及双侧乳房多个象限</button><button class="opt" data-k="C">C. 属于浸润癌</button><button class="opt" data-k="D">D. 常见粉刺样坏死</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">小叶原位癌：核分裂象罕见、癌变间期长、多累及双侧乳房多个象限。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌分类</div><div class="shot"><img loading="lazy" src="img/19c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 乳腺癌分类</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q10</span><span class="tag tloc">P2 · 乳腺癌分类</span></div><div class="stem">乳腺浸润癌中最常见的类型是</div><div class="opts"><button class="opt" data-k="A">A. 浸润性小叶癌</button><button class="opt" data-k="B">B. 黏液腺癌</button><button class="opt" data-k="C">C. 浸润癌非特殊型（原称浸润性导管癌）</button><button class="opt" data-k="D">D. 小管癌</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">浸润癌非特殊型（原称浸润性导管癌）最常见：巢状等结构、边界不清、间质纤维组织多。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌分类</div><div class="shot"><img loading="lazy" src="img/19c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 乳腺癌分类</div></div></div></details></div><h2 class="part">二、乳腺癌（续）与临床<span class="cnt">8 题</span></h2><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q11</span><span class="tag tloc">P2 · 乳腺癌分类</span></div><div class="stem">浸润性小叶癌的典型排列方式和常见转移部位是</div><div class="opts"><button class="opt" data-k="A">A. 腺管状排列；常转移至肝</button><button class="opt" data-k="B">B. 乳头状排列；常转移至骨</button><button class="opt" data-k="C">C. 巢状排列；常转移至肺</button><button class="opt" data-k="D">D. 癌细胞呈单行串珠状/列兵样/细条索状或环形排列；常转移至脑脊液、浆膜表面、卵巢、子宫、骨髓</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">浸润性小叶癌：癌细胞大小一致、核分裂象少见，呈单行串珠状/列兵样/细条索状排列，或环形排列在正常导管周围（牛眼样/靶环）——『小孩站一排、围成圈、泡水里玩』；常转移至脑脊液、浆膜表面、卵巢、子宫、骨髓。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌分类</div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q12</span><span class="tag tloc">P2 · 乳腺癌分类</span></div><div class="stem">下列乳腺癌类型中，预后较好（恶性度较低）的是</div><div class="opts"><button class="opt" data-k="A">A. 小管癌（高分化腺癌）</button><button class="opt" data-k="B">B. 炎性乳癌</button><button class="opt" data-k="C">C. 浸润性导管癌</button><button class="opt" data-k="D">D. 浸润性微乳头状癌</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">预后较好的特殊类型：小管癌/高分化腺癌（大量腺体形成）、髓样癌（大量淋巴细胞浸润、边界清、癌细胞大、间质少）、黏液腺癌、分泌性癌、实性乳头状癌；预后较差的类型：炎性乳癌（预后最差）、浸润性微乳头状癌、富于脂质性癌、高级别化生性癌。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌分类</div></div></details></div><div class="q" data-ans="BCD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q13</span><span class="tag tloc">P2 · 乳腺癌分类</span></div><div class="stem">乳腺髓样癌的形态特点有</div><div class="opts"><button class="opt" data-k="A">A. HER2/neu 过度表达</button><button class="opt" data-k="B">B. 边界清楚</button><button class="opt" data-k="C">C. 癌细胞体积大</button><button class="opt" data-k="D">D. 有较多的淋巴细胞浸润</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BCD</span></div><div class="expl">A 错：HER2/neu 过度表达与髓样癌无关。髓样癌『大清软软的』：大量淋巴细胞浸润、巢状等结构、边界清楚、癌细胞大、间质少。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌分类</div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q14</span><span class="tag tloc">P2 · 乳腺癌临床</span></div><div class="stem">乳腺癌患者皮肤呈『橘皮样变』的机制是</div><div class="opts"><button class="opt" data-k="A">A. 皮肤直接受癌细胞浸润坏死</button><button class="opt" data-k="B">B. 侵犯 Cooper 韧带</button><button class="opt" data-k="C">C. 淋巴回流增加</button><button class="opt" data-k="D">D. 癌细胞阻塞真皮内淋巴管引起皮肤水肿</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">橘皮样变（皮肤水肿）：阻塞真皮内淋巴管；酒窝征（皮肤凹陷）：侵犯 Cooper/乳房悬韧带。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌临床</div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q15</span><span class="tag tloc">P2 · 乳腺癌临床</span></div><div class="stem">乳腺癌『酒窝征』的形成机制是</div><div class="opts"><button class="opt" data-k="A">A. 肿瘤坏死液化</button><button class="opt" data-k="B">B. 癌细胞侵犯 Cooper（乳房悬）韧带致皮肤凹陷</button><button class="opt" data-k="C">C. 真皮淋巴管阻塞</button><button class="opt" data-k="D">D. 乳房皮肤淋巴水肿</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">酒窝征：侵犯 Cooper/乳房悬韧带。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌临床</div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q16</span><span class="tag tloc">P2 · 乳腺癌临床</span></div><div class="stem">乳腺癌最早和最常见的转移途径及部位是</div><div class="opts"><button class="opt" data-k="A">A. 淋巴转移，首先至同侧腋窝淋巴结</button><button class="opt" data-k="B">B. 血道转移，首先至肺</button><button class="opt" data-k="C">C. 种植性转移，胸膜</button><button class="opt" data-k="D">D. 淋巴转移，首先至锁骨上淋巴结</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">淋巴转移最早和最常见（首先至同侧腋窝淋巴结）；也易经椎旁静脉转移至骨、肺、肝、肾上腺、脑。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌临床</div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q17</span><span class="tag tloc">P2 · 乳腺癌临床</span></div><div class="stem">易经椎旁静脉发生骨转移的肿瘤组合是</div><div class="opts"><button class="opt" data-k="A">A. 肺癌、肝癌、胆囊癌、膀胱癌</button><button class="opt" data-k="B">B. 胃癌、肠癌、食管癌、胰腺癌</button><button class="opt" data-k="C">C. 乳腺癌、前列腺癌、甲状腺癌、肾癌</button><button class="opt" data-k="D">D. 小细胞肺癌、绒癌、肝细胞癌、肺腺癌</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">易经椎旁静脉发生骨转移：乳腺癌、前列腺癌、甲状腺癌、肾癌（『甲乳省钱』）。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌临床</div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q18</span><span class="tag tloc">P2 · 乳腺癌临床</span></div><div class="stem">关于乳腺癌的受体检测意义，正确的是</div><div class="opts"><button class="opt" data-k="A">A. ER 阳性预后较差</button><button class="opt" data-k="B">B. HER2 阳性预后较好</button><button class="opt" data-k="C">C. ER 阳性预后较好、可内分泌治疗；HER2 阳性预后较差、可靶向治疗</button><button class="opt" data-k="D">D. 受体检测无临床意义</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">雌激素受体 ER（+）预后较好、可内分泌治疗；HER2（+）预后较差、可靶向治疗。</div><div class="loc">📖 讲义定位：P2 · 乳腺癌临床</div></div></details></div><h2 class="part">本课速记卡</h2><div class="cardlist"><h3>乳腺导管增生</h3><ul><li>普通型：增生细胞呈流水样分布</li><li>异型/非典型：增生细胞分布均匀、单一形态（癌前病变）</li></ul><h3>乳腺癌要点</h3><ul><li>危险因素：雌激素暴露延长（月经早、绝经晚、晚育不育、肥胖）；BRCA 缺陷</li><li>缺失肌上皮细胞（与硬化性腺病鉴别）；好发外上象限</li><li>导管内癌（高级别→粉刺癌）；小叶原位癌（核分裂罕见、双侧多象限）</li><li>浸润癌非特殊型（原浸润性导管癌）最常见；浸润性小叶癌：列兵样/牛眼样→脑脊液/浆膜/卵巢/子宫/骨髓</li><li>预后较好：小管癌、髓样癌（淋巴多、细胞大、界清）；预后差：炎性乳癌（最差）等</li></ul><h3>临床与转移</h3><ul><li>橘皮样变＝阻塞真皮淋巴管；酒窝征＝侵犯 Cooper 韧带</li><li>淋巴转移最早最常见（同侧腋窝）；椎旁静脉→骨（甲乳省钱：乳腺、前列腺、甲状腺、肾）</li><li>ER（+）预后好、可内分泌治疗；HER2（+）预后差、可靶向治疗</li></ul></div><h2 class="part">📚 网站题库（导入）<span class="cnt">4 组 · 14 题</span></h2><div class="wbank"><button class="wbbtn" id="webBankBtn" data-label="🔽 点击展开：从「西综题库」网站导入的 4 组题（14 题，含答案）">🔽 点击展开：从「西综题库」网站导入的 4 组题（14 题，含答案）</button><div id="webBank" style="display:none"><div class="wbnote">说明：本部分为外部题库导入（来源：「西综题库」网站 · 病理学），题干、选项与答案保留原样；标注「教师补充」的答案未经讲义逐项复核。做题方式：点字母选择（多选后点【判卷】；答案可点开「答案与出处」查看）。</div><div class="wgroup"><div class="wgtop"><b>乳腺癌的分类与病理特征</b><span class="tag tW">匹配 / 归类</span></div><div class="wopts"><div><b>A</b> 浸润癌非特殊型（浸润性导管癌）</div><div><b>B</b> 小管癌/高分化腺癌</div><div><b>C</b> 炎性乳癌</div><div><b>D</b> 大量淋巴细胞浸润的髓样癌</div><div><b>E</b> 黏液腺癌</div><div><b>F</b> 导管内癌</div><div><b>G</b> 浸润性小叶癌</div><div><b>H</b> 分泌性癌</div><div><b>I</b> 浸润性微乳头状癌</div><div><b>J</b> 粉刺癌</div><div><b>K</b> 富于脂质性癌</div><div><b>L</b> 小叶原位癌</div><div><b>M</b> 实性乳头状癌</div><div><b>N</b> 高级别化生性癌</div></div><div class="q wq" data-ans="FJL" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W1</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">非浸润癌</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">FJL</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="ABCDEGHIKMN" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W2</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">浸润癌</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ABCDEGHIKMN</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="BCDEHIKMN" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W3</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">浸润癌特殊型</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BCDEHIKMN</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="BDEHM" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W4</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">浸润癌特殊型预后较好的类型</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BDEHM</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="CIKN" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W5</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">浸润癌特殊型预后较差的类型</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">CIKN</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="A" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W6</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">最常见的乳腺癌类型</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="C" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W7</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">预后最差的乳腺癌类型</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>乳腺癌主要类型的病理特征</b><span class="tag tW">B型题</span></div><div class="wopts"><div><b>A</b> 高级别者核分裂象常见、粉刺样坏死</div><div><b>B</b> 以前称为浸润性导管癌，癌巢边界不清、间质纤维组织多</div><div><b>C</b> 核分裂象罕见，癌变间期长，多累及双侧乳房多个象限</div><div><b>D</b> 常转移至脑脊液、浆膜表面、卵巢、子宫、骨髓</div><div><b>E</b> 巢状等结构、边界清楚、癌细胞大、间质少</div><div><b>F</b> 癌细胞大小一致，核分裂象少，呈单行串珠状、列兵样或牛眼样排列</div></div><div class="q wq" data-ans="A" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W8</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">导管原位癌/导管内癌</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="B" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W9</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">浸润癌非特殊型</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="DF" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W10</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">浸润性小叶癌</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">DF</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="E" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W11</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">大量淋巴细胞浸润的髓样癌</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">E</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="C" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W12</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">小叶原位癌</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>常转移至脑脊液的乳腺癌为</b><span class="tag tW">单项选择</span><span class="tag tS2">教师补充</span></div><div class="wopts"><div><b>A</b> 分泌性癌</div><div><b>B</b> 浸润性小叶癌</div><div><b>C</b> 黏液癌</div><div><b>D</b> 炎性乳癌</div></div><div class="q wq" data-ans="B" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W13</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">常转移至脑脊液的乳腺癌为(单选题)</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>常致橘皮样外观的乳腺癌为</b><span class="tag tW">单项选择</span><span class="tag tS2">教师补充</span></div><div class="wopts"><div><b>A</b> 浸润性导管癌</div><div><b>B</b> 浸润性小叶癌</div><div><b>C</b> 髓样癌</div><div><b>D</b> Paget病</div></div><div class="q wq" data-ans="A" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W14</span><span class="tag tloc">第19讲 · 第2页</span></div><div class="stem">常致橘皮样外观的乳腺癌为(单选题)</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="loc">📖 第19讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/19/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第19讲 · 第2页</div></div></div></details></div></div></div></div><footer>素材：病理学讲义·第19课核心精讲（P1–3）<br>题库与解析为学习整理 · 仅供个人复习参考</footer><a class="pdf-fab" id="pdfFab"><span class="ico">📄</span><span>讲义</span></a><div class="pdf-overlay" id="pdfOverlay" style="display:none"><div class="pdf-bar"><b>📄 本课讲义（共 3 页）</b><span><a class="pdf-ext" href="../%E9%A1%B5%E9%9D%A2/pdf/19.pdf" target="_blank">原生打开 ↗</a><button id="pdfClose">✕ 关闭</button></span></div><div class="pdf-pages"><img loading="lazy" decoding="async" src="pdfpages/19/01.jpg" alt="讲义第1页"><img loading="lazy" decoding="async" src="pdfpages/19/02.jpg" alt="讲义第2页"><img loading="lazy" decoding="async" src="pdfpages/19/03.jpg" alt="讲义第3页"></div></div></div><script>/* 病理学·学成选择题 —— 交互脚本（无依赖） */
+(function () {
+  'use strict';
+  var total = parseInt(document.body.getAttribute('data-total') || '0', 10);
+  var answered = 0, correct = 0;
+
+  function scoreEl() { return document.getElementById('score'); }
+  function refreshScore() {
+    var el = scoreEl();
+    if (el) el.textContent = '已答 ' + answered + '/' + total + ' · 正确 ' + correct;
+  }
+  function markResult(q, ok) {
+    q.classList.add(ok ? 'correct' : 'wrong');
+    var head = q.querySelector('.qhead');
+    if (head && !head.querySelector('.res')) {
+      var s = document.createElement('span');
+      s.className = 'res ' + (ok ? 'ok' : 'no');
+      s.textContent = ok ? '✓ 答对' : '✗ 答错';
+      s.style.cssText = 'font-size:12px;font-weight:700;' + (ok ? 'color:#15803d;' : 'color:#b91c1c;');
+      head.appendChild(s);
+    }
+    if (!q.getAttribute('data-noscore') && !q.getAttribute('data-counted')) {
+      q.setAttribute('data-counted', '1');
+      answered += 1;
+      if (ok) correct += 1;
+      refreshScore();
+    }
+    var d = q.querySelector('details.ans');
+    if (d) d.open = true;
+  }
+  function lockOpts(q) {
+    q.querySelectorAll('.opt,.lt').forEach(function (b) { b.disabled = true; });
+  }
+
+  /* 单选：.opt[data-k] 或 .lt[data-k] */
+  function bindSingle(q) {
+    var ans = (q.getAttribute('data-ans') || '').toUpperCase();
+    q.querySelectorAll('.lt,.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.getAttribute('data-judged')) return;
+        q.setAttribute('data-judged', '1');
+        var k = (b.getAttribute('data-k') || '').toUpperCase();
+        var ok = (k === ans);
+        if (ok) b.classList.add('right');
+        else {
+          b.classList.add('wrong');
+          var rightBtn = q.querySelector('[data-k="' + ans + '"]');
+          if (rightBtn) rightBtn.classList.add('right');
+        }
+        lockOpts(q);
+        markResult(q, ok);
+      });
+    });
+  }
+
+  /* 多选：.opt 可切换 .sel，.judge 判卷 */
+  function bindMulti(q) {
+    var ans = (q.getAttribute('data-ans') || '').toUpperCase().split('').sort().join('');
+    q.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.getAttribute('data-judged')) return;
+        b.classList.toggle('sel');
+      });
+    });
+    var jb = q.querySelector('.judge');
+    if (jb) jb.addEventListener('click', function () {
+      if (q.getAttribute('data-judged')) return;
+      var picked = [];
+      q.querySelectorAll('.opt.sel').forEach(function (b) { picked.push(b.getAttribute('data-k')); });
+      if (!picked.length) { jb.textContent = '请先选择'; setTimeout(function () { jb.textContent = '判卷'; }, 900); return; }
+      q.setAttribute('data-judged', '1');
+      var pk = picked.sort().join('');
+      q.querySelectorAll('.opt').forEach(function (b) {
+        var k = b.getAttribute('data-k');
+        var sel = b.classList.contains('sel');
+        var isR = ans.indexOf(k) >= 0;
+        b.classList.remove('sel');
+        if (sel && isR) b.classList.add('right');
+        else if (sel && !isR) b.classList.add('wrong');
+        else if (!sel && isR) b.classList.add('missed');
+      });
+      q.querySelectorAll('.opt,.judge').forEach(function (x) { x.disabled = true; });
+      markResult(q, pk === ans);
+    });
+  }
+
+  document.querySelectorAll('.q').forEach(function (q) {
+    var isMulti = q.getAttribute('data-mode') === 'multi';
+    if (isMulti) bindMulti(q); else bindSingle(q);
+  });
+
+  var ex = document.getElementById('expandAll');
+  if (ex) ex.addEventListener('click', function () {
+    document.querySelectorAll('details.ans').forEach(function (d) { d.open = true; });
+  });
+  var co = document.getElementById('collapseAll');
+  if (co) co.addEventListener('click', function () {
+    document.querySelectorAll('details.ans').forEach(function (d) { d.open = false; });
+  });
+  var rs = document.getElementById('resetBtn');
+  if (rs) rs.addEventListener('click', function () {
+    document.querySelectorAll('.q').forEach(function (q) {
+      q.classList.remove('correct', 'wrong');
+      q.removeAttribute('data-judged');
+      q.removeAttribute('data-counted');
+      q.querySelectorAll('.opt').forEach(function (b) {
+        b.classList.remove('sel', 'right', 'wrong', 'missed');
+        b.disabled = false;
+      });
+      q.querySelectorAll('.lt').forEach(function (b) {
+        b.classList.remove('right', 'wrong');
+        b.disabled = false;
+      });
+      q.querySelectorAll('.res').forEach(function (s) { s.remove(); });
+      q.querySelectorAll('details.ans').forEach(function (d) { d.open = false; });
+    });
+    answered = 0; correct = 0; refreshScore();
+  });
+
+  var fab = document.getElementById('pdfFab');
+  var ov = document.getElementById('pdfOverlay');
+  var pc = document.getElementById('pdfClose');
+  if (fab && ov && pc) {
+    fab.addEventListener('click', function () {
+      ov.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    pc.addEventListener('click', function () {
+      ov.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  }
+
+  var wbBtn = document.getElementById('webBankBtn');
+  var wbBox = document.getElementById('webBank');
+  if (wbBtn && wbBox) {
+    wbBtn.addEventListener('click', function () {
+      var open = wbBox.style.display !== 'none';
+      wbBox.style.display = open ? 'none' : 'block';
+      wbBtn.textContent = open ? wbBtn.getAttribute('data-label') : '🔼 收起网站题库';
+    });
+  }
+
+  refreshScore();
+})();
+</script></body></html>

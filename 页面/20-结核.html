@@ -1,0 +1,278 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>病理学 第20课 学成选择题 | 结核</title><style>:root{
+  --bg:#f2f5f6; --card:#ffffff; --ink:#1f2933; --sub:#5c6b73;
+  --line:#e2e8ea; --accent:#0f766e; --accent-bg:#e6f6f4;
+  --green:#15803d; --green-bg:#e8f6ec; --red:#b91c1c; --red-bg:#fdecec;
+  --blue:#1d4ed8; --blue-bg:#e8effd; --purple:#6d28d9; --purple-bg:#f1ebfd;
+  --orange:#c2410c; --orange-bg:#fdf0e6; --gold:#b45309; --gold-bg:#fdf6e3;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.7 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wrap{max-width:760px;margin:0 auto;padding:14px 12px 60px}
+header.top{background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;
+  border-radius:16px;padding:16px 16px 14px;margin-bottom:14px}
+header.top .crumb{font-size:12px;opacity:.85;letter-spacing:.05em}
+header.top h1{font-size:19px;line-height:1.45;margin:6px 0 8px}
+header.top .meta{font-size:12.5px;opacity:.92;line-height:1.6}
+header.top .meta b{font-weight:600}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toolbar button{border:0;border-radius:9px;padding:8px 12px;font-size:13.5px;font-weight:600;
+  background:rgba(255,255,255,.16);color:#fff}
+.toolbar button:active{background:rgba(255,255,255,.3)}
+.toolbar .score{margin-left:auto;font-size:13px;background:rgba(255,255,255,.14);
+  border-radius:9px;padding:8px 10px;white-space:nowrap}
+.howto{background:var(--accent-bg);border-radius:12px;padding:10px 14px;font-size:13.5px;
+  color:#115e59;margin:0 0 16px;line-height:1.65}
+.howto b{font-weight:700}
+h2.part{font-size:16.5px;margin:26px 4px 10px;padding-left:10px;border-left:4px solid var(--accent)}
+h2.part .cnt{font-size:12px;font-weight:400;color:var(--sub);margin-left:6px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 12px 10px;margin-bottom:12px;position:relative;overflow:hidden}
+.q::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:transparent}
+.q.correct::before{background:var(--green)}
+.q.wrong::before{background:var(--red)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}
+.tag{font-size:11px;font-weight:700;border-radius:6px;padding:2px 7px;letter-spacing:.03em}
+.tA{background:var(--blue-bg);color:var(--blue)}
+.tX{background:var(--orange-bg);color:var(--orange)}
+.tB{background:var(--purple-bg);color:var(--purple)}
+.tZ{background:var(--red-bg);color:var(--red)}
+.tloc{background:#eef2f4;color:var(--sub);font-weight:500}
+.qno{font-size:12px;color:var(--sub);font-weight:600}
+.stem{font-size:15.5px;line-height:1.7;margin:2px 0 8px}
+.opts{display:grid;gap:7px}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:14.5px;line-height:1.6;
+  background:#fafbfc;border:1.5px solid var(--line);border-radius:10px;padding:8px 11px;color:var(--ink)}
+.opt.sel{border-color:var(--accent);background:var(--accent-bg)}
+.opt.right{border-color:var(--green);background:var(--green-bg);color:#14532d;font-weight:600}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:#7f1d1d;font-weight:600}
+.opt.missed{border-style:dashed;border-color:var(--orange);background:var(--orange-bg);color:#9a3412}
+.opt[disabled]{opacity:.92}
+.judgebar{display:flex;gap:8px;margin-top:8px}
+.judgebar button{font-size:13.5px;font-weight:700;border:0;border-radius:9px;padding:7px 14px;
+  background:var(--accent);color:#fff}
+.judgebar button.ghost{background:#eef2f4;color:var(--sub)}
+.letters{display:flex;gap:8px;margin-top:8px}
+.letters button{width:44px;height:38px;border-radius:9px;border:1.5px solid var(--line);
+  background:#fafbfc;font-size:15px;font-weight:700;color:var(--ink)}
+.letters button.right{border-color:var(--green);background:var(--green-bg);color:#14532d}
+.letters button.wrong{border-color:var(--red);background:var(--red-bg);color:#7f1d1d}
+.bgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.bgroup .bnote{font-size:12.5px;color:var(--purple);font-weight:600;margin-bottom:6px}
+.bopts{background:#faf9fe;border:1px dashed #ddd6fe;border-radius:10px;padding:8px 11px;
+  font-size:14.5px;line-height:1.8;margin-bottom:10px}
+.bgroup .q{border:0;border-top:1px solid var(--line);border-radius:0;margin:0;padding:10px 2px 6px}
+.bgroup .q::before{display:none}
+details.ans{margin-top:9px;border-radius:10px;background:#f6f8f9;border:1px solid var(--line)}
+details.ans summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--accent);
+  padding:7px 11px;list-style-position:inside}
+details.ans[open] summary{border-bottom:1px dashed var(--line)}
+.ansbody{padding:8px 12px 10px;font-size:14px;line-height:1.75}
+.ansbody .ansline{font-weight:700;margin-bottom:4px}
+.ansbody .ansline .ok{color:var(--green)}
+.ansbody .expl{color:#37474f;white-space:pre-line}
+.ansbody .loc{margin-top:6px;font-size:12.5px;color:var(--sub)}
+.cardlist{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.cardlist h3{font-size:14.5px;margin:10px 0 6px;color:var(--accent)}
+.cardlist h3:first-child{margin-top:2px}
+.cardlist ul{margin:4px 0;padding-left:20px}
+.cardlist li{font-size:14px;line-height:1.8;margin:2px 0}
+.cardlist table{border-collapse:collapse;width:100%;margin:6px 0;font-size:13.5px}
+.cardlist th,.cardlist td{border:1px solid var(--line);padding:5px 8px;text-align:left;line-height:1.6}
+.cardlist th{background:#f2f7f6;font-weight:600;color:#115e59}
+footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center;line-height:1.8}
+@media print{
+  body{background:#fff}
+  .toolbar,.howto{display:none}
+  details.ans{display:block}
+  details.ans summary{list-style:none}
+  .q{break-inside:avoid;page-break-inside:avoid}
+  header.top{background:#fff;color:#000;border:1px solid #000}
+  header.top .crumb,header.top .meta{color:#333}
+}
+.shot{margin-top:8px}
+.shot img{width:100%;display:block;border:1px solid var(--line);border-radius:8px}
+.shcap{font-size:11.5px;color:var(--sub);margin-top:3px}
+a.toolbtn{display:inline-block;text-decoration:none;border-radius:9px;padding:8px 12px;
+  font-size:13.5px;font-weight:600;background:rgba(255,255,255,.16);color:#fff}
+a.toolbtn:active{background:rgba(255,255,255,.3)}
+
+.pdf-fab{position:fixed;right:10px;top:45%;z-index:60;display:flex;flex-direction:column;align-items:center;
+  gap:1px;background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;text-decoration:none;
+  border-radius:14px;padding:9px;font-size:11px;font-weight:700;box-shadow:0 3px 12px rgba(0,0,0,.28);
+  line-height:1.15;letter-spacing:1px}
+.pdf-fab .ico{font-size:17px;letter-spacing:0}
+.pdf-fab:active{opacity:.85}
+.pdf-overlay{position:fixed;inset:0;z-index:120;background:#eef2f3;display:flex;flex-direction:column}
+.pdf-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#0f766e;color:#fff;
+  padding:9px 12px;font-size:14px}
+.pdf-bar .pdf-ext{color:#d1faf5;text-decoration:none;font-size:12.5px;margin-right:10px}
+.pdf-bar #pdfClose{border:0;border-radius:8px;background:rgba(255,255,255,.2);color:#fff;font-size:13px;
+  font-weight:600;padding:6px 10px}
+.pdf-pages{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#e8edee;padding:8px 6px 24px}
+.pdf-pages img{width:100%;display:block;margin:0 auto 10px;border-radius:6px;box-shadow:0 1px 6px rgba(0,0,0,.18);background:#fff}
+@media print{.pdf-fab,.pdf-overlay{display:none!important}}
+
+.tW{background:#eef2ff;color:#4f46e5}
+.tS2{background:#fdf2f8;color:#be185d}
+.wbbtn{width:100%;border:1.5px dashed #0f766e88;background:#f0fdfa;color:#0f766e;font-size:14.5px;font-weight:700;
+  border-radius:12px;padding:13px;margin-bottom:12px;line-height:1.5}
+.wbbtn:active{background:#ccfbf1}
+.wbnote{font-size:12.5px;color:var(--sub);background:#f6f8f9;border:1px solid var(--line);border-radius:10px;
+  padding:8px 11px;margin-bottom:10px;line-height:1.65}
+.wgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.wgtop{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:7px}
+.wgtop b{font-size:15px}
+.wopts{background:#f7f9ff;border:1px dashed #cdd8f6;border-radius:10px;padding:8px 11px;font-size:13.5px;
+  line-height:1.75;margin-bottom:8px;max-height:240px;overflow:auto}
+.wgroup .q{border:0;border-top:1px dashed var(--line);border-radius:0;margin:0;padding:9px 2px 6px}
+.wgroup .q::before{display:none}
+.opts.lg{display:flex;flex-wrap:wrap;gap:6px}
+.opts.lg .opt{width:auto;min-width:40px;text-align:center;padding:6px 10px;font-size:13.5px}
+</style></head><body data-total="26"><div class="wrap"><header class="top"><div class="crumb">考研西综 · 病理学 · 学成选择题</div><h1>第20课｜结核</h1><div class="meta">对应讲义：<b>P1–8</b> ｜ 共 <b>26</b> 题 ｜ 建议约 <b>20</b> 分钟</div><div class="toolbar"><a class="toolbtn" href="../index.html">← 总目录</a><button id="expandAll">展开全部答案</button><button id="collapseAll">收起全部</button><button id="resetBtn">重做</button><span class="score" id="score">已答 0/26 · 正确 0</span></div></header><div class="howto">用法：A型题点选项即判；X型题先多选、再点【判卷】；答完自动展开解析。刷完本课再过一遍底部【本课速记卡】，效果最好。</div><h2 class="part">一、结核概述与基本病理<span class="cnt">6 题</span></h2><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q1</span><span class="tag tloc">P1 · 结核概述</span></div><div class="stem">结核病最主要的传染源是</div><div class="opts"><button class="opt" data-k="A">A. 空洞性肺结核患者</button><button class="opt" data-k="B">B. 肠结核患者</button><button class="opt" data-k="C">C. 结核性胸膜炎患者</button><button class="opt" data-k="D">D. 骨结核患者</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">传染源：肺结核患者（主要是空洞性肺结核）；主要经呼吸道飞沫传播。</div><div class="loc">📖 讲义定位：P1 · 结核概述</div><div class="shot"><img loading="lazy" src="img/20a.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 结核概述</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q2</span><span class="tag tloc">P1 · 结核杆菌</span></div><div class="stem">结核杆菌的致病性主要依靠</div><div class="opts"><button class="opt" data-k="A">A. 内毒素</button><button class="opt" data-k="B">B. 侵袭性酶</button><button class="opt" data-k="C">C. 外毒素</button><button class="opt" data-k="D">D. 菌体细胞壁成分（脂类等），不产生毒素</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">结核杆菌不产生毒素，致病性/毒性依靠菌体细胞壁成分（脂类等）。</div><div class="loc">📖 讲义定位：P1 · 结核杆菌</div><div class="shot"><img loading="lazy" src="img/20b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 结核杆菌</div></div></div></details></div><div class="q" data-ans="ACD" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q3</span><span class="tag tloc">P1 · 结核杆菌</span></div><div class="stem">结核杆菌菌体成分（脂类等）的作用包括</div><div class="opts"><button class="opt" data-k="A">A. 蛋白质→皮肤红斑和结核菌素试验（PPD）阳性</button><button class="opt" data-k="B">B. 外毒素→组织坏死</button><button class="opt" data-k="C">C. 蜡质→干酪样坏死、空洞</button><button class="opt" data-k="D">D. 多糖→血清反应等免疫应答</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ACD</span></div><div class="expl">B 错：结核杆菌不产生外毒素。</div><div class="loc">📖 讲义定位：P1 · 结核杆菌</div><div class="shot"><img loading="lazy" src="img/20b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 结核杆菌</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q4</span><span class="tag tloc">P1 · 结核结节</span></div><div class="stem">结核的病理特征性病变是</div><div class="opts"><button class="opt" data-k="A">A. 嗜酸性脓肿</button><button class="opt" data-k="B">B. 慢性干酪性肉芽肿（结核结节）</button><button class="opt" data-k="C">C. 纤维素性炎</button><button class="opt" data-k="D">D. 蜂窝织炎</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">结核的病理特征＝慢性干酪性肉芽肿（结核结节）；典型结节中央伴干酪样坏死。</div><div class="loc">📖 讲义定位：P1 · 结核结节</div><div class="shot"><img loading="lazy" src="img/20b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 结核结节</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q5</span><span class="tag tloc">P1 · 结核结节</span></div><div class="stem">结核结节的上皮样细胞（类上皮细胞）起源于</div><div class="opts"><button class="opt" data-k="A">A. 淋巴细胞</button><button class="opt" data-k="B">B. 鳞状上皮细胞</button><button class="opt" data-k="C">C. 巨噬细胞</button><button class="opt" data-k="D">D. 肺泡上皮细胞</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">上皮样细胞＝吞噬结核杆菌的单核-巨噬细胞；结节组成还包括朗汉斯巨细胞、大量淋巴细胞、少量成纤维细胞（『凌晨累死』）。</div><div class="loc">📖 讲义定位：P1 · 结核结节</div><div class="shot"><img loading="lazy" src="img/20b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 结核结节</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q6</span><span class="tag tloc">P1 · 结核结节</span></div><div class="stem">干酪样坏死的本质是</div><div class="opts"><button class="opt" data-k="A">A. 脂肪坏死</button><button class="opt" data-k="B">B. 液化性坏死</button><button class="opt" data-k="C">C. 彻底的凝固性坏死（镜下无结构嗜酸性红染颗粒物）</button><button class="opt" data-k="D">D. 纤维素样坏死</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">干酪样坏死＝彻底的凝固性坏死；坏死灶干燥、淡黄、细腻、质地较实（含脂质多）。</div><div class="loc">📖 讲义定位：P1 · 结核结节</div><div class="shot"><img loading="lazy" src="img/20b.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P1 · 结核结节</div></div></div></details></div><h2 class="part">二、肺结核<span class="cnt">12 题</span></h2><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q7</span><span class="tag tloc">P2 · 原发性肺结核</span></div><div class="stem">原发性肺结核的概念是</div><div class="opts"><button class="opt" data-k="A">A. 儿童期感染的统称</button><button class="opt" data-k="B">B. 血源播散性肺结核</button><button class="opt" data-k="C">C. 再次感染结核杆菌、有免疫力</button><button class="opt" data-k="D">D. 机体初次感染结核杆菌，此时无特异免疫力</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">原发性肺结核：初次感染结核杆菌、无特异免疫力（之后在病程中出现）；好发儿童。</div><div class="loc">📖 讲义定位：P2 · 原发性肺结核</div><div class="shot"><img loading="lazy" src="img/20c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 原发性肺结核</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q8</span><span class="tag tloc">P2 · 原发性肺结核</span></div><div class="stem">原发复合征的组成是</div><div class="opts"><button class="opt" data-k="A">A. 干酪性肺炎＋肺门钙化</button><button class="opt" data-k="B">B. 肺内原发灶＋结核性淋巴管炎＋肺门淋巴结结核</button><button class="opt" data-k="C">C. 肺尖病灶＋空洞＋纤维化</button><button class="opt" data-k="D">D. 结核球＋胸膜炎</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">原发复合征（X 线呈哑铃影）：①肺内原发灶（上叶下部、下叶上部近胸膜处）②结核性淋巴管炎 ③肺门淋巴结结核（多为单侧肿大、常伴干酪样坏死）。</div><div class="loc">📖 讲义定位：P2 · 原发性肺结核</div><div class="shot"><img loading="lazy" src="img/20c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 原发性肺结核</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q9</span><span class="tag tloc">P2 · 原发性肺结核</span></div><div class="stem">原发性肺结核的主要播散途径是</div><div class="opts"><button class="opt" data-k="A">A. 主要经淋巴道或血道播散</button><button class="opt" data-k="B">B. 主要经直接蔓延</button><button class="opt" data-k="C">C. 主要经消化道播散</button><button class="opt" data-k="D">D. 主要经支气管播散</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">原发性肺结核主要经淋巴道或血道播散（TB 嚣张）。</div><div class="loc">📖 讲义定位：P2 · 原发性肺结核</div><div class="shot"><img loading="lazy" src="img/20c.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P2 · 原发性肺结核</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q10</span><span class="tag tloc">P3 · 继发性肺结核</span></div><div class="stem">继发性肺结核的好发部位是</div><div class="opts"><button class="opt" data-k="A">A. 上叶下部、下叶上部近胸膜处</button><button class="opt" data-k="B">B. 上叶尖后段、下叶背段和后基底段</button><button class="opt" data-k="C">C. 肺门及纵隔</button><button class="opt" data-k="D">D. 两肺弥漫分布</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">继发性肺结核好发上叶尖后段、下叶背段和后基底段（『勾肩搭背』）；常从右肺尖开始。</div><div class="loc">📖 讲义定位：P3 · 继发性肺结核</div><div class="shot"><img loading="lazy" src="img/20d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 继发性肺结核</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q11</span><span class="tag tloc">P3 · 继发性肺结核</span></div><div class="stem">继发性肺结核的主要播散方式和病变分布特点是</div><div class="opts"><button class="opt" data-k="A">A. 主要经支气管播散，病变上重下轻、上旧下新</button><button class="opt" data-k="B">B. 主要经消化道播散</button><button class="opt" data-k="C">C. 主要经淋巴道播散，肺门淋巴结肿大</button><button class="opt" data-k="D">D. 主要经血道播散，病变均匀分布</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">继发性肺结核：自上而下主要经支气管播散→上重下轻、上旧下新；多局限于肺内、常伴空洞。</div><div class="loc">📖 讲义定位：P3 · 继发性肺结核</div><div class="shot"><img loading="lazy" src="img/20d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 继发性肺结核</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q12</span><span class="tag tloc">P3 · 继发性肺结核类型</span></div><div class="stem">局灶型肺结核的特点是</div><div class="opts"><button class="opt" data-k="A">A. 浸润性病变、边界模糊</button><button class="opt" data-k="B">B. 虫蚀样空洞</button><button class="opt" data-k="C">C. 厚壁空洞伴播散</button><button class="opt" data-k="D">D. 好发肺尖，境界清楚的结节（以增生为主），属非活动性</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">局灶型：非活动性；好发肺尖、境界清楚结节、以增生为主（菌少＋免疫力强→多无症状）。</div><div class="loc">📖 讲义定位：P3 · 继发性肺结核类型</div><div class="shot"><img loading="lazy" src="img/20e.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 继发性肺结核类型</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q13</span><span class="tag tloc">P3 · 继发性肺结核类型</span></div><div class="stem">最常见的活动性继发性肺结核类型是</div><div class="opts"><button class="opt" data-k="A">A. 干酪性肺炎</button><button class="opt" data-k="B">B. 局灶型肺结核</button><button class="opt" data-k="C">C. 浸润型肺结核</button><button class="opt" data-k="D">D. 结核球</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">浸润型：最常见的活动性继发性肺结核；好发肺尖和锁骨下、云雾状/云絮状影（以渗出为主）、可有薄壁空洞（菌多＋免疫力弱→咳嗽、低热、盗汗）。</div><div class="loc">📖 讲义定位：P3 · 继发性肺结核类型</div><div class="shot"><img loading="lazy" src="img/20e.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 继发性肺结核类型</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q14</span><span class="tag tloc">P4 · 继发性肺结核类型</span></div><div class="stem">病情危重、可见虫蚀样空洞的肺结核类型是</div><div class="opts"><button class="opt" data-k="A">A. 浸润型肺结核</button><button class="opt" data-k="B">B. 结核球</button><button class="opt" data-k="C">C. 局灶型肺结核</button><button class="opt" data-k="D">D. 干酪性肺炎</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">干酪性肺炎：病情危重；虫蚀样空洞、可有大叶性实变。</div><div class="loc">📖 讲义定位：P4 · 继发性肺结核类型</div><div class="shot"><img loading="lazy" src="img/20e2.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P4 · 继发性肺结核类型</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q15</span><span class="tag tloc">P4 · 继发性肺结核类型</span></div><div class="stem">慢性纤维空洞型肺结核空洞壁的三层结构由内向外是</div><div class="opts"><button class="opt" data-k="A">A. 纤维结缔组织／干酪样坏死物／肉芽组织</button><button class="opt" data-k="B">B. 纤维结缔组织／肉芽组织／干酪样坏死物</button><button class="opt" data-k="C">C. 干酪样坏死物＋大量结核杆菌／肉芽组织／纤维结缔组织</button><button class="opt" data-k="D">D. 肉芽组织／干酪样坏死物／纤维结缔组织</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">厚壁空洞：内层＝干酪样坏死物＋大量结核杆菌、中层＝肉芽组织、外层＝纤维结缔组织；属传染性强的开放性肺结核，可并发慢性肺心病。</div><div class="loc">📖 讲义定位：P4 · 继发性肺结核类型</div><div class="shot"><img loading="lazy" src="img/20e2.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P4 · 继发性肺结核类型</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q16</span><span class="tag tloc">P4 · 继发性肺结核类型</span></div><div class="stem">结核球（结核瘤）的本质是</div><div class="opts"><button class="opt" data-k="A">A. 孤立的、境界清楚（纤维包裹）的干酪样坏死灶</button><button class="opt" data-k="B">B. 大量结核杆菌聚集形成的脓肿</button><button class="opt" data-k="C">C. 钙化的淋巴结</button><button class="opt" data-k="D">D. 结核性肉芽组织增生结节</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">结核球：孤立、境界清楚（纤维包裹）的干酪样坏死灶；来自浸润型病灶纤维包裹、空洞被干酪物填充或病灶融合。</div><div class="loc">📖 讲义定位：P4 · 继发性肺结核类型</div><div class="shot"><img loading="lazy" src="img/20e2.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P4 · 继发性肺结核类型</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q17</span><span class="tag tloc">P5 · 结核性胸膜炎</span></div><div class="stem">结核性胸膜炎最常见的形式是</div><div class="opts"><button class="opt" data-k="A">A. 出血性炎</button><button class="opt" data-k="B">B. 湿性：浆液纤维蛋白性渗出性炎（胸腔积液）</button><button class="opt" data-k="C">C. 干性：以增生为主</button><button class="opt" data-k="D">D. 化脓性炎</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">湿性多见：浆液纤维蛋白性渗出性炎（胸腔积液）；可致胸膜增厚粘连；干性为增生性。</div><div class="loc">📖 讲义定位：P5 · 结核性胸膜炎</div><div class="shot"><img loading="lazy" src="img/20e3.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P5 · 结核性胸膜炎</div></div></div></details></div><div class="q" data-ans="BC" data-mode="multi"><div class="qhead"><span class="tag tX">X型·多选</span><span class="qno">Q18</span><span class="tag tloc">P3 · 继发性肺结核</span></div><div class="stem">继发性肺结核的病理特点有</div><div class="opts"><button class="opt" data-k="A">A. 以肺门淋巴结肿大为突出表现</button><button class="opt" data-k="B">B. 病灶多由肺尖部开始</button><button class="opt" data-k="C">C. 常循气道（支气管）播散</button><button class="opt" data-k="D">D. 常循血道播散</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BC</span></div><div class="expl">D、A 错：血道播散和肺门淋巴结肿大是原发性肺结核的特点；继发性以支气管播散为主、从肺尖开始。</div><div class="loc">📖 讲义定位：P3 · 继发性肺结核</div><div class="shot"><img loading="lazy" src="img/20d.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P3 · 继发性肺结核</div></div></div></details></div><h2 class="part">三、血源播散与肺外结核<span class="cnt">8 题</span></h2><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q19</span><span class="tag tloc">P5 · 血源播散</span></div><div class="stem">急性全身粟粒性结核的发生机制是</div><div class="opts"><button class="opt" data-k="A">A. 结核杆菌短时间大量侵入肺静脉分支，经左心至体循环播散全身</button><button class="opt" data-k="B">B. 结核杆菌沿淋巴管播散</button><button class="opt" data-k="C">C. 结核杆菌经消化道播散</button><button class="opt" data-k="D">D. 结核杆菌经支气管播散</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">急性全身粟粒性结核：短时间内一次或反复多次大量侵入肺静脉分支→经左心至体循环→播散到全身各器官（肺、肝、脾、脑膜等）。</div><div class="loc">📖 讲义定位：P5 · 血源播散</div><div class="shot"><img loading="lazy" src="img/20f.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P5 · 血源播散</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q20</span><span class="tag tloc">P5 · 血源播散</span></div><div class="stem">急性粟粒性肺结核的典型表现是</div><div class="opts"><button class="opt" data-k="A">A. 单发结节伴钙化</button><button class="opt" data-k="B">B. 双肺弥漫的粟粒影（2mm），分布、大小、密度均匀（『三均匀』）</button><button class="opt" data-k="C">C. 双肺下叶斑片影</button><button class="opt" data-k="D">D. 肺尖厚壁空洞</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">急性粟粒性肺结核（血源播散性肺结核）：双肺弥漫粟粒影（2mm）、分布/大小/密度均匀（三均匀）。</div><div class="loc">📖 讲义定位：P5 · 血源播散</div><div class="shot"><img loading="lazy" src="img/20f.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P5 · 血源播散</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q21</span><span class="tag tloc">P6 · 肠结核</span></div><div class="stem">肠结核的感染途径和好发部位是</div><div class="opts"><button class="opt" data-k="A">A. 经血道播散；好发空肠</button><button class="opt" data-k="B">B. 经淋巴道播散；好发乙状结肠</button><button class="opt" data-k="C">C. 直接蔓延；好发直肠</button><button class="opt" data-k="D">D. 多继发于空洞性肺结核（反复咽下含菌痰液）；好发回盲部</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">肠结核多继发于空洞性肺结核（经口感染）；好发回盲部；溃疡型多见：环形溃疡（长轴与肠长轴垂直）→易致肠梗阻。</div><div class="loc">📖 讲义定位：P6 · 肠结核</div><div class="shot"><img loading="lazy" src="img/20g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P6 · 肠结核</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q22</span><span class="tag tloc">P6 · 肠结核</span></div><div class="stem">肠结核溃疡的形态特征取决于</div><div class="opts"><button class="opt" data-k="A">A. 肠黏膜淋巴小结的形态</button><button class="opt" data-k="B">B. 肠黏膜皱襞的形态</button><button class="opt" data-k="C">C. 肠黏膜淋巴管的走向（环形走向）</button><button class="opt" data-k="D">D. 肠黏膜血管的走向</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">肠黏膜淋巴管呈环形走向→环形溃疡（长轴与肠长轴垂直）。对比：肠伤寒溃疡长轴与肠长轴平行（与淋巴小结形态一致）。</div><div class="loc">📖 讲义定位：P6 · 肠结核</div><div class="shot"><img loading="lazy" src="img/20g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P6 · 肠结核</div></div></div></details></div><div class="q" data-ans="C" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q23</span><span class="tag tloc">P6 · 肺外结核</span></div><div class="stem">女性生殖系统结核中最常见的是</div><div class="opts"><button class="opt" data-k="A">A. 卵巢结核</button><button class="opt" data-k="B">B. 宫颈结核</button><button class="opt" data-k="C">C. 输卵管结核</button><button class="opt" data-k="D">D. 子宫内膜结核</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="expl">女性生殖系统结核以输卵管结核最常见。</div><div class="loc">📖 讲义定位：P6 · 肺外结核</div><div class="shot"><img loading="lazy" src="img/20g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P6 · 肺外结核</div></div></div></details></div><div class="q" data-ans="A" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q24</span><span class="tag tloc">P6 · 肺外结核</span></div><div class="stem">淋巴结结核中最常见的是</div><div class="opts"><button class="opt" data-k="A">A. 颈部淋巴结结核</button><button class="opt" data-k="B">B. 纵隔淋巴结结核</button><button class="opt" data-k="C">C. 腋窝淋巴结结核</button><button class="opt" data-k="D">D. 腹股沟淋巴结结核</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="expl">淋巴结结核以颈部淋巴结最常见。</div><div class="loc">📖 讲义定位：P6 · 肺外结核</div><div class="shot"><img loading="lazy" src="img/20g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P6 · 肺外结核</div></div></div></details></div><div class="q" data-ans="D" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q25</span><span class="tag tloc">P6 · 肺外结核</span></div><div class="stem">骨与关节结核中，最常见且可形成『冷脓肿』的是</div><div class="opts"><button class="opt" data-k="A">A. 膝关节结核</button><button class="opt" data-k="B">B. 胸椎结核</button><button class="opt" data-k="C">C. 颈椎结核</button><button class="opt" data-k="D">D. 腰椎结核</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">D</span></div><div class="expl">骨与关节结核：腰椎结核最常见，椎体破坏、椎间隙变窄、冷/寒性脓肿。</div><div class="loc">📖 讲义定位：P6 · 肺外结核</div><div class="shot"><img loading="lazy" src="img/20g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P6 · 肺外结核</div></div></div></details></div><div class="q" data-ans="B" data-mode="single"><div class="qhead"><span class="tag tA">A型·单选</span><span class="qno">Q26</span><span class="tag tloc">P6 · 肺外结核</span></div><div class="stem">结核性腹膜炎的临床特点是（其感染途径多为）</div><div class="opts"><button class="opt" data-k="A">A. 揉面感；继发于肠结核血道播散</button><button class="opt" data-k="B">B. 腹壁『揉面感/柔韧感』；多继发于腹腔内结核灶直接蔓延</button><button class="opt" data-k="C">C. 板状腹；继发于肺结核血道播散</button><button class="opt" data-k="D">D. 无反跳痛；继发于骨结核</button></div><details class="ans"><summary>答案与解析</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="expl">结核性腹膜炎：揉面感/柔韧感；多继发于腹腔内结核灶（肠结核、肠系膜淋巴结结核、输卵管结核）直接蔓延。</div><div class="loc">📖 讲义定位：P6 · 肺外结核</div><div class="shot"><img loading="lazy" src="img/20g.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · P6 · 肺外结核</div></div></div></details></div><h2 class="part">本课速记卡</h2><div class="cardlist"><h3>结核基本病理</h3><ul><li>传染病（传染源：空洞性肺结核；呼吸道飞沫传播为主）＋炎症（变质、渗出、增生）</li><li>致病靠菌壁成分：多糖→免疫应答；蜡质→干酪样坏死、空洞；蛋白质→PPD 阳性（不产生毒素）</li><li>特征：慢性干酪性肉芽肿（结核结节）＝上皮样细胞（←巨噬细胞）＋朗汉斯巨细胞＋大量淋巴细胞＋少量成纤维细胞；中央干酪样坏死（彻底的凝固性坏死）</li></ul><h3>原发性 VS 继发性肺结核</h3><table><tr><th>项目</th><th>原发性</th><th>继发性</th></tr><tr><td>感染/好发</td><td>初次；儿童</td><td>再次（内源复发为主）；成人</td></tr><tr><td>好发部位</td><td>上叶下部、下叶上部近胸膜</td><td>上叶尖后段、下叶背段</td></tr><tr><td>播散</td><td>淋巴道、血道</td><td>支气管（上重下轻、上旧下新）</td></tr><tr><td>特征</td><td>原发复合征（哑铃影）</td><td>多局限肺内、常伴空洞</td></tr></table><h3>继发性肺结核 6 型</h3><ul><li>局灶型：非活动性、肺尖界清结节（增生为主）</li><li>浸润型：最常见活动性（渗出为主、云雾状影）</li><li>干酪性肺炎：危重、虫蚀样空洞</li><li>慢性纤维空洞型：厚壁空洞三层、开放传染、可致肺心病</li><li>结核球：纤维包裹的孤立干酪灶</li><li>结核性胸膜炎：湿性多见（浆液纤维蛋白性）</li></ul><h3>血源播散与肺外结核</h3><ul><li>急性全身粟粒性结核：肺静脉→左心→体循环；急性粟粒性肺结核『三均匀』（2mm）</li><li>肠结核：继发空洞性肺结核、回盲部、环形溃疡（⊥肠长轴）→易梗阻</li><li>脑膜（儿童、脑底）、输卵管（女性生殖最多）、颈部淋巴结（最多）、腰椎（冷脓肿）</li><li>规律：肺外结核多继发肺结核；特例：结核性腹膜炎多继腹腔内结核直接蔓延；泌尿/男生殖系多继肾结核</li></ul></div><h2 class="part">📚 网站题库（导入）<span class="cnt">5 组 · 13 题</span></h2><div class="wbank"><button class="wbbtn" id="webBankBtn" data-label="🔽 点击展开：从「西综题库」网站导入的 5 组题（13 题，含答案）">🔽 点击展开：从「西综题库」网站导入的 5 组题（13 题，含答案）</button><div id="webBank" style="display:none"><div class="wbnote">说明：本部分为外部题库导入（来源：「西综题库」网站 · 病理学），题干、选项与答案保留原样；标注「教师补充」的答案未经讲义逐项复核。做题方式：点字母选择（多选后点【判卷】；答案可点开「答案与出处」查看）。</div><div class="wgroup"><div class="wgtop"><b>结核杆菌细胞壁成分</b><span class="tag tW">B型题</span></div><div class="wopts"><div><b>A</b> 干酪样坏死、空洞</div><div><b>B</b> 血清反应等免疫应答</div><div><b>C</b> 皮肤红斑和结核菌素试验PPD阳性</div></div><div class="q wq" data-ans="B" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W1</span><span class="tag tloc">第20讲 · 第1页</span></div><div class="stem">多糖</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="loc">📖 第20讲 · 第1页</div><div class="shot"><img loading="lazy" src="pdfpages/20/01.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第1页</div></div></div></details></div><div class="q wq" data-ans="A" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W2</span><span class="tag tloc">第20讲 · 第1页</span></div><div class="stem">蜡质</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">A</span></div><div class="loc">📖 第20讲 · 第1页</div><div class="shot"><img loading="lazy" src="pdfpages/20/01.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第1页</div></div></div></details></div><div class="q wq" data-ans="C" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W3</span><span class="tag tloc">第20讲 · 第1页</span></div><div class="stem">蛋白质</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="loc">📖 第20讲 · 第1页</div><div class="shot"><img loading="lazy" src="pdfpages/20/01.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第1页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>原发性与继发性肺结核</b><span class="tag tW">B型题</span></div><div class="wopts"><div><b>A</b> 机体初次感染结核杆菌，无特异免疫力</div><div><b>B</b> 病变常从右肺尖开始，自上而下主要经支气管播散，病变上重下轻、上旧下新</div><div><b>C</b> 好发于儿童</div><div><b>D</b> 常伴空洞</div><div><b>E</b> 基本病理特征为原发复合征（X线呈哑铃影）</div><div><b>F</b> 若合并AIDS，好发于下叶</div><div><b>G</b> 机体再次感染结核杆菌（内源复发为主），有免疫力</div><div><b>H</b> 肺内原发灶位于上叶下部、下叶上部近胸膜处</div><div><b>I</b> 病变多局限于肺内</div><div><b>J</b> 若合并AIDS，趋于原发性肺结核：肺门、纵隔淋巴结肿大，空洞少见</div><div><b>K</b> 有结核性淋巴管炎</div><div><b>L</b> 好发于成人，尤其抵抗力低下者</div><div><b>M</b> 若合并AIDS，PPD常呈阴性或弱阳性</div><div><b>N</b> 肺门淋巴结结核：多为单侧肿大，常伴干酪样坏死</div><div><b>O</b> 好发于上叶尖后段、下叶背段和后基底段</div><div><b>P</b> 主要经淋巴道或血道播散</div><div><b>Q</b> 若合并AIDS，肉芽肿少见</div></div><div class="q wq" data-ans="ACEHKNP" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W4</span><span class="tag tloc">第20讲 · 第2页</span></div><div class="stem">原发性肺结核</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button><button class="opt" data-k="Q">Q</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">ACEHKNP</span></div><div class="loc">📖 第20讲 · 第2页</div><div class="shot"><img loading="lazy" src="pdfpages/20/02.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第2页</div></div></div></details></div><div class="q wq" data-ans="BDFGIJLMOQ" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W5</span><span class="tag tloc">第20讲 · 第3页</span></div><div class="stem">继发性肺结核</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button><button class="opt" data-k="Q">Q</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BDFGIJLMOQ</span></div><div class="loc">📖 第20讲 · 第3页</div><div class="shot"><img loading="lazy" src="pdfpages/20/03.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第3页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>继发性肺结核的类型</b><span class="tag tW">B型题</span></div><div class="wopts"><div><b>A</b> 非活动性</div><div><b>B</b> 病情危重</div><div><b>C</b> 好发于肺尖，境界清楚的结节，增生为主</div><div><b>D</b> 肺组织严重破坏、广泛纤维化、肺体积缩小变形、肺门抬高、肺纹理呈垂柳样</div><div><b>E</b> 最常见的活动性继发性肺结核</div><div><b>F</b> 孤立的境界清楚（纤维包裹）的干酪样坏死灶</div><div><b>G</b> 湿性多见：浆液纤维蛋白性渗出性炎；干性：增生性</div><div><b>H</b> 好发于肺尖和锁骨下，境界不清/边缘模糊、密度不均，呈云雾状/云絮状影（以渗出为主）</div><div><b>I</b> 好发于上叶的厚壁空洞</div><div><b>J</b> 可有薄壁空洞</div><div><b>K</b> 虫蚀样空洞，可有大叶性实变</div><div><b>L</b> 传染性强的开放性肺结核</div><div><b>M</b> 多有咳嗽、低热、盗汗等症状</div><div><b>N</b> 可并发慢性肺心病</div><div><b>O</b> 可致胸膜增厚粘连</div><div><b>P</b> 同侧或对侧肺组织可见由支气管播散引起的很多病灶，它们大小不等、上旧下新</div></div><div class="q wq" data-ans="AC" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W6</span><span class="tag tloc">第20讲 · 第3页</span></div><div class="stem">局灶型肺结核</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">AC</span></div><div class="loc">📖 第20讲 · 第3页</div><div class="shot"><img loading="lazy" src="pdfpages/20/03.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第3页</div></div></div></details></div><div class="q wq" data-ans="EHJM" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W7</span><span class="tag tloc">第20讲 · 第3页</span></div><div class="stem">浸润型肺结核</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">EHJM</span></div><div class="loc">📖 第20讲 · 第3页</div><div class="shot"><img loading="lazy" src="pdfpages/20/03.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第3页</div></div></div></details></div><div class="q wq" data-ans="BK" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W8</span><span class="tag tloc">第20讲 · 第4页</span></div><div class="stem">干酪样肺炎</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">BK</span></div><div class="loc">📖 第20讲 · 第4页</div><div class="shot"><img loading="lazy" src="pdfpages/20/04.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第4页</div></div></div></details></div><div class="q wq" data-ans="DILNP" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W9</span><span class="tag tloc">第20讲 · 第4页</span></div><div class="stem">慢性纤维空洞型肺结核</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">DILNP</span></div><div class="loc">📖 第20讲 · 第4页</div><div class="shot"><img loading="lazy" src="pdfpages/20/04.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第4页</div></div></div></details></div><div class="q wq" data-ans="F" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W10</span><span class="tag tloc">第20讲 · 第4页</span></div><div class="stem">结核球/结核瘤</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">F</span></div><div class="loc">📖 第20讲 · 第4页</div><div class="shot"><img loading="lazy" src="pdfpages/20/04.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第4页</div></div></div></details></div><div class="q wq" data-ans="GO" data-mode="multi" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W11</span><span class="tag tloc">第20讲 · 第5页</span></div><div class="stem">结核性胸膜炎</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button><button class="opt" data-k="E">E</button><button class="opt" data-k="F">F</button><button class="opt" data-k="G">G</button><button class="opt" data-k="H">H</button><button class="opt" data-k="I">I</button><button class="opt" data-k="J">J</button><button class="opt" data-k="K">K</button><button class="opt" data-k="L">L</button><button class="opt" data-k="M">M</button><button class="opt" data-k="N">N</button><button class="opt" data-k="O">O</button><button class="opt" data-k="P">P</button></div><div class="judgebar"><button class="judge">判卷</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">GO</span></div><div class="loc">📖 第20讲 · 第5页</div><div class="shot"><img loading="lazy" src="pdfpages/20/05.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第5页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>在结核病的免疫反应中,起主要作用的细胞是</b><span class="tag tW">单项选择</span><span class="tag tS2">教师补充</span></div><div class="wopts"><div><b>A</b> CD8 T细胞</div><div><b>B</b> CD4 T细胞</div><div><b>C</b> B淋巴细胞</div><div><b>D</b> 巨噬细胞</div></div><div class="q wq" data-ans="B" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W12</span><span class="tag tloc">第20讲 · 第8页</span></div><div class="stem">在结核病的免疫反应中,起主要作用的细胞是(单选)</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">B</span></div><div class="loc">📖 第20讲 · 第8页</div><div class="shot"><img loading="lazy" src="pdfpages/20/08.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第8页</div></div></div></details></div></div><div class="wgroup"><div class="wgtop"><b>淋巴结结核病最常见于</b><span class="tag tW">单项选择</span><span class="tag tS2">教师补充</span></div><div class="wopts"><div><b>A</b> 支气管淋巴结</div><div><b>B</b> 肠系膜淋巴结</div><div><b>C</b> 颈部淋巴结</div><div><b>D</b> 锁骨上淋巴结</div></div><div class="q wq" data-ans="C" data-mode="single" data-noscore="1"><div class="qhead"><span class="tag tW">网站题</span><span class="qno">W13</span><span class="tag tloc">第20讲 · 第6页</span></div><div class="stem">淋巴结结核病最常见于(单选)</div><div class="opts lg"><button class="opt" data-k="A">A</button><button class="opt" data-k="B">B</button><button class="opt" data-k="C">C</button><button class="opt" data-k="D">D</button></div><details class="ans"><summary>答案与出处</summary><div class="ansbody"><div class="ansline">答案：<span class="ok">C</span></div><div class="loc">📖 第20讲 · 第6页</div><div class="shot"><img loading="lazy" src="pdfpages/20/06.jpg" alt="讲义原图"><div class="shcap">📷 讲义原图 · 第20讲 · 第6页</div></div></div></details></div></div></div></div><footer>素材：病理学讲义·第20课核心精讲（P1–8）<br>题库与解析为学习整理 · 仅供个人复习参考</footer><a class="pdf-fab" id="pdfFab"><span class="ico">📄</span><span>讲义</span></a><div class="pdf-overlay" id="pdfOverlay" style="display:none"><div class="pdf-bar"><b>📄 本课讲义（共 8 页）</b><span><a class="pdf-ext" href="../%E9%A1%B5%E9%9D%A2/pdf/20.pdf" target="_blank">原生打开 ↗</a><button id="pdfClose">✕ 关闭</button></span></div><div class="pdf-pages"><img loading="lazy" decoding="async" src="pdfpages/20/01.jpg" alt="讲义第1页"><img loading="lazy" decoding="async" src="pdfpages/20/02.jpg" alt="讲义第2页"><img loading="lazy" decoding="async" src="pdfpages/20/03.jpg" alt="讲义第3页"><img loading="lazy" decoding="async" src="pdfpages/20/04.jpg" alt="讲义第4页"><img loading="lazy" decoding="async" src="pdfpages/20/05.jpg" alt="讲义第5页"><img loading="lazy" decoding="async" src="pdfpages/20/06.jpg" alt="讲义第6页"><img loading="lazy" decoding="async" src="pdfpages/20/07.jpg" alt="讲义第7页"><img loading="lazy" decoding="async" src="pdfpages/20/08.jpg" alt="讲义第8页"></div></div></div><script>/* 病理学·学成选择题 —— 交互脚本（无依赖） */
+(function () {
+  'use strict';
+  var total = parseInt(document.body.getAttribute('data-total') || '0', 10);
+  var answered = 0, correct = 0;
+
+  function scoreEl() { return document.getElementById('score'); }
+  function refreshScore() {
+    var el = scoreEl();
+    if (el) el.textContent = '已答 ' + answered + '/' + total + ' · 正确 ' + correct;
+  }
+  function markResult(q, ok) {
+    q.classList.add(ok ? 'correct' : 'wrong');
+    var head = q.querySelector('.qhead');
+    if (head && !head.querySelector('.res')) {
+      var s = document.createElement('span');
+      s.className = 'res ' + (ok ? 'ok' : 'no');
+      s.textContent = ok ? '✓ 答对' : '✗ 答错';
+      s.style.cssText = 'font-size:12px;font-weight:700;' + (ok ? 'color:#15803d;' : 'color:#b91c1c;');
+      head.appendChild(s);
+    }
+    if (!q.getAttribute('data-noscore') && !q.getAttribute('data-counted')) {
+      q.setAttribute('data-counted', '1');
+      answered += 1;
+      if (ok) correct += 1;
+      refreshScore();
+    }
+    var d = q.querySelector('details.ans');
+    if (d) d.open = true;
+  }
+  function lockOpts(q) {
+    q.querySelectorAll('.opt,.lt').forEach(function (b) { b.disabled = true; });
+  }
+
+  /* 单选：.opt[data-k] 或 .lt[data-k] */
+  function bindSingle(q) {
+    var ans = (q.getAttribute('data-ans') || '').toUpperCase();
+    q.querySelectorAll('.lt,.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.getAttribute('data-judged')) return;
+        q.setAttribute('data-judged', '1');
+        var k = (b.getAttribute('data-k') || '').toUpperCase();
+        var ok = (k === ans);
+        if (ok) b.classList.add('right');
+        else {
+          b.classList.add('wrong');
+          var rightBtn = q.querySelector('[data-k="' + ans + '"]');
+          if (rightBtn) rightBtn.classList.add('right');
+        }
+        lockOpts(q);
+        markResult(q, ok);
+      });
+    });
+  }
+
+  /* 多选：.opt 可切换 .sel，.judge 判卷 */
+  function bindMulti(q) {
+    var ans = (q.getAttribute('data-ans') || '').toUpperCase().split('').sort().join('');
+    q.querySelectorAll('.opt').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (q.getAttribute('data-judged')) return;
+        b.classList.toggle('sel');
+      });
+    });
+    var jb = q.querySelector('.judge');
+    if (jb) jb.addEventListener('click', function () {
+      if (q.getAttribute('data-judged')) return;
+      var picked = [];
+      q.querySelectorAll('.opt.sel').forEach(function (b) { picked.push(b.getAttribute('data-k')); });
+      if (!picked.length) { jb.textContent = '请先选择'; setTimeout(function () { jb.textContent = '判卷'; }, 900); return; }
+      q.setAttribute('data-judged', '1');
+      var pk = picked.sort().join('');
+      q.querySelectorAll('.opt').forEach(function (b) {
+        var k = b.getAttribute('data-k');
+        var sel = b.classList.contains('sel');
+        var isR = ans.indexOf(k) >= 0;
+        b.classList.remove('sel');
+        if (sel && isR) b.classList.add('right');
+        else if (sel && !isR) b.classList.add('wrong');
+        else if (!sel && isR) b.classList.add('missed');
+      });
+      q.querySelectorAll('.opt,.judge').forEach(function (x) { x.disabled = true; });
+      markResult(q, pk === ans);
+    });
+  }
+
+  document.querySelectorAll('.q').forEach(function (q) {
+    var isMulti = q.getAttribute('data-mode') === 'multi';
+    if (isMulti) bindMulti(q); else bindSingle(q);
+  });
+
+  var ex = document.getElementById('expandAll');
+  if (ex) ex.addEventListener('click', function () {
+    document.querySelectorAll('details.ans').forEach(function (d) { d.open = true; });
+  });
+  var co = document.getElementById('collapseAll');
+  if (co) co.addEventListener('click', function () {
+    document.querySelectorAll('details.ans').forEach(function (d) { d.open = false; });
+  });
+  var rs = document.getElementById('resetBtn');
+  if (rs) rs.addEventListener('click', function () {
+    document.querySelectorAll('.q').forEach(function (q) {
+      q.classList.remove('correct', 'wrong');
+      q.removeAttribute('data-judged');
+      q.removeAttribute('data-counted');
+      q.querySelectorAll('.opt').forEach(function (b) {
+        b.classList.remove('sel', 'right', 'wrong', 'missed');
+        b.disabled = false;
+      });
+      q.querySelectorAll('.lt').forEach(function (b) {
+        b.classList.remove('right', 'wrong');
+        b.disabled = false;
+      });
+      q.querySelectorAll('.res').forEach(function (s) { s.remove(); });
+      q.querySelectorAll('details.ans').forEach(function (d) { d.open = false; });
+    });
+    answered = 0; correct = 0; refreshScore();
+  });
+
+  var fab = document.getElementById('pdfFab');
+  var ov = document.getElementById('pdfOverlay');
+  var pc = document.getElementById('pdfClose');
+  if (fab && ov && pc) {
+    fab.addEventListener('click', function () {
+      ov.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    pc.addEventListener('click', function () {
+      ov.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  }
+
+  var wbBtn = document.getElementById('webBankBtn');
+  var wbBox = document.getElementById('webBank');
+  if (wbBtn && wbBox) {
+    wbBtn.addEventListener('click', function () {
+      var open = wbBox.style.display !== 'none';
+      wbBox.style.display = open ? 'none' : 'block';
+      wbBtn.textContent = open ? wbBtn.getAttribute('data-label') : '🔼 收起网站题库';
+    });
+  }
+
+  refreshScore();
+})();
+</script></body></html>
